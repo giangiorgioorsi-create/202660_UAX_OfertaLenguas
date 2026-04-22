@@ -4,29 +4,27 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO TOTAL DE TEMA Y CONTRASTE (VERSIÓN FINAL) ---
+# --- BLOQUEO TOTAL DE TEMA Y VISIBILIDAD DE EXPANDERS ---
 st.markdown("""
     <style>
-    /* Reset de variables y fondo global */
-    :root { --primary-color: #FF6600; }
+    /* Reset de fondo global */
     html, body, [data-testid="stAppViewContainer"], .main, [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
 
-    /* BARRA LATERAL VISIBLE */
+    /* BARRA LATERAL */
     [data-testid="stSidebar"] { background-color: #F8F9FA !important; border-right: 1px solid #EEEEEE !important; }
     [data-testid="stSidebar"] * { color: #1A1A1A !important; }
 
-    /* PESTAÑAS (TABS) VISIBLES */
+    /* PESTAÑAS (TABS) */
     button[data-baseweb="tab"] p {
         color: #1A1A1A !important;
         font-weight: bold !important;
-        font-size: 1rem !important;
     }
     button[data-baseweb="tab"][aria-selected="true"] p { color: #FF6600 !important; }
 
-    /* MENÚS DESPLEGABLES (SELECTBOX) */
+    /* MENÚS DESPLEGABLES */
     div[data-baseweb="select"] > div { background-color: #FFFFFF !important; color: #1A1A1A !important; border: 1px solid #FF6600 !important; }
     div[role="listbox"] ul { background-color: #FFFFFF !important; }
     div[role="option"] { color: #1A1A1A !important; background-color: #FFFFFF !important; }
@@ -41,21 +39,31 @@ st.markdown("""
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
 
-    /* EXPANDER Y DETALLES (FORZAR VISIBILIDAD) */
-    .st-ae summary { color: #1A1A1A !important; font-weight: bold !important; }
-    .st-ae div[data-testid="stMarkdownContainer"] p { color: #1A1A1A !important; }
-    .st-ae { background-color: #FFFFFF !important; border: 1px solid #EEEEEE !important; border-radius: 8px !important; }
+    /* FIX CRÍTICO: VISIBILIDAD DEL TÍTULO DEL EXPANDER (MENSAJE) */
+    /* Forzamos el color del texto del expander cuando está cerrado */
+    details summary p {
+        color: #1A1A1A !important;
+        font-weight: bold !important;
+    }
+    /* Forzamos el color del icono (flecha) del expander */
+    details summary svg {
+        fill: #1A1A1A !important;
+    }
+    /* Fondo del expander */
+    .st-ae {
+        background-color: #F9F9F9 !important;
+        border: 1px solid #EEEEEE !important;
+    }
 
     /* BOTÓN REINICIAR */
     div.stButton > button {
         color: #1A1A1A !important;
         background-color: #FFFFFF !important;
         border: 1px solid #D3D3D3 !important;
-        font-weight: bold !important;
         width: 100% !important;
     }
 
-    /* ELEMENTOS DE DISEÑO */
+    /* ETIQUETAS NRC */
     .nrc-tag {
         background-color: #FF6600;
         color: #FFFFFF;
@@ -63,7 +71,6 @@ st.markdown("""
         border-radius: 6px;
         font-weight: bold;
         display: inline-block;
-        margin-bottom: 5px;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -94,18 +101,21 @@ try:
         cola, colb = st.columns([2, 1])
         with cola:
             st.markdown("### 📝 Guía de Inscripción")
-            st.write("1. Busca tu NRC en la pestaña correspondiente.")
-            st.write("2. Verifica modalidad y horario.")
+            st.write("1. Localiza tu asignatura en la pestaña de buscador.")
+            st.write("2. Toma nota de los NRCs correspondientes.")
+            
+            # EL EXPANDER CON FIX DE VISIBILIDAD
             with st.expander("✨ Mensaje de la Coordinación"):
                 st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
+                st.write("Aprender una lengua es una herramienta de liderazgo fundamental para tu futuro.")
         with colb:
             st.markdown(f"""
             <div style="background-color: #FFF5EE; padding: 20px; border-radius: 12px; border: 1px dashed #FF6600;">
                 <h4 style="color: #FF6600 !important; margin-top:0;">🆘 Soporte</h4>
-                <p style="color: #1A1A1A !important; font-size: 0.9em;">Dudas de niveles o NRC:</p>
+                <p style="color: #1A1A1A !important; font-size: 0.9em;">¿Dudas con un NRC?</p>
                 <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank'>
                     <button style='width:100%; padding:10px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;'>
-                        Ir al Formulario
+                        Abrir Formulario
                     </button>
                 </a>
             </div>
@@ -136,7 +146,6 @@ try:
                             for _, fila in res.drop_duplicates(subset=['Key']).iterrows():
                                 if fila['Recordatorio'] != "No asignado": st.warning(f"🔔 {fila['Recordatorio']}")
                                 
-                                # TARJETA UNIFICADA
                                 with st.container():
                                     st.markdown(f"""
                                     <div class="course-card">
@@ -146,16 +155,13 @@ try:
                                     </div>
                                     """, unsafe_allow_html=True)
                                     
-                                    # NRCs vinculados
                                     lc = df[df['ListaCruzada'] == fila['ListaCruzada']] if pd.notna(fila['ListaCruzada']) and fila['ListaCruzada'] != "No asignado" else df[df['NRC'] == fila['NRC']]
                                     cols_nrc = st.columns(min(len(lc), 4))
                                     for i, (_, n) in enumerate(lc.iterrows()):
                                         with cols_nrc[i % 4]:
                                             st.markdown(f"<div class='nrc-tag'>NRC {n['NRC']}</div>", unsafe_allow_html=True)
                                             st.markdown(f"<span style='color:#FF6600; font-weight:bold;'>{n['ClaveBanner']}</span>", unsafe_allow_html=True)
-                                            if len(lc) > 1: st.caption(n['NombreMateria'])
 
-                                    # DETALLES TÉCNICOS (EXPANDER)
                                     with st.expander("🔍 Detalles Técnicos"):
                                         ca, cb = st.columns(2)
                                         with ca:
@@ -164,10 +170,9 @@ try:
                                         with cb:
                                             st.write(f"**Días:** {fila['Weekdays']}")
                                             st.markdown("<div style='background-color:#F1F3F5; padding:10px; border-radius:5px; font-size:0.8em; color:#1A1A1A;'>1:Lu | 2:Ma | 3:Mi | 4:Ju | 5:Vi | 6:Sa | 7:Do</div>", unsafe_allow_html=True)
-                                        st.info(f"**Notas:** {fila['Notas']}")
 
         st.sidebar.divider()
-        if st.sidebar.button("🔄 Reiniciar Filtros"):
+        if st.sidebar.button("🔄 Reiniciar Búsqueda"):
             st.session_state.rk += 1
             st.rerun()
 
