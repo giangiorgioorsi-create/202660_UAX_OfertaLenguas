@@ -206,14 +206,7 @@ try:
                     else:
                         lc = df[df['NRC'] == fila['NRC']]
 
-                    # Construir contenido HTML de la tarjeta
-                    recordatorio_html = ""
-                    if es_valor_valido(fila['Recordatorio']):
-                        recordatorio_html = f"""
-                        <div class="reminder-box">
-                            🔔 <strong>Recordatorio:</strong> {fila['Recordatorio']}
-                        </div>"""
-
+                    # Tarjeta principal del curso
                     st.markdown(f"""
                     <div class="course-card">
                         <h3>{fila['NombreMateria']}</h3>
@@ -221,9 +214,16 @@ try:
                             <b>Docente:</b> {fila['Docente']}<br>
                             <b>Horario:</b> {fila['HoraInicio']} – {fila['HoraFin']}
                         </p>
-                        {recordatorio_html}
                     </div>
                     """, unsafe_allow_html=True)
+
+                    # Recordatorio como bloque independiente (evita escape de HTML en f-string)
+                    if es_valor_valido(fila['Recordatorio']):
+                        st.markdown(f"""
+                        <div class="reminder-box">
+                            🔔 <strong>Recordatorio:</strong> {fila['Recordatorio']}
+                        </div>
+                        """, unsafe_allow_html=True)
 
                     # NRC tags
                     cols_nrc = st.columns(min(len(lc), 4))
