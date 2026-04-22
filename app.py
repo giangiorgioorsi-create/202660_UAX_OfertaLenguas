@@ -120,21 +120,7 @@ def cargar_datos():
     return df
 
 
-def traducir_dias(weekdays_str):
-    """Convierte la cadena de números de días al nombre completo en español."""
-    mapa = {
-        '1': 'Lunes',
-        '2': 'Martes',
-        '3': 'Miércoles',
-        '4': 'Jueves',
-        '5': 'Viernes',
-        '6': 'Sábado',
-        '7': 'Domingo'
-    }
-    if not weekdays_str or weekdays_str.strip() == "":
-        return "No especificado"
-    dias = [mapa.get(d.strip(), d.strip()) for d in weekdays_str if d.strip().isdigit()]
-    return " | ".join(dias) if dias else weekdays_str
+
 
 
 try:
@@ -254,13 +240,13 @@ try:
                             st.write(f"**Periodo:** {fila['Fechas']}")
                             st.write(f"**Estatus:** {fila['Status']}")
                         with c_b:
-                            dias_traducidos = traducir_dias(fila['Weekdays'])
-                            st.write(f"**Días de clase:** {dias_traducidos}")
+                            dias_raw = fila['Weekdays'] if fila['Weekdays'] else "No especificado"
+                            st.markdown(f"**Días de sesión:** <span style='color:#2ecc71; font-weight:600;'>{dias_raw}</span>", unsafe_allow_html=True)
                             st.markdown("""
                             <div class='legend-box'>
-                                <strong>Clave de días:</strong><br>
-                                1 = Lunes &nbsp;|&nbsp; 2 = Martes &nbsp;|&nbsp; 3 = Miércoles &nbsp;|&nbsp; 4 = Jueves<br>
-                                5 = Viernes &nbsp;|&nbsp; 6 = Sábado &nbsp;|&nbsp; 7 = Domingo
+                                <strong>Guía de nomenclatura de días:</strong><br>
+                                1: Lunes | 2: Martes | 3: Miércoles | 4: Jueves<br>
+                                5: Viernes | 6: Sábado | 7: Domingo
                             </div>
                             """, unsafe_allow_html=True)
 
