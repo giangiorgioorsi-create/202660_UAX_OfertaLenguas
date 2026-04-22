@@ -4,26 +4,22 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- LA OPCIÓN NUCLEAR PARA EL TEMA OSCURO ---
-# Este bloque redefine las variables internas de Streamlit y fuerza el contraste
+# --- BLOQUEO TOTAL DE TEMA (ANTI-MODO OSCURO) ---
 st.markdown("""
     <style>
-    /* 1. Forzar fondo y texto global */
+    /* Forzamos el fondo blanco y texto negro en toda la aplicación */
     html, body, [data-testid="stAppViewContainer"], .main {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
 
-    /* 2. Forzar colores en la barra lateral */
-    [data-testid="stSidebar"] {
+    /* Barra lateral forzada */
+    [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
-    [data-testid="stSidebar"] * {
-        color: #1A1A1A !important;
-    }
 
-    /* 3. Estilo de las Tarjetas (Cards) */
+    /* Tarjetas de cursos con alto contraste */
     .card { 
         border: 2px solid #FF6600 !important; 
         padding: 25px !important; 
@@ -34,23 +30,12 @@ st.markdown("""
         box-shadow: 5px 5px 15px rgba(0,0,0,0.1) !important;
     }
     
-    /* 4. Forzar visibilidad de textos específicos */
-    h1, h2, h3, h4, h5, h6, p, span, label {
+    /* Forzar color en títulos y textos */
+    h1, h2, h3, h4, h5, h6, p, span, label, strong {
         color: #1A1A1A !important;
     }
-    
-    /* 5. Títulos de pestañas */
-    button[data-baseweb="tab"] p {
-        color: #1A1A1A !important;
-        font-weight: bold !important;
-    }
 
-    /* 6. Métricas (Estadísticas) */
-    [data-testid="stMetricValue"], [data-testid="stMetricLabel"] {
-        color: #FF6600 !important;
-    }
-
-    /* 7. Botones y Badges */
+    /* Botones de NRC */
     .nrc-box { 
         background-color: #FF6600 !important; 
         color: #FFFFFF !important; 
@@ -65,13 +50,18 @@ st.markdown("""
         font-weight: 800 !important;
     }
 
-    /* 8. Cuadro de leyenda */
+    /* Leyenda de días */
     .legend-box { 
         background-color: #F1F3F5 !important; 
         color: #1A1A1A !important;
         padding: 15px !important; 
         border-radius: 10px !important; 
         border-left: 6px solid #FF6600 !important;
+    }
+    
+    /* Fix para que los expanders también sean blancos */
+    .st-ae {
+        background-color: #FFFFFF !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -99,7 +89,6 @@ def cargar_datos_limpios():
 
 try:
     df = cargar_datos_limpios()
-    # Título forzado con color institucional
     st.markdown("<h1 style='color: #FF6600 !important;'>🏛️ Portal Académico — Ciclo 2026-60</h1>", unsafe_allow_html=True)
 
     tab_explorar, tab_buscar = st.tabs(["📊 Panorama General", "🔍 Buscador de Asignaturas"])
@@ -111,18 +100,17 @@ try:
         m3.metric("Cuerpo Docente", df[df['Docente'] != "No asignado"]['Docente'].nunique())
         
         st.divider()
-        c_a, c_b = st.columns(2)
-        with c_a:
+        col_a, col_b = st.columns(2)
+        with col_a:
             st.write("**Oferta por Lengua**")
             st.bar_chart(df['Lengua'].value_counts(), color="#FF6600")
-        with col_b := c_b: # Pequeño fix para asignar columna
+        with col_b: # Corregido el SyntaxError aquí
             st.write("**Oferta por Modalidad**")
             st.bar_chart(df['MetodoInstruccion'].value_counts(), color="#FFB380")
 
     with tab_buscar:
         st.sidebar.header("Filtros de Búsqueda")
         
-        # Filtros encadenados
         idiomas = sorted(df['Lengua'].unique().tolist())
         sel_idioma = st.sidebar.selectbox("1. Idioma", [""] + idiomas, key=f"idi_{st.session_state.reset_cnt}")
         
@@ -152,7 +140,6 @@ try:
                             
                             for _, fila in res.drop_duplicates(subset=['GroupKey']).iterrows():
                                 
-                                # Lógica de Lista Cruzada
                                 id_cruzada = fila['ListaCruzada']
                                 if pd.notna(id_cruzada) and id_cruzada != "No asignado":
                                     cruzados = df[df['ListaCruzada'] == id_cruzada]
@@ -164,10 +151,10 @@ try:
                                 if fila['Recordatorio'] != "No asignado":
                                     st.warning(f"🔔 **Aviso:** {fila['Recordatorio']}")
 
-                                # TARJETA REFORZADA CON HTML DIRECTO
+                                # TARJETA REFORZADA
                                 st.markdown(f"""
                                 <div class="card">
-                                    <h3 style="color: #FF6600 !important;">{fila['NombreMateria']}</h3>
+                                    <h3 style="color: #FF6600 !important; margin-top: 0;">{fila['NombreMateria']}</h3>
                                     <p><strong>Catedrático:</strong> {fila['Docente']}</p>
                                     <p><strong>Horario:</strong> {fila['HoraInicio']} - {fila['HoraFin']}</p>
                                     <hr style="border: 1px solid #FF6600; margin: 15px 0;">
@@ -182,7 +169,7 @@ try:
                                         st.markdown(f"<div class='nrc-box'>NRC {nrc_data['NRC']}</div>", unsafe_allow_html=True)
                                         st.markdown(f"<span class='banner-text'>{nrc_data['ClaveBanner']}</span>", unsafe_allow_html=True)
                                         if es_cruzada:
-                                            st.markdown(f"<small style='color: #555;'>{nrc_data['NombreMateria']}</small>", unsafe_allow_html=True)
+                                            st.markdown(f"<small style='color: #1A1A1A;'>{nrc_data['NombreMateria']}</small>", unsafe_allow_html=True)
                                 
                                 st.markdown("</div>", unsafe_allow_html=True)
                                 
