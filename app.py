@@ -241,7 +241,7 @@ try:
                             # Clave Banner de cada NRC vinculado
                             st.markdown("**Clave(s) Banner:**")
                             for _, n in lc.iterrows():
-                                st.markdown(f"<span style='color:#FF6600; font-weight:800;'>NRC {n['NRC']}:</span> {n['ClaveBanner']}", unsafe_allow_html=True)
+                                st.markdown(f"<span style='color:#FF6600; font-weight:800;'>{n['ClaveBanner']}</span>", unsafe_allow_html=True)
                         with c_b:
                             dias_raw = fila['Weekdays'] if fila['Weekdays'] else "No especificado"
                             st.markdown(f"**Días de sesión:** <span style='color:#2ecc71; font-weight:600;'>{dias_raw}</span>", unsafe_allow_html=True)
