@@ -138,7 +138,7 @@ try:
         cola, colb = st.columns([2, 1])
         with cola:
            st.markdown("""
-            ### 📝 Guía rápida de inscripción
+            ### 📝 Guía rápida de planificación
             1. **Abre la barra lateral:** haz clic en el botón en la parte superior izquierda. 
             2. **Filtra con cuidado:** selecciona idioma, materia y horario.
             3. **Conoce los detalles:** ve a la pestaña 'Buscador de Cursos'.
