@@ -145,11 +145,12 @@ try:
         with cola:
            st.markdown("""
             ### 📝 Guía Rápida de Inscripción
-            1. **Encuentra tu curso:** Ve a la pestaña 'Buscador de Cursos'.
-            2. **Filtra con cuidado:** Selecciona idioma, materia y horario.
-            3. **Verifica el NRC:** Toma nota del número de 5 dígitos (NRC) y la Clave Banner.
-            4. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
-            5. **Inscribe en Banner:** Realiza el proceso oficial en el portal de alumnos.
+            1. **Abre la barra lateral:** haz clic en el botón en la parte superior izquierda. 
+            2. **Filtra con cuidado:** selecciona idioma, materia y horario.
+            3. **Conoce los detalles:** ve a la pestaña 'Buscador de Cursos'.
+            4. **Verifica los datos:** Toma nota del NRC y de la Clave Banner.
+            5. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
+            5. **Planifica en Banner:** agrega el curso a tu planificación a través del SIU.
             """)
            with st.expander("✨ Un mensaje para tu camino"):
                  st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
