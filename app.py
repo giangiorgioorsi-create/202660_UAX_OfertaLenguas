@@ -92,9 +92,17 @@ def cargar_datos():
     archivo = "202660_UAX_OfertaLenguas.xlsx"
     df = pd.read_excel(archivo, dtype=str)
     df.columns = [str(c).strip() for c in df.columns]
+    
+    # Columnas a limpiar
     cols = ['Docente', 'NombreMateria', 'MetodoInstruccion', 'Fechas', 'Weekdays', 'Status', 'Notas', 'Recordatorio', 'ClaveBanner']
+    
     for c in cols:
-        if c in df.columns: df[c] = df[c].fillna("No asignado")
+        if c in df.columns:
+            # AJUSTE SOLICITADO: Si es Notas, el valor por defecto es vacío ("")
+            # Para el resto, se mantiene "No asignado" para evitar confusiones administrativas
+            val_default = "" if c == 'Notas' else "No asignado"
+            df[c] = df[c].fillna(val_default)
+            
     df['Hora_Ref'] = df['HoraInicio'].str.strip()
     return df
 
