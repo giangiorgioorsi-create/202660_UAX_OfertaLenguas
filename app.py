@@ -4,16 +4,42 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
+# --- BLOQUEO NUCLEAR DE TEMA Y VISIBILIDAD TOTAL ---
 st.markdown("""
     <style>
+    /* 1. Fondo Global y Texto Base */
     html, body, [data-testid="stAppViewContainer"], .main, [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
+
+    /* 2. FIX CRÍTICO: BOTÓN DE ABRIR/CERRAR BARRA LATERAL */
+    [data-testid="collapsedControl"], [data-testid="stSidebarHeader"] button {
+        background-color: #F8F9FA !important;
+        border: 1px solid #FF6600 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+        transition: all 0.3s ease;
+    }
+    [data-testid="collapsedControl"] svg, [data-testid="stSidebarHeader"] button svg {
+        fill: #FF6600 !important;
+        color: #FF6600 !important;
+    }
+    [data-testid="collapsedControl"]:hover, [data-testid="stSidebarHeader"] button:hover {
+        background-color: #FF6600 !important;
+    }
+    [data-testid="collapsedControl"]:hover svg, [data-testid="stSidebarHeader"] button:hover svg {
+        fill: #FFFFFF !important;
+        color: #FFFFFF !important;
+    }
+
+    /* 3. BARRA LATERAL (SIDEBAR) */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
+
+    /* 4. PESTAÑAS (TABS) */
     button[data-baseweb="tab"] p {
         color: #1A1A1A !important;
         font-weight: bold !important;
@@ -21,6 +47,8 @@ st.markdown("""
     button[data-baseweb="tab"][aria-selected="true"] p {
         color: #FF6600 !important;
     }
+
+    /* 5. ARREGLO PARA ALERTAS (st.warning / st.info) */
     div[data-testid="stAlert"] {
         background-color: #FFFFFF !important;
         border: 2px solid #FF6600 !important;
@@ -30,6 +58,8 @@ st.markdown("""
         color: #1A1A1A !important;
         fill: #FF6600 !important;
     }
+
+    /* 6. ARREGLO PARA EXPANDERS (Detalles Técnicos) */
     [data-testid="stExpander"] {
         background-color: #FFFFFF !important;
         border: 1px solid #D3D3D3 !important;
@@ -46,6 +76,8 @@ st.markdown("""
     [data-testid="stExpander"] [data-testid="stMarkdownContainer"] * {
         color: #1A1A1A !important;
     }
+
+    /* 7. TARJETAS DE CURSOS */
     .course-card {
         border: 2px solid #FF6600;
         border-radius: 12px;
@@ -56,6 +88,8 @@ st.markdown("""
     }
     .course-card h3 { color: #FF6600 !important; margin-top: 0; }
     .course-card p, .course-card b, .course-card strong { color: #1A1A1A !important; }
+
+    /* Recordatorio visual */
     .reminder-box {
         background-color: #FFF3CD;
         border-left: 5px solid #FF6600;
@@ -65,6 +99,8 @@ st.markdown("""
         color: #1A1A1A !important;
         font-size: 0.92em;
     }
+
+    /* 8. ETIQUETAS NRC Y BOTONES */
     .nrc-tag {
         background-color: #FF6600;
         color: #FFFFFF;
@@ -73,7 +109,7 @@ st.markdown("""
         font-weight: bold;
         display: inline-block;
     }
-    /* NUEVO: Estilo para el NRC seleccionado */
+    /* Estilo para el NRC seleccionado */
     .nrc-tag-selected {
         background-color: #2ecc71 !important;
         color: #FFFFFF !important;
@@ -101,13 +137,11 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-
 def es_valor_valido(valor):
     """Devuelve True si el valor tiene contenido real (no es NaN, vacío ni 'No asignado')."""
     if pd.isna(valor):
         return False
     return str(valor).strip() not in ("", "No asignado", "nan")
-
 
 @st.cache_data(ttl=60)
 def cargar_datos():
@@ -127,7 +161,6 @@ def cargar_datos():
     df['Hora_Ref'] = df['HoraInicio'].str.strip()
     return df
 
-
 try:
     df = cargar_datos()
     st.markdown("<h1 style='color: #FF6600 !important;'>🏛️ Centro de Lenguas UAX — Oferta Académica 202660</h1>", unsafe_allow_html=True)
@@ -143,7 +176,7 @@ try:
         st.divider()
         cola, colb = st.columns([2, 1])
         with cola:
-           st.markdown("""
+            st.markdown("""
             ### 📝 Guía Rápida de Inscripción
             1. **Encuentra tu curso:** Ve a la pestaña 'Buscador de Cursos'.
             2. **Filtra con cuidado:** Selecciona idioma, materia y horario.
@@ -151,9 +184,9 @@ try:
             4. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
             5. **Inscribe en Banner:** Realiza el proceso oficial en el portal de alumnos.
             """)
-           with st.expander("✨ Un mensaje para tu camino"):
-                 st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
-                 st.write("Aprender una lengua abre puertas no solo profesionales, sino humanas. ¡Mucho éxito en tu elección!")
+            with st.expander("✨ Un mensaje para tu camino"):
+                st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
+                st.write("Aprender una lengua abre puertas no solo profesionales, sino humanas. ¡Mucho éxito en tu elección!")
 
         with colb:
             st.markdown(f"""
@@ -203,7 +236,6 @@ try:
             if df_res.empty:
                 st.warning("No se encontraron resultados para los criterios seleccionados.")
             else:
-                # IDENTIFICAR NRCs SELECCIONADOS: Guardamos los NRC que pasaron el filtro
                 nrcs_seleccionados = set(df_res['NRC'].unique())
 
                 df_res['Key'] = df_res.apply(
@@ -244,9 +276,7 @@ try:
                             st.divider()
                             st.markdown("**NRC(s) para inscripción:**")
                             
-                            # Renderizado de NRCs con resaltado de selección
                             for _, n in lc.iterrows():
-                                # Verificamos si este NRC específico es el que el usuario buscó/filtró
                                 es_el_buscado = n['NRC'] in nrcs_seleccionados
                                 tag_class = "nrc-tag-selected" if es_el_buscado else "nrc-tag"
                                 label_seleccion = " <span style='color:#27ae60; font-weight:bold; font-size:0.85em;'>← Tu selección</span>" if es_el_buscado else ""
