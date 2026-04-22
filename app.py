@@ -4,160 +4,164 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# Estilos CSS (Mise en place visual)
+# Estilos CSS de alta visibilidad (Mise en place visual)
 st.markdown("""
     <style>
     .card { 
-        border: 1px solid #e0e0e0; padding: 25px; border-radius: 12px; 
-        background-color: #ffffff; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+        border: 1px solid #ff6600; padding: 25px; border-radius: 12px; 
+        background-color: #ffffff; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(255,102,0,0.1); 
     }
     .nrc-box { 
         background-color: #ff6600; color: white; padding: 6px 12px; 
         border-radius: 6px; font-weight: bold; display: inline-block; margin: 5px 0;
     }
-    .banner-text { color: #444; font-size: 0.9em; font-weight: 700; display: block; }
+    .banner-text { color: #333; font-size: 0.95em; font-weight: 800; display: block; margin-top: 5px;}
     .legend-box { 
-        background-color: #f0f2f6; padding: 12px; border-radius: 8px; 
+        background-color: #f8f9fa; padding: 12px; border-radius: 8px; 
         font-size: 0.85em; color: #444; border-left: 5px solid #ff6600; 
     }
     </style>
     """, unsafe_allow_html=True)
 
-if 'reset_counter' not in st.session_state:
-    st.session_state.reset_counter = 0
+# 2. Gestión de Estado (Reset)
+if 'reset_cnt' not in st.session_state:
+    st.session_state.reset_cnt = 0
 
-def restablecer_todo():
-    st.session_state.reset_counter += 1
+def clean_reset():
+    st.session_state.reset_cnt += 1
 
-# 2. Carga de Base de Datos con Limpieza Automática
-@st.cache_data(ttl=600) # El caché se limpia cada 10 min o manualmente
-def cargar_datos():
+# 3. Carga y Limpieza Profunda de Datos
+@st.cache_data
+def cargar_datos_limpios():
     archivo = "202660_UAX_OfertaLenguas.xlsx"
-    # Leemos el archivo asegurando que todo sea texto para evitar errores de formato
-    df = pd.read_excel(archivo)
+    # Cargamos todo como objeto/string para evitar que Excel "adivine" formatos
+    df = pd.read_excel(archivo, dtype=str)
     
-    # Limpieza crítica de nombres de columnas
+    # Limpieza de nombres de columnas (espacios al principio/final)
     df.columns = [str(c).strip() for c in df.columns]
     
-    # Manejo de valores nulos para evitar que aparezca "nan" en la interfaz
-    columnas_texto = ['Docente', 'NombreMateria', 'MetodoInstruccion', 'Fechas', 'Weekdays', 'Status', 'Notas', 'Recordatorio', 'ClaveBanner']
-    for col in columnas_texto:
+    # Rellenar vacíos para evitar que desaparezcan datos en el buscador
+    columnas_clave = ['Docente', 'ClaveBanner', 'NRC', 'Status', 'Fechas', 'Weekdays', 'Notas', 'Recordatorio', 'CreditosAcademicos', 'MetodoInstruccion']
+    for col in columnas_clave:
         if col in df.columns:
-            df[col] = df[col].fillna("No asignado")
+            df[col] = df[col].fillna("Pendiente/No asignado")
     
-    # Estandarizamos la hora para el filtro
-    df['Hora_Ref'] = df['HoraInicio'].astype(str).str.strip()
+    # Estandarización de la columna de Horario para el filtro
+    if 'HoraInicio' in df.columns:
+        df['Hora_Ref'] = df['HoraInicio'].str.strip()
+    
     return df
 
 try:
-    df_full = cargar_datos()
-    st.markdown("<h1 style='color: #ff6600;'>🏛️ Portal Académico — Ciclo 2026-60</h1>", unsafe_allow_html=True)
+    df = cargar_datos_limpios()
+    st.markdown("<h1 style='color: #ff6600;'>🏛️ Portal de Consulta Académica — Ciclo 2026-60</h1>", unsafe_allow_html=True)
 
-    tab_explorar, tab_buscar = st.tabs(["📊 Panorama General", "🔍 Buscador de Asignaturas"])
+    tab_explorar, tab_buscar = st.tabs(["📊 Panorama General", "🔍 Buscador Inteligente"])
 
     with tab_explorar:
-        # Si aquí ves números, significa que el archivo cargó correctamente
-        c1, c2, c3 = st.columns(3)
-        c1.metric("Idiomas", df_full['Lengua'].nunique())
-        c2.metric("Grupos Totales", df_full['NRC'].count())
-        # Filtramos "No asignado" para la métrica de docentes reales
-        docentes_reales = df_full[df_full['Docente'] != "No asignado"]['Docente'].nunique()
-        c3.metric("Cuerpo Docente", docentes_reales)
+        m1, m2, m3 = st.columns(3)
+        m1.metric("Idiomas", df['Lengua'].nunique())
+        m2.metric("Total Grupos", df['NRC'].count())
+        docentes_count = df[df['Docente'] != "Pendiente/No asignado"]['Docente'].nunique()
+        m3.metric("Cuerpo Docente", docentes_count)
         
         st.divider()
-        col_graf1, col_graf2 = st.columns(2)
-        with col_graf1: st.bar_chart(df_full['Lengua'].value_counts(), color="#ff6600")
-        with col_graf2: st.bar_chart(df_full['MetodoInstruccion'].value_counts(), color="#ffb380")
+        c_a, c_b = st.columns(2)
+        with c_a:
+            st.write("**Oferta por Lengua**")
+            st.bar_chart(df['Lengua'].value_counts(), color="#ff6600")
+        with c_b:
+            st.write("**Oferta por Modalidad**")
+            st.bar_chart(df['MetodoInstruccion'].value_counts(), color="#ffb380")
 
     with tab_buscar:
-        st.sidebar.header("Filtros de Búsqueda")
+        st.sidebar.header("Filtros de Inscripción")
         
-        # Filtros encadenados
-        idiomas = sorted(df_full['Lengua'].unique().tolist())
-        sel_idioma = st.sidebar.selectbox("1. Idioma", [""] + idiomas, key=f"id_{st.session_state.reset_counter}")
+        # Filtros encadenados dinámicos
+        sel_idioma = st.sidebar.selectbox("1. Idioma", [""] + sorted(df['Lengua'].unique().tolist()), key=f"idi_{st.session_state.reset_cnt}")
         
         if sel_idioma:
-            df_f = df_full[df_full['Lengua'] == sel_idioma]
-            materias = sorted(df_f['NombreMateria'].unique().tolist())
-            sel_materia = st.sidebar.selectbox("2. Asignatura", [""] + materias, key=f"mat_{st.session_state.reset_counter}")
+            df_1 = df[df['Lengua'] == sel_idioma]
+            sel_materia = st.sidebar.selectbox("2. Asignatura", [""] + sorted(df_1['NombreMateria'].unique().tolist()), key=f"mat_{st.session_state.reset_cnt}")
             
             if sel_materia:
-                df_f = df_f[df_f['NombreMateria'] == sel_materia]
-                metodos = sorted(df_f['MetodoInstruccion'].unique().tolist())
-                sel_metodo = st.sidebar.selectbox("3. Modalidad", [""] + metodos, key=f"met_{st.session_state.reset_counter}")
+                df_2 = df_1[df_1['NombreMateria'] == sel_materia]
+                sel_metodo = st.sidebar.selectbox("3. Modalidad", [""] + sorted(df_2['MetodoInstruccion'].unique().tolist()), key=f"met_{st.session_state.reset_cnt}")
                 
                 if sel_metodo:
-                    df_f = df_f[df_f['MetodoInstruccion'] == sel_metodo]
-                    fechas = sorted(df_f['Fechas'].unique().tolist())
-                    sel_fecha = st.sidebar.selectbox("4. Fechas", [""] + fechas, key=f"fec_{st.session_state.reset_counter}")
+                    df_3 = df_2[df_2['MetodoInstruccion'] == sel_metodo]
+                    sel_fecha = st.sidebar.selectbox("4. Periodo / Fechas", [""] + sorted(df_3['Fechas'].unique().tolist()), key=f"fec_{st.session_state.reset_cnt}")
                     
                     if sel_fecha:
-                        df_f = df_f[df_f['Fechas'] == sel_fecha]
-                        horarios = sorted(df_f['Hora_Ref'].unique().tolist())
-                        sel_horario = st.sidebar.selectbox("5. Horario de Inicio", [""] + horarios, key=f"hr_{st.session_state.reset_counter}")
+                        df_4 = df_3[df_3['Fechas'] == sel_fecha]
+                        sel_horario = st.sidebar.selectbox("5. Horario", [""] + sorted(df_4['Hora_Ref'].unique().tolist()), key=f"hor_{st.session_state.reset_cnt}")
                         
                         if sel_horario:
-                            # Seleccionamos los cursos y evitamos el Warning de copia
-                            target_cursos = df_f[df_f['Hora_Ref'] == sel_horario].copy()
+                            # RESULTADOS FINALES
+                            res = df_4[df_4['Hora_Ref'] == sel_horario]
                             
-                            # Si no hay resultados por el formato de hora, avisamos
-                            if target_cursos.empty:
-                                st.warning("No se encontraron coincidencias exactas para este horario. Verifica el formato en Excel.")
-                            else:
-                                # Clave de agrupación para evitar tarjetas duplicadas
-                                target_cursos['GroupKey'] = target_cursos['ListaCruzada'].fillna(target_cursos['NRC'].astype(str))
+                            st.info(f"Mostrando opciones para **{sel_materia}**")
+                            
+                            # Evitar duplicar tarjetas si hay varios NRC en la misma lista cruzada
+                            res['GroupKey'] = res['ListaCruzada'].fillna(res['NRC'])
+                            
+                            for _, fila in res.drop_duplicates(subset=['GroupKey']).iterrows():
                                 
-                                for _, row in target_cursos.drop_duplicates(subset=['GroupKey']).iterrows():
-                                    
-                                    # Lógica de Lista Cruzada
-                                    if pd.notna(row['ListaCruzada']) and row['ListaCruzada'] != "No asignado":
-                                        lista_cruzada = df_full[df_full['ListaCruzada'] == row['ListaCruzada']]
-                                        es_lista_cruzada = True
-                                    else:
-                                        lista_cruzada = df_full[df_full['NRC'] == row['NRC']]
-                                        es_lista_cruzada = False
+                                # Lógica de Lista Cruzada
+                                id_cruzada = fila['ListaCruzada']
+                                if pd.notna(id_cruzada) and id_cruzada != "Pendiente/No asignado":
+                                    cruzados = df[df['ListaCruzada'] == id_cruzada]
+                                    es_cruzada = True
+                                else:
+                                    cruzados = df[df['NRC'] == fila['NRC']]
+                                    es_cruzada = False
 
-                                    # Aviso de Recordatorio
-                                    if row['Recordatorio'] != "No asignado":
-                                        st.warning(f"⚠️ **Aviso:** {row['Recordatorio']}")
+                                # Recordatorio destacado
+                                if fila['Recordatorio'] != "Pendiente/No asignado":
+                                    st.warning(f"🔔 **Nota Importante:** {fila['Recordatorio']}")
 
-                                    # Renderizado de Tarjeta
-                                    st.markdown(f"""
-                                    <div class="card">
-                                        <h3 style="color: #ff6600; margin-bottom: 5px;">{row['NombreMateria']}</h3>
-                                        <p style="margin: 0;"><strong>Catedrático:</strong> {row['Docente']}</p>
-                                        <p style="margin: 0;"><strong>Horario:</strong> {row['HoraInicio']} - {row['HoraFin']}</p>
-                                        <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
-                                        <p style="font-weight: bold; margin-bottom: 10px;">
-                                            {"NRC(s) vinculados (Lista Cruzada):" if es_lista_cruzada else "NRC para inscripción:"}
-                                        </p>
-                                    """, unsafe_allow_html=True)
-                                    
-                                    cols = st.columns(len(lista_cruzada) if len(lista_cruzada) < 5 else 4)
-                                    for i, (_, item) in enumerate(lista_cruzada.iterrows()):
-                                        with cols[i % 4]:
-                                            st.markdown(f"<div class='nrc-box'>NRC {item['NRC']}</div>", unsafe_allow_html=True)
-                                            st.markdown(f"<span class='banner-text'>{item['ClaveBanner']}</span>", unsafe_allow_html=True)
-                                            if es_lista_cruzada:
-                                                st.caption(item['NombreMateria'])
-                                    
-                                    st.markdown("</div>", unsafe_allow_html=True)
-                                    
-                                    with st.expander("📚 Ver Detalles Académicos"):
-                                        c_a, c_b = st.columns(2)
-                                        with c_a:
-                                            st.write(f"**Créditos:** {row['CreditosAcademicos']}")
-                                            st.write(f"**Fechas:** {row['Fechas']}")
-                                        with c_b:
-                                            st.write(f"**Estatus:** {row['Status']}")
-                                            st.write(f"**Días:** {row['Weekdays']}")
-                                            st.markdown("<div class='legend-box'>1: Lu | 2: Ma | 3: Mi | 4: Ju | 5: Vi | 6: Sa | 7: Do</div>", unsafe_allow_html=True)
-                                        st.info(f"**Notas:** {row['Notas']}")
+                                # Render de la Tarjeta Principal
+                                st.markdown(f"""
+                                <div class="card">
+                                    <h3 style="color: #ff6600; margin-top: 0;">{fila['NombreMateria']}</h3>
+                                    <p style="margin-bottom: 5px;"><strong>Docente:</strong> {fila['Docente']}</p>
+                                    <p style="margin-bottom: 5px;"><strong>Horario:</strong> {fila['HoraInicio']} - {fila['HoraFin']}</p>
+                                    <hr style="border: 0.5px solid #eee; margin: 15px 0;">
+                                    <p style="font-weight: bold; margin-bottom: 10px;">
+                                        {"NRCs disponibles en este grupo (Lista Cruzada):" if es_cruzada else "NRC para inscripción:"}
+                                    </p>
+                                """, unsafe_allow_html=True)
+                                
+                                # Grid de NRCs
+                                cols_nrc = st.columns(min(len(cruzados), 4))
+                                for i, (_, nrc_data) in enumerate(cruzados.iterrows()):
+                                    with cols_nrc[i % 4]:
+                                        st.markdown(f"<div class='nrc-box'>NRC {nrc_data['NRC']}</div>", unsafe_allow_html=True)
+                                        st.markdown(f"<span class='banner-text'>{nrc_data['ClaveBanner']}</span>", unsafe_allow_html=True)
+                                        if es_cruzada:
+                                            st.caption(nrc_data['NombreMateria'])
+                                
+                                st.markdown("</div>", unsafe_allow_html=True)
+                                
+                                with st.expander("📚 Ver Detalles Académicos Completos"):
+                                    c1, c2 = st.columns(2)
+                                    with c1:
+                                        st.write(f"**Créditos:** {fila['CreditosAcademicos']}")
+                                        st.write(f"**Periodo:** {fila['Fechas']}")
+                                        st.write(f"**Estatus:** {fila['Status']}")
+                                    with c2:
+                                        st.write(f"**Días:** {fila['Weekdays']}")
+                                        st.markdown("""
+                                        <div class='legend-box'>
+                                        1: Lun | 2: Mar | 3: Mié | 4: Jue | 5: Vie | 6: Sáb | 7: Dom
+                                        </div>
+                                        """, unsafe_allow_html=True)
+                                    st.info(f"**Notas:** {fila['Notas']}")
 
         st.sidebar.divider()
-        if st.sidebar.button("🔄 Limpiar Filtros", on_click=restablecer_todo):
+        if st.sidebar.button("🔄 Restablecer Filtros", on_click=clean_reset):
             st.rerun()
 
 except Exception as e:
-    st.error(f"⚠️ Error al procesar los datos: {e}")
-    st.info("Asegúrate de que las columnas del Excel se llamen exactamente como en el código.")
+    st.error(f"⚠️ Error Crítico: {e}")
+    st.info("Asegúrate de que el archivo '202660_UAX_OfertaLenguas.xlsx' esté en la raíz de tu GitHub.")
