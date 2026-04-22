@@ -4,20 +4,17 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO TOTAL DE TEMA (FONDO BLANCO / TEXTO NEGRO) ---
+# --- BLOQUEO DE TEMA (FONDO BLANCO / TEXTO OSCURO) ---
 st.markdown("""
     <style>
-    /* Reset Global */
     html, body, [data-testid="stAppViewContainer"], .main, [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
-    /* Barra Lateral */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
-    /* Tarjetas de Cursos */
     .card { 
         border: 2px solid #FF6600 !important; 
         padding: 25px !important; 
@@ -27,7 +24,6 @@ st.markdown("""
         margin-bottom: 25px !important; 
         box-shadow: 5px 5px 15px rgba(0,0,0,0.05) !important;
     }
-    /* Forzado de texto negro en todo lugar */
     h1, h2, h3, h4, h5, h6, p, span, label, strong, li {
         color: #1A1A1A !important;
     }
@@ -69,7 +65,6 @@ try:
     tab_inicio, tab_buscar = st.tabs(["🏠 Inicio y Guía", "🔍 Buscador de Cursos"])
 
     with tab_inicio:
-        # SECCIÓN PROMOCIONAL Y MÉTRICAS
         st.subheader("Bienvenido al Portal de Consulta")
         c1, c2, c3 = st.columns(3)
         c1.metric("Idiomas Ofertados", df['Lengua'].nunique())
@@ -86,26 +81,28 @@ try:
             1. **Encuentra tu curso:** Ve a la pestaña 'Buscador de Cursos'.
             2. **Filtra con cuidado:** Selecciona idioma, materia y horario.
             3. **Verifica el NRC:** Toma nota del número de 5 dígitos (NRC) y la Clave Banner.
-            4. **Listas Cruzadas:** Si tu curso tiene varios NRC, asegúrate de elegir el que corresponde a tu plan de estudios.
+            4. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
             5. **Inscribe en Banner:** Realiza el proceso oficial en el portal de alumnos.
             """)
             
-            with st.expander("📌 Avisos Importantes del Periodo"):
-                st.info("Recuerda que las bajas de materias tienen fechas límite. Consulta el calendario académico.")
-                st.warning("Los grupos con menos de 10 inscritos están sujetos a cambios.")
+            with st.expander("✨ Un mensaje para tu camino"):
+                # Frase inspiradora solicitada
+                st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
+                st.write("Aprender una lengua abre puertas no solo profesionales, sino humanas. ¡Mucho éxito en tu elección!")
 
         with col_ayuda:
+            # Enlace actualizado al formulario de Microsoft Forms
             st.markdown("""
             <div class='help-card'>
                 <h4 style='margin-top:0;'>🆘 ¿Necesitas Ayuda?</h4>
-                <p>Si tienes problemas con un NRC o no encuentras tu nivel:</p>
-                <a href='mailto:lenguas.xalapa@anahuac.mx' style='text-decoration:none;'>
-                    <button style='width:100%; padding:10px; background-color:#FF6600; color:white; border:none; border-radius:5px; cursor:pointer;'>
-                        📧 Contactar por Correo
+                <p>Si tienes problemas con un NRC, dudas de niveles o requieres atención personalizada:</p>
+                <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank' style='text-decoration:none;'>
+                    <button style='width:100%; padding:12px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;'>
+                        📝 Formulario de Atención
                     </button>
                 </a>
                 <br><br>
-                <p style='font-size:0.8em; text-align:center;'>Horario de atención:<br>Lunes a Viernes 9:00 - 18:00 hrs</p>
+                <p style='font-size:0.8em; text-align:center;'>Horario de atención de la Coordinación:<br>Lunes a Viernes 9:00 - 18:00 hrs</p>
             </div>
             """, unsafe_allow_html=True)
 
