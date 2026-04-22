@@ -82,7 +82,7 @@ try:
             2. **Filtra con cuidado:** Selecciona idioma, materia y horario.
             3. **Verifica el NRC:** Toma nota del número de 5 dígitos (NRC) y la Clave Banner.
             4. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
-            5. **Inscribe en Banner:** Realiza el proceso oficial en el portal de alumnos.
+            5. **Planifica e Inscribe en Banner:** Realiza el proceso en el SIU.
             """)
             
             with st.expander("✨ Un mensaje para tu camino"):
@@ -102,7 +102,7 @@ try:
                     </button>
                 </a>
                 <br><br>
-                <p style='font-size:0.8em; text-align:center;'>Horario de atención de la Coordinación:<br>Lunes a Viernes 9:00 - 18:00 hrs</p>
+                <p style='font-size:0.8em; text-align:center;'>Horario de atención de la Coordinación:<br>Lunes a Viernes 08:30 - 19:00 hrs</p>
             </div>
             """, unsafe_allow_html=True)
 
