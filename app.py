@@ -4,22 +4,30 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO TOTAL DE TEMA (ANTI-MODO OSCURO) ---
+# --- BLOQUEO TOTAL DE TEMA Y GRÁFICOS (ANTI-MODO OSCURO PRO) ---
 st.markdown("""
     <style>
-    /* Forzamos el fondo blanco y texto negro en toda la aplicación */
+    /* 1. Fondo global de la aplicación */
     html, body, [data-testid="stAppViewContainer"], .main {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
 
-    /* Barra lateral forzada */
+    /* 2. Forzar fondo blanco en los contenedores de GRÁFICOS */
+    [data-testid="stVegaLiteChart"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #EEEEEE !important;
+        border-radius: 10px !important;
+        padding: 10px !important;
+    }
+
+    /* 3. Barra lateral (Sidebar) */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
 
-    /* Tarjetas de cursos con alto contraste */
+    /* 4. Tarjetas de cursos (Cards) */
     .card { 
         border: 2px solid #FF6600 !important; 
         padding: 25px !important; 
@@ -27,22 +35,21 @@ st.markdown("""
         background-color: #FFFFFF !important; 
         color: #1A1A1A !important;
         margin-bottom: 25px !important; 
-        box-shadow: 5px 5px 15px rgba(0,0,0,0.1) !important;
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.05) !important;
     }
     
-    /* Forzar color en títulos y textos */
-    h1, h2, h3, h4, h5, h6, p, span, label, strong {
+    /* 5. Forzar color negro en todos los textos */
+    h1, h2, h3, h4, h5, h6, p, span, label, strong, small {
         color: #1A1A1A !important;
     }
 
-    /* Botones de NRC */
+    /* 6. Botones y Badges de NRC */
     .nrc-box { 
         background-color: #FF6600 !important; 
         color: #FFFFFF !important; 
         padding: 8px 15px !important; 
         border-radius: 8px !important; 
         font-weight: bold !important;
-        display: inline-block !important;
     }
     
     .banner-text { 
@@ -50,7 +57,7 @@ st.markdown("""
         font-weight: 800 !important;
     }
 
-    /* Leyenda de días */
+    /* 7. Cuadro de leyenda de días */
     .legend-box { 
         background-color: #F1F3F5 !important; 
         color: #1A1A1A !important;
@@ -59,8 +66,8 @@ st.markdown("""
         border-left: 6px solid #FF6600 !important;
     }
     
-    /* Fix para que los expanders también sean blancos */
-    .st-ae {
+    /* 8. Fix para expanders y elementos secundarios */
+    .st-ae, .st-af, .st-ag, .st-ah {
         background-color: #FFFFFF !important;
     }
     </style>
@@ -72,7 +79,7 @@ if 'reset_cnt' not in st.session_state:
 def clean_reset():
     st.session_state.reset_cnt += 1
 
-# 2. Carga de Datos
+# 2. Carga de Datos (Periodo 202660)
 @st.cache_data
 def cargar_datos_limpios():
     archivo = "202660_UAX_OfertaLenguas.xlsx"
@@ -103,8 +110,9 @@ try:
         col_a, col_b = st.columns(2)
         with col_a:
             st.write("**Oferta por Lengua**")
+            # Forzamos color institucional en las barras
             st.bar_chart(df['Lengua'].value_counts(), color="#FF6600")
-        with col_b: # Corregido el SyntaxError aquí
+        with col_b:
             st.write("**Oferta por Modalidad**")
             st.bar_chart(df['MetodoInstruccion'].value_counts(), color="#FFB380")
 
@@ -151,7 +159,6 @@ try:
                                 if fila['Recordatorio'] != "No asignado":
                                     st.warning(f"🔔 **Aviso:** {fila['Recordatorio']}")
 
-                                # TARJETA REFORZADA
                                 st.markdown(f"""
                                 <div class="card">
                                     <h3 style="color: #FF6600 !important; margin-top: 0;">{fila['NombreMateria']}</h3>
@@ -169,7 +176,7 @@ try:
                                         st.markdown(f"<div class='nrc-box'>NRC {nrc_data['NRC']}</div>", unsafe_allow_html=True)
                                         st.markdown(f"<span class='banner-text'>{nrc_data['ClaveBanner']}</span>", unsafe_allow_html=True)
                                         if es_cruzada:
-                                            st.markdown(f"<small style='color: #1A1A1A;'>{nrc_data['NombreMateria']}</small>", unsafe_allow_html=True)
+                                            st.markdown(f"<small style='color: #1A1A1A !important;'>{nrc_data['NombreMateria']}</small>", unsafe_allow_html=True)
                                 
                                 st.markdown("</div>", unsafe_allow_html=True)
                                 
