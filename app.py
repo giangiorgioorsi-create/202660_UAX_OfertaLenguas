@@ -143,11 +143,17 @@ try:
         st.divider()
         cola, colb = st.columns([2, 1])
         with cola:
-            st.markdown("### 📝 Guía de Inscripción")
-            st.write("1. Localiza tu curso usando el buscador por NRC o los filtros.")
-            st.write("2. Verifica que el horario y periodo sean los correctos.")
-            with st.expander("✨ Mensaje de la Coordinación"):
+           st.markdown("""
+            ### 📝 Guía Rápida de Inscripción
+            1. **Encuentra tu curso:** Ve a la pestaña 'Buscador de Cursos'.
+            2. **Filtra con cuidado:** Selecciona idioma, materia y horario.
+            3. **Verifica el NRC:** Toma nota del número de 5 dígitos (NRC) y la Clave Banner.
+            4. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
+            5. **Inscribe en Banner:** Realiza el proceso oficial en el portal de alumnos.
+            """)
+            with st.expander("✨ Un mensaje para tu camino"):
                 st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
+                st.write("Aprender una lengua abre puertas no solo profesionales, sino humanas. ¡Mucho éxito en tu elección!") Fellini")
 
         with colb:
             st.markdown(f"""
