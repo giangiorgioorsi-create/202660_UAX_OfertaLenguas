@@ -2,19 +2,49 @@ import streamlit as st
 import pandas as pd
 
 # 1. Configuración Institucional
-st.set_page_config(page_title="Página con la oferta académica de Lenguas 2026-60", layout="wide")
+st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO DE TEMA (FONDO BLANCO / TEXTO OSCURO) ---
+# --- BLOQUEO AGRESIVO DE TEMA (PARA MENÚS Y SELECTBOXES) ---
 st.markdown("""
     <style>
+    /* 1. Fondo global y texto base */
     html, body, [data-testid="stAppViewContainer"], .main, [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
-    [data-testid="stSidebar"], [data-testid="stSidebar"] * {
-        background-color: #F8F9FA !important;
+
+    /* 2. FORZAR VISIBILIDAD EN MENÚS DESPLEGABLES (Selectboxes) */
+    /* Caja del menú */
+    div[data-baseweb="select"] > div {
+        background-color: #FFFFFF !important;
+        color: #1A1A1A !important;
+        border: 1px solid #FF6600 !important;
+    }
+    
+    /* Lista de opciones (el menú que cae) */
+    ul[data-baseweb="menu"] {
+        background-color: #FFFFFF !important;
+    }
+    
+    /* Elementos individuales de la lista */
+    li[data-baseweb="menu-item"] {
+        background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
+    
+    /* Hover (cuando pasas el mouse por las opciones) */
+    li[data-baseweb="menu-item"]:hover {
+        background-color: #FF6600 !important;
+        color: #FFFFFF !important;
+    }
+
+    /* Etiquetas de los filtros en la barra lateral */
+    [data-testid="stSidebar"] label {
+        color: #1A1A1A !important;
+        font-weight: bold !important;
+    }
+
+    /* 3. Estilo de las Tarjetas de Cursos */
     .card { 
         border: 2px solid #FF6600 !important; 
         padding: 25px !important; 
@@ -24,9 +54,12 @@ st.markdown("""
         margin-bottom: 25px !important; 
         box-shadow: 5px 5px 15px rgba(0,0,0,0.05) !important;
     }
-    h1, h2, h3, h4, h5, h6, p, span, label, strong, li {
+    
+    /* Forzado general de color en títulos y párrafos */
+    h1, h2, h3, h4, h5, h6, p, span, strong, li, small {
         color: #1A1A1A !important;
     }
+
     .nrc-box { 
         background-color: #FF6600 !important; 
         color: #FFFFFF !important; 
@@ -35,7 +68,9 @@ st.markdown("""
         font-weight: bold !important;
         display: inline-block !important;
     }
+    
     .banner-text { color: #FF6600 !important; font-weight: 800 !important; }
+
     .help-card {
         background-color: #FFF5EE !important;
         padding: 20px !important;
