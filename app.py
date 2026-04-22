@@ -135,12 +135,6 @@ try:
     t1, t2 = st.tabs(["🏠 Inicio y Guía", "🔍 Buscador de Cursos"])
 
     with t1:
-        c1, c2, c3 = st.columns(3)
-        c1.metric("Idiomas", df['Lengua'].nunique())
-        c2.metric("Total Grupos", df['NRC'].count())
-        c3.metric("Modalidades", df['MetodoInstruccion'].nunique())
-
-        st.divider()
         cola, colb = st.columns([2, 1])
         with cola:
            st.markdown("""
@@ -150,7 +144,7 @@ try:
             3. **Conoce los detalles:** ve a la pestaña 'Buscador de Cursos'.
             4. **Verifica los datos:** toma nota del NRC y de la Clave Banner.
             5. **Listas Cruzadas:** si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
-            5. **Planifica en Banner:** agrega el curso a tu planificación a través del SIU.
+            6. **Planifica en Banner:** agrega el curso a tu planificación a través del SIU.
             """)
            with st.expander("✨ Un mensaje para tu camino"):
                  st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
@@ -283,5 +277,3 @@ try:
 
 except Exception as e:
     st.error(f"Error: {e}")
-
-
