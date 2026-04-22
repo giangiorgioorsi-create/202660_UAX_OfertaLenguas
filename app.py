@@ -4,7 +4,7 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO AGRESIVO DE TEMA (FONDO BLANCO / TEXTO NEGRO) ---
+# --- BLOQUEO AGRESIVO DE TEMA Y CONTRASTE DE ALERTAS ---
 st.markdown("""
     <style>
     /* 1. Fondo Global y Texto Base */
@@ -13,45 +13,39 @@ st.markdown("""
         color: #1A1A1A !important;
     }
 
-    /* 2. BARRA LATERAL (SIDEBAR) */
+    /* 2. ADVERTENCIAS Y ALERTAS (st.warning / st.info) - FIX DE VISIBILIDAD */
+    div[data-testid="stAlert"] {
+        background-color: #FFFFFF !important; /* Fondo blanco para la caja */
+        border: 2px solid #FF6600 !important; /* Borde naranja institucional */
+        color: #1A1A1A !important;
+    }
+    /* Forzamos el color del texto de la advertencia */
+    div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] p {
+        color: #1A1A1A !important;
+        font-weight: bold !important;
+    }
+    /* Forzamos el color del icono de la alerta */
+    div[data-testid="stAlert"] [data-testid="stVerticalBlock"] svg {
+        fill: #FF6600 !important;
+    }
+
+    /* 3. BARRA LATERAL (SIDEBAR) */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
 
-    /* 3. PESTAÑAS (TABS) */
-    button[data-baseweb="tab"] p {
-        color: #1A1A1A !important;
-        font-weight: bold !important;
-    }
-    button[data-baseweb="tab"][aria-selected="true"] p {
-        color: #FF6600 !important;
-    }
-
-    /* 4. EXPANDERS (MENSAJES Y DETALLES) - SOLUCIÓN PARA TEXTO INVISIBLE */
-    /* Forzamos fondo blanco y borde en el contenedor */
+    /* 4. EXPANDERS (MENSAJES Y DETALLES) */
     [data-testid="stExpander"] {
         background-color: #FFFFFF !important;
         border: 1px solid #FF6600 !important;
         border-radius: 10px !important;
-        margin-bottom: 1rem !important;
-    }
-    /* Forzamos fondo blanco y texto negro en el título (Summary) */
-    [data-testid="stExpander"] summary {
-        background-color: #FFFFFF !important;
-        color: #1A1A1A !important;
     }
     [data-testid="stExpander"] summary p {
         color: #1A1A1A !important;
         font-weight: bold !important;
     }
-    /* Forzamos color de la flecha */
-    [data-testid="stExpander"] summary svg {
-        fill: #1A1A1A !important;
-    }
-    /* Contenido interno del expander */
-    [data-testid="stExpander"] div[data-testid="stMarkdownContainer"] p,
-    [data-testid="stExpander"] div[data-testid="stMarkdownContainer"] li {
+    [data-testid="stExpander"] div[data-testid="stMarkdownContainer"] p {
         color: #1A1A1A !important;
     }
 
@@ -68,7 +62,7 @@ st.markdown("""
         color: #1A1A1A !important;
     }
 
-    /* 6. ETIQUETAS NRC */
+    /* 6. ETIQUETAS NRC Y PESTAÑAS */
     .nrc-tag {
         background-color: #FF6600;
         color: #FFFFFF;
@@ -77,12 +71,12 @@ st.markdown("""
         font-weight: bold;
         display: inline-block;
     }
-
-    /* 7. ALERTAS Y MENSAJES INFO */
-    div[data-testid="stAlert"] {
-        background-color: #FFF5EE !important;
+    button[data-baseweb="tab"] p {
         color: #1A1A1A !important;
-        border: 1px solid #FF6600 !important;
+        font-weight: bold !important;
+    }
+    button[data-baseweb="tab"][aria-selected="true"] p {
+        color: #FF6600 !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -105,28 +99,27 @@ try:
     tab_inicio, tab_buscar = st.tabs(["🏠 Inicio y Guía", "🔍 Buscador de Cursos"])
 
     with tab_inicio:
-        m1, m2, m3 = st.columns(3)
-        m1.metric("Idiomas", df['Lengua'].nunique())
-        m2.metric("Total Grupos", df['NRC'].count())
-        m3.metric("Modalidades", df['MetodoInstruccion'].nunique())
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Idiomas", df['Lengua'].nunique())
+        c2.metric("Total Grupos", df['NRC'].count())
+        c3.metric("Modalidades", df['MetodoInstruccion'].nunique())
         
         st.divider()
         cola, colb = st.columns([2, 1])
         with cola:
             st.markdown("### 📝 Guía de Inscripción")
             st.write("1. Localiza tu asignatura en la pestaña del buscador.")
-            st.write("2. Verifica que el horario y modalidad se ajusten a tu carga.")
-            st.write("3. Toma nota del NRC para realizar el proceso en Banner.")
+            st.write("2. Toma nota del NRC y la Clave Banner.")
             
             with st.expander("✨ Mensaje de la Coordinación"):
                 st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
-                st.write("Explorar una nueva lengua expande tus horizontes profesionales y personales.")
+                st.write("¡Mucho éxito en este nuevo ciclo escolar!")
 
         with colb:
             st.markdown(f"""
             <div style="background-color: #FFF5EE; padding: 25px; border-radius: 12px; border: 1px dashed #FF6600;">
                 <h4 style="color: #FF6600 !important; margin-top:0;">🆘 Soporte</h4>
-                <p style="color: #1A1A1A !important;">¿Dudas con un NRC o nivel?</p>
+                <p style="color: #1A1A1A !important;">¿Dudas con un NRC?</p>
                 <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank'>
                     <button style='width:100%; padding:12px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; width:100%;'>
                         Abrir Formulario
@@ -158,9 +151,10 @@ try:
                             res['Key'] = res['ListaCruzada'].fillna(res['NRC'])
                             
                             for _, fila in res.drop_duplicates(subset=['Key']).iterrows():
-                                if fila['Recordatorio'] != "No asignado": st.warning(f"🔔 {fila['Recordatorio']}")
+                                # LA ADVERTENCIA (RECORADTORIO)
+                                if fila['Recordatorio'] != "No asignado": 
+                                    st.warning(f"🔔 **Recordatorio:** {fila['Recordatorio']}")
                                 
-                                # Tarjeta de Curso Principal
                                 st.markdown(f"""
                                 <div class="course-card">
                                     <h3 style="color: #FF6600 !important; margin-top: 0;">{fila['NombreMateria']}</h3>
@@ -169,7 +163,6 @@ try:
                                 </div>
                                 """, unsafe_allow_html=True)
                                 
-                                # NRCs Vinculados
                                 lc = df[df['ListaCruzada'] == fila['ListaCruzada']] if pd.notna(fila['ListaCruzada']) and fila['ListaCruzada'] != "No asignado" else df[df['NRC'] == fila['NRC']]
                                 cols_nrc = st.columns(min(len(lc), 4))
                                 for i, (_, n) in enumerate(lc.iterrows()):
@@ -177,7 +170,6 @@ try:
                                         st.markdown(f"<div class='nrc-tag'>NRC {n['NRC']}</div>", unsafe_allow_html=True)
                                         st.markdown(f"<span style='color:#FF6600; font-weight:800;'>{n['ClaveBanner']}</span>", unsafe_allow_html=True)
 
-                                # Detalles Técnicos del Curso
                                 with st.expander("🔍 Detalles Técnicos"):
                                     c_a, c_b = st.columns(2)
                                     with c_a:
