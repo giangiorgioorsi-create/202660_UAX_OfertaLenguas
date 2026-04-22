@@ -1,35 +1,33 @@
 import streamlit as st
 import pandas as pd
 
-# 1. Configuración de la Plataforma
+# 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
 # --- BLOQUEO TOTAL DE TEMA (MODO ANTI-OSCURO DEFINITIVO) ---
 st.markdown("""
     <style>
-    /* 1. Fondo global y texto */
+    /* 1. Fondo global y texto negro */
     html, body, [data-testid="stAppViewContainer"], .main {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
 
-    /* 2. FORZAR BLANCO EN EL LIENZO INTERNO DE LOS GRÁFICOS */
-    canvas {
+    /* 2. BLANQUEO DE CONTENEDORES DE GRÁFICOS (Para versiones antiguas) */
+    div[data-testid="stVegaLiteChart"] {
         background-color: #FFFFFF !important;
-    }
-    [data-testid="stVegaLiteChart"] {
-        background-color: #FFFFFF !important;
-        padding: 10px;
-        border-radius: 10px;
+        border: 1px solid #EEEEEE !important;
+        padding: 15px !important;
+        border-radius: 12px !important;
     }
 
-    /* 3. Barra lateral */
+    /* 3. Barra lateral forzada */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
 
-    /* 4. Tarjetas de cursos */
+    /* 4. Tarjetas de cursos con alto contraste */
     .card { 
         border: 2px solid #FF6600 !important; 
         padding: 25px !important; 
@@ -44,12 +42,14 @@ st.markdown("""
         color: #1A1A1A !important;
     }
 
+    /* Estilo de los NRCs */
     .nrc-box { 
         background-color: #FF6600 !important; 
         color: #FFFFFF !important; 
         padding: 8px 15px !important; 
         border-radius: 8px !important; 
         font-weight: bold !important;
+        display: inline-block !important;
     }
     
     .banner-text { 
@@ -57,6 +57,7 @@ st.markdown("""
         font-weight: 800 !important;
     }
 
+    /* Leyenda informativa */
     .legend-box { 
         background-color: #F1F3F5 !important; 
         color: #1A1A1A !important;
@@ -73,7 +74,7 @@ if 'reset_cnt' not in st.session_state:
 def clean_reset():
     st.session_state.reset_cnt += 1
 
-# 2. Carga de Datos
+# 2. Carga de Datos (Ciclo 202660)
 @st.cache_data
 def cargar_datos_limpios():
     archivo = "202660_UAX_OfertaLenguas.xlsx"
@@ -104,11 +105,11 @@ try:
         col_a, col_b = st.columns(2)
         with col_a:
             st.write("**Oferta por Lengua**")
-            # CAMBIO CLAVE: theme=None desactiva el tema automático de Streamlit
-            st.bar_chart(df['Lengua'].value_counts(), color="#FF6600", theme=None)
+            # SE ELIMINÓ EL ARGUMENTO 'theme' PARA EVITAR EL ERROR
+            st.bar_chart(df['Lengua'].value_counts(), color="#FF6600")
         with col_b:
             st.write("**Oferta por Modalidad**")
-            st.bar_chart(df['MetodoInstruccion'].value_counts(), color="#FFB380", theme=None)
+            st.bar_chart(df['MetodoInstruccion'].value_counts(), color="#FFB380")
 
     with tab_buscar:
         st.sidebar.header("Filtros de Búsqueda")
