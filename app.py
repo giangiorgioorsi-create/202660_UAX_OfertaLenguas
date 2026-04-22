@@ -130,7 +130,7 @@ def cargar_datos():
 
 try:
     df = cargar_datos()
-    st.markdown("<h1 style='color: #FF6600 !important;'>🏛️ Centro de Lenguas — Oferta Académica</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='color: #FF6600 !important;'>🏛️ Centro de Lenguas UAX — Oferta Académica 202660</h1>", unsafe_allow_html=True)
 
     t1, t2 = st.tabs(["🏠 Inicio y Guía", "🔍 Buscador de Cursos"])
 
