@@ -225,12 +225,11 @@ try:
                         </div>
                         """, unsafe_allow_html=True)
 
-                    # NRC tags
+                    # NRC tags (solo el NRC, sin Clave Banner)
                     cols_nrc = st.columns(min(len(lc), 4))
                     for i, (_, n) in enumerate(lc.iterrows()):
                         with cols_nrc[i % 4]:
                             st.markdown(f"<div class='nrc-tag'>NRC {n['NRC']}</div>", unsafe_allow_html=True)
-                            st.markdown(f"<span style='color:#FF6600; font-weight:800;'>{n['ClaveBanner']}</span>", unsafe_allow_html=True)
 
                     # Detalles técnicos
                     with st.expander("🔍 Detalles Técnicos"):
@@ -239,6 +238,10 @@ try:
                             st.write(f"**Créditos académicos:** {fila['CreditosAcademicos']}")
                             st.write(f"**Periodo:** {fila['Fechas']}")
                             st.write(f"**Estatus:** {fila['Status']}")
+                            # Clave Banner de cada NRC vinculado
+                            st.markdown("**Clave(s) Banner:**")
+                            for _, n in lc.iterrows():
+                                st.markdown(f"<span style='color:#FF6600; font-weight:800;'>NRC {n['NRC']}:</span> {n['ClaveBanner']}", unsafe_allow_html=True)
                         with c_b:
                             dias_raw = fila['Weekdays'] if fila['Weekdays'] else "No especificado"
                             st.markdown(f"**Días de sesión:** <span style='color:#2ecc71; font-weight:600;'>{dias_raw}</span>", unsafe_allow_html=True)
