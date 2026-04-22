@@ -1,33 +1,35 @@
 import streamlit as st
 import pandas as pd
 
-# 1. Configuración Institucional
+# 1. Configuración de la Plataforma
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO TOTAL DE TEMA Y GRÁFICOS (ANTI-MODO OSCURO PRO) ---
+# --- BLOQUEO TOTAL DE TEMA (MODO ANTI-OSCURO DEFINITIVO) ---
 st.markdown("""
     <style>
-    /* 1. Fondo global de la aplicación */
+    /* 1. Fondo global y texto */
     html, body, [data-testid="stAppViewContainer"], .main {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
 
-    /* 2. Forzar fondo blanco en los contenedores de GRÁFICOS */
+    /* 2. FORZAR BLANCO EN EL LIENZO INTERNO DE LOS GRÁFICOS */
+    canvas {
+        background-color: #FFFFFF !important;
+    }
     [data-testid="stVegaLiteChart"] {
         background-color: #FFFFFF !important;
-        border: 1px solid #EEEEEE !important;
-        border-radius: 10px !important;
-        padding: 10px !important;
+        padding: 10px;
+        border-radius: 10px;
     }
 
-    /* 3. Barra lateral (Sidebar) */
+    /* 3. Barra lateral */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
 
-    /* 4. Tarjetas de cursos (Cards) */
+    /* 4. Tarjetas de cursos */
     .card { 
         border: 2px solid #FF6600 !important; 
         padding: 25px !important; 
@@ -38,12 +40,10 @@ st.markdown("""
         box-shadow: 5px 5px 15px rgba(0,0,0,0.05) !important;
     }
     
-    /* 5. Forzar color negro en todos los textos */
     h1, h2, h3, h4, h5, h6, p, span, label, strong, small {
         color: #1A1A1A !important;
     }
 
-    /* 6. Botones y Badges de NRC */
     .nrc-box { 
         background-color: #FF6600 !important; 
         color: #FFFFFF !important; 
@@ -57,18 +57,12 @@ st.markdown("""
         font-weight: 800 !important;
     }
 
-    /* 7. Cuadro de leyenda de días */
     .legend-box { 
         background-color: #F1F3F5 !important; 
         color: #1A1A1A !important;
         padding: 15px !important; 
         border-radius: 10px !important; 
         border-left: 6px solid #FF6600 !important;
-    }
-    
-    /* 8. Fix para expanders y elementos secundarios */
-    .st-ae, .st-af, .st-ag, .st-ah {
-        background-color: #FFFFFF !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -79,7 +73,7 @@ if 'reset_cnt' not in st.session_state:
 def clean_reset():
     st.session_state.reset_cnt += 1
 
-# 2. Carga de Datos (Periodo 202660)
+# 2. Carga de Datos
 @st.cache_data
 def cargar_datos_limpios():
     archivo = "202660_UAX_OfertaLenguas.xlsx"
@@ -110,11 +104,11 @@ try:
         col_a, col_b = st.columns(2)
         with col_a:
             st.write("**Oferta por Lengua**")
-            # Forzamos color institucional en las barras
-            st.bar_chart(df['Lengua'].value_counts(), color="#FF6600")
+            # CAMBIO CLAVE: theme=None desactiva el tema automático de Streamlit
+            st.bar_chart(df['Lengua'].value_counts(), color="#FF6600", theme=None)
         with col_b:
             st.write("**Oferta por Modalidad**")
-            st.bar_chart(df['MetodoInstruccion'].value_counts(), color="#FFB380")
+            st.bar_chart(df['MetodoInstruccion'].value_counts(), color="#FFB380", theme=None)
 
     with tab_buscar:
         st.sidebar.header("Filtros de Búsqueda")
