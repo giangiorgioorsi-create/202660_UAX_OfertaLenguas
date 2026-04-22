@@ -81,7 +81,7 @@ try:
             1. **Encuentra tu curso:** ve a la pestaña 'Buscador de Cursos'.
             2. **Filtra con cuidado:** selecciona idioma, materia y horario.
             3. **Verifica el NRC:** toma nota del número de 5 dígitos (NRC) y la Clave Banner.
-            4. **Listas Cruzadas:** si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
+            4. **Listas cruzadas:** si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
             5. **Planifica e inscribe en Banner:** realiza el proceso en el SIU.
             """)
             
