@@ -144,12 +144,12 @@ try:
         cola, colb = st.columns([2, 1])
         with cola:
            st.markdown("""
-            ### 📝 Guía Rápida de Inscripción
+            ### 📝 Guía rápida de inscripción
             1. **Abre la barra lateral:** haz clic en el botón en la parte superior izquierda. 
             2. **Filtra con cuidado:** selecciona idioma, materia y horario.
             3. **Conoce los detalles:** ve a la pestaña 'Buscador de Cursos'.
-            4. **Verifica los datos:** Toma nota del NRC y de la Clave Banner.
-            5. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
+            4. **Verifica los datos:** toma nota del NRC y de la Clave Banner.
+            5. **Listas Cruzadas:** si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
             5. **Planifica en Banner:** agrega el curso a tu planificación a través del SIU.
             """)
            with st.expander("✨ Un mensaje para tu camino"):
