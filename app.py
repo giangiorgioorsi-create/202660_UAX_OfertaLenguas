@@ -151,9 +151,9 @@ try:
             4. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
             5. **Inscribe en Banner:** Realiza el proceso oficial en el portal de alumnos.
             """)
-        with st.expander("✨ Un mensaje para tu camino"):
+           with st.expander("✨ Un mensaje para tu camino"):
                  st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
-                 st.write("Aprender una lengua abre puertas no solo profesionales, sino humanas. ¡Mucho éxito en tu elección!") Fellini")
+                 st.write("Aprender una lengua abre puertas no solo profesionales, sino humanas. ¡Mucho éxito en tu elección!")
 
         with colb:
             st.markdown(f"""
