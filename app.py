@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
 
-# 1. Configuración Institucional
+# 1. Configuración de la Plataforma
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO AGRESIVO DE TEMA (PARA MENÚS Y SELECTBOXES) ---
+# --- BLOQUEO AGRESIVO DE TEMA (FONDO BLANCO / TEXTO NEGRO) ---
+# Este bloque ataca directamente los selectores de los menús desplegables (BaseWeb)
 st.markdown("""
     <style>
     /* 1. Fondo global y texto base */
@@ -13,38 +14,46 @@ st.markdown("""
         color: #1A1A1A !important;
     }
 
-    /* 2. FORZAR VISIBILIDAD EN MENÚS DESPLEGABLES (Selectboxes) */
-    /* Caja del menú */
+    /* 2. FORZADO DE BARRA LATERAL (Sidebar) */
+    [data-testid="stSidebar"], [data-testid="stSidebar"] > div:first-child {
+        background-color: #FFFFFF !important;
+    }
+    [data-testid="stSidebar"] * {
+        color: #1A1A1A !important;
+    }
+
+    /* 3. FORZADO DE MENÚS DESPLEGABLES (Selectboxes) */
+    /* Caja cerrada del menú */
     div[data-baseweb="select"] > div {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
         border: 1px solid #FF6600 !important;
     }
     
-    /* Lista de opciones (el menú que cae) */
-    ul[data-baseweb="menu"] {
+    /* El ícono de la flecha */
+    div[data-baseweb="select"] svg {
+        fill: #1A1A1A !important;
+    }
+
+    /* La lista desplegable (popover) */
+    ul[data-baseweb="menu"], div[role="listbox"] {
         background-color: #FFFFFF !important;
+        border: 1px solid #FF6600 !important;
     }
     
-    /* Elementos individuales de la lista */
-    li[data-baseweb="menu-item"] {
+    /* Elementos de la lista */
+    li[data-baseweb="menu-item"], div[role="option"] {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
     
-    /* Hover (cuando pasas el mouse por las opciones) */
-    li[data-baseweb="menu-item"]:hover {
+    /* Efecto al pasar el mouse por las opciones */
+    li[data-baseweb="menu-item"]:hover, div[role="option"]:hover {
         background-color: #FF6600 !important;
         color: #FFFFFF !important;
     }
 
-    /* Etiquetas de los filtros en la barra lateral */
-    [data-testid="stSidebar"] label {
-        color: #1A1A1A !important;
-        font-weight: bold !important;
-    }
-
-    /* 3. Estilo de las Tarjetas de Cursos */
+    /* 4. Estilo de las Tarjetas de Cursos */
     .card { 
         border: 2px solid #FF6600 !important; 
         padding: 25px !important; 
@@ -55,8 +64,8 @@ st.markdown("""
         box-shadow: 5px 5px 15px rgba(0,0,0,0.05) !important;
     }
     
-    /* Forzado general de color en títulos y párrafos */
-    h1, h2, h3, h4, h5, h6, p, span, strong, li, small {
+    /* Forzado de color en todos los textos */
+    h1, h2, h3, h4, h5, h6, p, span, label, strong, li, small {
         color: #1A1A1A !important;
     }
 
