@@ -2,91 +2,108 @@ import streamlit as st
 import pandas as pd
 
 # 1. Configuración Institucional
-st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide", initial_sidebar_state="auto")
+st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO NUCLEAR DE TEMA: CSS MAESTRO ---
 st.markdown("""
     <style>
-    /* 1. Fondo Global */
     html, body, [data-testid="stAppViewContainer"], .main, [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
-    }
-
-    /* 2. FORZAR TEXTOS EN LA PÁGINA DE INICIO (Métricas y Guía) */
-    [data-testid="stMarkdownContainer"] p,
-    [data-testid="stMarkdownContainer"] li,
-    [data-testid="stMarkdownContainer"] strong,
-    [data-testid="stMarkdownContainer"] b {
         color: #1A1A1A !important;
     }
-    /* Estilo de los números grandes en las métricas */
-    [data-testid="stMetricValue"] div, [data-testid="stMetricValue"] {
-        color: #FF6600 !important;
-    }
-    /* Estilo de los títulos de las métricas ("Idiomas", "Grupos") */
-    [data-testid="stMetricLabel"] *, [data-testid="stMetricLabel"] {
-        color: #1A1A1A !important;
-        font-weight: bold !important;
-    }
-
-    /* 3. OPTIMIZACIÓN MÓVIL: BOTÓN DEL MENÚ (FAB) */
-    [data-testid="collapsedControl"] {
-        background-color: #FF6600 !important;
-        border-radius: 50px !important;
-        box-shadow: 0 4px 12px rgba(255, 102, 0, 0.4) !important;
-        padding: 5px !important;
-        top: 10px !important; left: 10px !important;
-        z-index: 999999 !important;
-    }
-    [data-testid="collapsedControl"] svg {
-        fill: #FFFFFF !important; color: #FFFFFF !important;
-        width: 28px !important; height: 28px !important;
-    }
-    [data-testid="stSidebarHeader"] button {
-        background-color: #EEEEEE !important; border: 1px solid #D3D3D3 !important; border-radius: 50px !important;
-    }
-    [data-testid="stSidebarHeader"] button svg { fill: #1A1A1A !important; }
-
-    /* 4. BARRA LATERAL Y MENÚS DESPLEGABLES (Selectboxes) */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
-    div[data-baseweb="select"] > div {
-        background-color: #FFFFFF !important; color: #1A1A1A !important; border: 1px solid #FF6600 !important;
+    button[data-baseweb="tab"] p {
+        color: #1A1A1A !important;
+        font-weight: bold !important;
     }
-    div[role="listbox"] ul { background-color: #FFFFFF !important; }
-    div[role="option"] { color: #1A1A1A !important; background-color: #FFFFFF !important; }
-    input[type="text"] { color: #1A1A1A !important; background-color: #FFFFFF !important; }
-
-    /* 5. PESTAÑAS (TABS) */
-    button[data-baseweb="tab"] p { color: #1A1A1A !important; font-weight: bold !important; font-size: 1.1rem !important; }
-    button[data-baseweb="tab"][aria-selected="true"] p { color: #FF6600 !important; }
-
-    /* 6. ALERTAS Y EXPANDERS */
-    div[data-testid="stAlert"] { background-color: #FFFFFF !important; border: 2px solid #FF6600 !important; border-radius: 10px !important; }
-    div[data-testid="stAlert"] * { color: #1A1A1A !important; fill: #FF6600 !important; }
-    [data-testid="stExpander"] { background-color: #FFFFFF !important; border: 1px solid #D3D3D3 !important; border-radius: 8px !important; }
-    [data-testid="stExpander"] summary, [data-testid="stExpander"] summary p { background-color: #FFFFFF !important; color: #1A1A1A !important; font-weight: bold !important; }
-
-    /* 7. TARJETAS DE CURSOS Y NRCs */
+    button[data-baseweb="tab"][aria-selected="true"] p {
+        color: #FF6600 !important;
+    }
+    div[data-testid="stAlert"] {
+        background-color: #FFFFFF !important;
+        border: 2px solid #FF6600 !important;
+        border-radius: 10px !important;
+    }
+    div[data-testid="stAlert"] * {
+        color: #1A1A1A !important;
+        fill: #FF6600 !important;
+    }
+    [data-testid="stExpander"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #D3D3D3 !important;
+        border-radius: 8px !important;
+    }
+    [data-testid="stExpander"] summary {
+        background-color: #FFFFFF !important;
+        color: #1A1A1A !important;
+    }
+    [data-testid="stExpander"] summary p {
+        color: #1A1A1A !important;
+        font-weight: bold !important;
+    }
+    [data-testid="stExpander"] [data-testid="stMarkdownContainer"] * {
+        color: #1A1A1A !important;
+    }
     .course-card {
-        border: 2px solid #FF6600; border-radius: 12px; padding: 20px; background-color: #FFFFFF; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        border: 2px solid #FF6600;
+        border-radius: 12px;
+        padding: 20px;
+        background-color: #FFFFFF;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
     .course-card h3 { color: #FF6600 !important; margin-top: 0; }
     .course-card p, .course-card b, .course-card strong { color: #1A1A1A !important; }
-
-    .reminder-box { background-color: #FFF3CD; border-left: 5px solid #FF6600; border-radius: 6px; padding: 10px 14px; margin-top: 10px; color: #1A1A1A !important; font-size: 0.92em; }
-    .nrc-tag { background-color: #FF6600; color: #FFFFFF; padding: 6px 12px; border-radius: 6px; font-weight: bold; display: inline-block; }
-    .nrc-tag-selected { background-color: #2ecc71 !important; color: #FFFFFF !important; padding: 6px 12px; border-radius: 6px; font-weight: bold; display: inline-block; border: 2px solid #27ae60; }
-    .legend-box { background-color: #F1F3F5; padding: 10px 14px; border-radius: 6px; font-size: 0.85em; color: #1A1A1A; border-left: 4px solid #FF6600; margin-top: 6px; }
-    
-    div.stButton > button { background-color: #FFFFFF !important; color: #1A1A1A !important; border: 2px solid #D3D3D3 !important; border-radius: 8px !important; width: 100% !important; font-weight: bold !important; padding: 12px !important; }
+    .reminder-box {
+        background-color: #FFF3CD;
+        border-left: 5px solid #FF6600;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin-top: 10px;
+        color: #1A1A1A !important;
+        font-size: 0.92em;
+    }
+    .nrc-tag {
+        background-color: #FF6600;
+        color: #FFFFFF;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        display: inline-block;
+    }
+    /* NUEVO: Estilo para el NRC seleccionado */
+    .nrc-tag-selected {
+        background-color: #2ecc71 !important;
+        color: #FFFFFF !important;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        display: inline-block;
+        border: 2px solid #27ae60;
+    }
+    .legend-box {
+        background-color: #F1F3F5;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-size: 0.85em;
+        color: #1A1A1A;
+        border-left: 4px solid #FF6600;
+        margin-top: 6px;
+    }
+    div.stButton > button {
+        background-color: #FFFFFF !important;
+        color: #1A1A1A !important;
+        border: 1px solid #D3D3D3 !important;
+        width: 100% !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
 
 def es_valor_valido(valor):
+    """Devuelve True si el valor tiene contenido real (no es NaN, vacío ni 'No asignado')."""
     if pd.isna(valor):
         return False
     return str(valor).strip() not in ("", "No asignado", "nan")
@@ -113,37 +130,38 @@ def cargar_datos():
 
 try:
     df = cargar_datos()
-    st.markdown("<h2 style='color: #FF6600 !important; text-align: center;'>🏛️ Centro de Lenguas UAX<br><small>Oferta 202660</small></h2>", unsafe_allow_html=True)
+    st.markdown("<h1 style='color: #FF6600 !important;'>🏛️ Centro de Lenguas UAX — Oferta Académica 202660</h1>", unsafe_allow_html=True)
 
-    t1, t2 = st.tabs(["🏠 Inicio", "🔍 Buscador"])
+    t1, t2 = st.tabs(["🏠 Inicio y Guía", "🔍 Buscador de Cursos"])
 
     with t1:
         c1, c2, c3 = st.columns(3)
         c1.metric("Idiomas", df['Lengua'].nunique())
-        c2.metric("Grupos", df['NRC'].count())
+        c2.metric("Total Grupos", df['NRC'].count())
         c3.metric("Modalidades", df['MetodoInstruccion'].nunique())
 
         st.divider()
         cola, colb = st.columns([2, 1])
         with cola:
-            st.markdown("""
-            ### 📝 Guía Rápida
-            1. **Busca tu curso:** Ve a la pestaña 'Buscador'.
-            2. **Filtra:** Selecciona idioma, materia y horario.
-            3. **NRC:** Anota el número de 5 dígitos (NRC) y la Clave Banner.
-            4. **Inscribe:** Realiza el proceso oficial en Anáhuac.
+           st.markdown("""
+            ### 📝 Guía Rápida de Inscripción
+            1. **Encuentra tu curso:** Ve a la pestaña 'Buscador de Cursos'.
+            2. **Filtra con cuidado:** Selecciona idioma, materia y horario.
+            3. **Verifica el NRC:** Toma nota del número de 5 dígitos (NRC) y la Clave Banner.
+            4. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
+            5. **Inscribe en Banner:** Realiza el proceso oficial en el portal de alumnos.
             """)
-            with st.expander("✨ Un mensaje para tu camino"):
-                st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
-                st.write("Aprender una lengua abre puertas no solo profesionales, sino humanas. ¡Mucho éxito en tu elección!")
+           with st.expander("✨ Un mensaje para tu camino"):
+                 st.info("*'Un idioma diferente es una visión diferente de la vida.'* — Federico Fellini")
+                 st.write("Aprender una lengua abre puertas no solo profesionales, sino humanas. ¡Mucho éxito en tu elección!")
 
         with colb:
             st.markdown(f"""
-            <div style="background-color: #FFF5EE; padding: 25px; border-radius: 12px; border: 1px dashed #FF6600; margin-top: 15px;">
-                <h4 style="color: #FF6600 !important; margin-top:0;">🆘 Soporte Técnico</h4>
-                <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank' style='text-decoration:none;'>
-                    <button style='width:100%; padding:14px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; font-size: 1.05em;'>
-                        📝 Abrir Formulario
+            <div style="background-color: #FFF5EE; padding: 25px; border-radius: 12px; border: 1px dashed #FF6600;">
+                <h4 style="color: #FF6600 !important; margin-top:0;">🆘 Soporte</h4>
+                <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank'>
+                    <button style='width:100%; padding:12px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;'>
+                        Abrir Formulario
                     </button>
                 </a>
             </div>
@@ -152,10 +170,9 @@ try:
     with t2:
         if 'rk' not in st.session_state:
             st.session_state.rk = 0
-        
-        st.sidebar.markdown("<h3 style='color: #1A1A1A !important;'>Filtros de Búsqueda</h3>", unsafe_allow_html=True)
+        st.sidebar.header("Búsqueda")
 
-        nrc_input = st.sidebar.text_input("🔍 Buscar por NRC directo", key=f"nrc_{st.session_state.rk}")
+        nrc_input = st.sidebar.text_input("🔍 Buscar por NRC", key=f"nrc_{st.session_state.rk}")
         st.sidebar.divider()
 
         df_res = df.copy()
@@ -186,6 +203,7 @@ try:
             if df_res.empty:
                 st.warning("No se encontraron resultados para los criterios seleccionados.")
             else:
+                # IDENTIFICAR NRCs SELECCIONADOS: Guardamos los NRC que pasaron el filtro
                 nrcs_seleccionados = set(df_res['NRC'].unique())
 
                 df_res['Key'] = df_res.apply(
@@ -213,40 +231,44 @@ try:
                     if es_valor_valido(fila['Recordatorio']):
                         st.markdown(f"""
                         <div class="reminder-box">
-                            🔔 <strong>Aviso:</strong> {fila['Recordatorio']}
+                            🔔 <strong>Recordatorio:</strong> {fila['Recordatorio']}
                         </div>
                         """, unsafe_allow_html=True)
 
                     with st.expander("🔍 Detalles Técnicos"):
                         c_a, c_b = st.columns(2)
                         with c_a:
-                            st.write(f"**Créditos:** {fila['CreditosAcademicos']}")
-                            st.write(f"**Fechas:** {fila['Fechas']}")
+                            st.write(f"**Créditos académicos:** {fila['CreditosAcademicos']}")
+                            st.write(f"**Periodo:** {fila['Fechas']}")
                             st.write(f"**Estatus:** {fila['Status']}")
                             st.divider()
-                            st.markdown("**NRC(s) correspondientes:**")
+                            st.markdown("**NRC(s) para inscripción:**")
                             
+                            # Renderizado de NRCs con resaltado de selección
                             for _, n in lc.iterrows():
+                                # Verificamos si este NRC específico es el que el usuario buscó/filtró
                                 es_el_buscado = n['NRC'] in nrcs_seleccionados
                                 tag_class = "nrc-tag-selected" if es_el_buscado else "nrc-tag"
-                                label_seleccion = " <br><span style='color:#27ae60; font-weight:bold; font-size:0.9em;'>← TU SELECCIÓN</span>" if es_el_buscado else ""
+                                label_seleccion = " <span style='color:#27ae60; font-weight:bold; font-size:0.85em;'>← Tu selección</span>" if es_el_buscado else ""
                                 
                                 st.markdown(
-                                    f"<div style='display:flex; align-items:flex-start; gap:10px; margin-bottom:12px;'>"
+                                    f"<div style='display:flex; align-items:center; gap:10px; margin-bottom:10px;'>"
                                     f"<div class='{tag_class}'>NRC {n['NRC']}</div>"
-                                    f"<div style='display:flex; flex-direction:column; line-height:1.2;'>"
-                                    f"<span style='color:#555; font-size:0.95em;'>Banner: <strong style='color:#FF6600;'>{n['ClaveBanner']}</strong>{label_seleccion}</span>"
-                                    f"<span style='color:#888; font-size:0.8em; font-style:italic;'>{n['NombreMateria']}</span>"
+                                    f"<div style='display:flex; flex-direction:column;'>"
+                                    f"<span style='color:#555; font-size:0.9em;'>Clave Banner: <strong style='color:#FF6600;'>{n['ClaveBanner']}</strong>{label_seleccion}</span>"
+                                    f"<span style='color:#888; font-size:0.75em; font-style:italic;'>{n['NombreMateria']}</span>"
                                     f"</div>"
                                     f"</div>",
                                     unsafe_allow_html=True
                                 )
                         with c_b:
                             dias_raw = fila['Weekdays'] if fila['Weekdays'] else "No especificado"
-                            st.markdown(f"**Días:** <span style='color:#2ecc71; font-weight:600;'>{dias_raw}</span>", unsafe_allow_html=True)
+                            st.markdown(f"**Días de sesión:** <span style='color:#2ecc71; font-weight:600;'>{dias_raw}</span>", unsafe_allow_html=True)
                             st.markdown("""
-                            <div class='legend-box' style='font-size: 0.75em;'>
-                                <strong>Días:</strong> 1:Lun | 2:Mar | 3:Mié | 4:Jue | 5:Vie | 6:Sáb | 7:Dom
+                            <div class='legend-box'>
+                                <strong>Guía de nomenclatura de días:</strong><br>
+                                1: Lunes | 2: Martes | 3: Miércoles | 4: Jueves<br>
+                                5: Viernes | 6: Sábado | 7: Domingo
                             </div>
                             """, unsafe_allow_html=True)
 
@@ -254,9 +276,11 @@ try:
                             st.info(f"📌 **Notas:** {fila['Notas']}")
 
         st.sidebar.divider()
-        if st.sidebar.button("🔄 Reiniciar Búsqueda"):
+        if st.sidebar.button("🔄 Reiniciar"):
             st.session_state.rk += 1
             st.rerun()
 
 except Exception as e:
     st.error(f"Error: {e}")
+
+
