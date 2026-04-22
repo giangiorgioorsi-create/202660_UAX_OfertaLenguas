@@ -73,6 +73,16 @@ st.markdown("""
         font-weight: bold;
         display: inline-block;
     }
+    /* NUEVO: Estilo para el NRC seleccionado */
+    .nrc-tag-selected {
+        background-color: #2ecc71 !important;
+        color: #FFFFFF !important;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        display: inline-block;
+        border: 2px solid #27ae60;
+    }
     .legend-box {
         background-color: #F1F3F5;
         padding: 10px 14px;
@@ -105,11 +115,9 @@ def cargar_datos():
     df = pd.read_excel(archivo, dtype=str)
     df.columns = [str(c).strip() for c in df.columns]
 
-    # Asegurarse de que la columna Recordatorio existe (puede no existir en futuros periodos)
     if 'Recordatorio' not in df.columns:
         df['Recordatorio'] = ""
 
-    # Normalizar columnas de texto: NaN → cadena vacía
     cols_texto = ['Docente', 'NombreMateria', 'MetodoInstruccion', 'Fechas',
                   'Weekdays', 'Status', 'Notas', 'Recordatorio', 'ClaveBanner', 'ListaCruzada']
     for c in cols_texto:
@@ -118,9 +126,6 @@ def cargar_datos():
 
     df['Hora_Ref'] = df['HoraInicio'].str.strip()
     return df
-
-
-
 
 
 try:
@@ -192,7 +197,9 @@ try:
             if df_res.empty:
                 st.warning("No se encontraron resultados para los criterios seleccionados.")
             else:
-                # FIX: GroupKey usa ListaCruzada sólo cuando tiene valor real
+                # IDENTIFICAR NRCs SELECCIONADOS: Guardamos los NRC que pasaron el filtro
+                nrcs_seleccionados = set(df_res['NRC'].unique())
+
                 df_res['Key'] = df_res.apply(
                     lambda r: r['ListaCruzada'] if es_valor_valido(r['ListaCruzada']) else r['NRC'],
                     axis=1
@@ -200,13 +207,11 @@ try:
 
                 for _, fila in df_res.drop_duplicates(subset=['Key']).iterrows():
 
-                    # FIX: Obtener NRCs vinculados con lógica robusta
                     if es_valor_valido(fila['ListaCruzada']):
                         lc = df[df['ListaCruzada'] == fila['ListaCruzada']]
                     else:
                         lc = df[df['NRC'] == fila['NRC']]
 
-                    # Tarjeta principal del curso
                     st.markdown(f"""
                     <div class="course-card">
                         <h3>{fila['NombreMateria']}</h3>
@@ -217,7 +222,6 @@ try:
                     </div>
                     """, unsafe_allow_html=True)
 
-                    # Recordatorio como bloque independiente (evita escape de HTML en f-string)
                     if es_valor_valido(fila['Recordatorio']):
                         st.markdown(f"""
                         <div class="reminder-box">
@@ -225,7 +229,6 @@ try:
                         </div>
                         """, unsafe_allow_html=True)
 
-                    # Detalles técnicos (NRC y Clave Banner van dentro)
                     with st.expander("🔍 Detalles Técnicos"):
                         c_a, c_b = st.columns(2)
                         with c_a:
@@ -233,14 +236,22 @@ try:
                             st.write(f"**Periodo:** {fila['Fechas']}")
                             st.write(f"**Estatus:** {fila['Status']}")
                             st.divider()
-                            # NRC + Clave Banner en la misma línea
                             st.markdown("**NRC(s) para inscripción:**")
+                            
+                            # Renderizado de NRCs con resaltado de selección
                             for _, n in lc.iterrows():
+                                # Verificamos si este NRC específico es el que el usuario buscó/filtró
+                                es_el_buscado = n['NRC'] in nrcs_seleccionados
+                                tag_class = "nrc-tag-selected" if es_el_buscado else "nrc-tag"
+                                label_seleccion = " <span style='color:#27ae60; font-weight:bold; font-size:0.85em;'>← Tu selección</span>" if es_el_buscado else ""
+                                
                                 st.markdown(
-                                    f"<div style='display:flex; align-items:center; gap:10px; margin-bottom:6px;'>"
-                                    f"<div class='nrc-tag'>NRC {n['NRC']}</div>"
-                                    f"<span style='color:#555; font-size:0.9em;'>Clave Banner: "
-                                    f"<strong style='color:#FF6600;'>{n['ClaveBanner']}</strong></span>"
+                                    f"<div style='display:flex; align-items:center; gap:10px; margin-bottom:10px;'>"
+                                    f"<div class='{tag_class}'>NRC {n['NRC']}</div>"
+                                    f"<div style='display:flex; flex-direction:column;'>"
+                                    f"<span style='color:#555; font-size:0.9em;'>Clave Banner: <strong style='color:#FF6600;'>{n['ClaveBanner']}</strong>{label_seleccion}</span>"
+                                    f"<span style='color:#888; font-size:0.75em; font-style:italic;'>{n['NombreMateria']}</span>"
+                                    f"</div>"
                                     f"</div>",
                                     unsafe_allow_html=True
                                 )
@@ -255,7 +266,6 @@ try:
                             </div>
                             """, unsafe_allow_html=True)
 
-                        # FIX: Notas sólo se muestra si tiene contenido real
                         if es_valor_valido(fila['Notas']):
                             st.info(f"📌 **Notas:** {fila['Notas']}")
 
