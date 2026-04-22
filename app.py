@@ -4,162 +4,89 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide", initial_sidebar_state="auto")
 
-# --- BLOQUEO NUCLEAR DE TEMA Y OPTIMIZACIÓN MÓVIL ---
+# --- BLOQUEO NUCLEAR DE TEMA: CSS MAESTRO ---
 st.markdown("""
     <style>
-    /* 1. Fondo Global y Texto Base */
+    /* 1. Fondo Global */
     html, body, [data-testid="stAppViewContainer"], .main, [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
-        color: #1A1A1A !important;
     }
 
-    /* 2. OPTIMIZACIÓN MÓVIL: SÚPER BOTÓN DE MENÚ (Floating Action Button) */
-    /* Botón para abrir (cuando está cerrado) */
+    /* 2. FORZAR TEXTOS EN LA PÁGINA DE INICIO (Métricas y Guía) */
+    [data-testid="stMarkdownContainer"] p,
+    [data-testid="stMarkdownContainer"] li,
+    [data-testid="stMarkdownContainer"] strong,
+    [data-testid="stMarkdownContainer"] b {
+        color: #1A1A1A !important;
+    }
+    /* Estilo de los números grandes en las métricas */
+    [data-testid="stMetricValue"] div, [data-testid="stMetricValue"] {
+        color: #FF6600 !important;
+    }
+    /* Estilo de los títulos de las métricas ("Idiomas", "Grupos") */
+    [data-testid="stMetricLabel"] *, [data-testid="stMetricLabel"] {
+        color: #1A1A1A !important;
+        font-weight: bold !important;
+    }
+
+    /* 3. OPTIMIZACIÓN MÓVIL: BOTÓN DEL MENÚ (FAB) */
     [data-testid="collapsedControl"] {
         background-color: #FF6600 !important;
         border-radius: 50px !important;
         box-shadow: 0 4px 12px rgba(255, 102, 0, 0.4) !important;
         padding: 5px !important;
-        transition: transform 0.2s ease;
-        z-index: 999999 !important; /* Siempre al frente */
-        /* Ajuste de posición para móviles */
-        top: 10px !important;
-        left: 10px !important;
+        top: 10px !important; left: 10px !important;
+        z-index: 999999 !important;
     }
     [data-testid="collapsedControl"] svg {
-        fill: #FFFFFF !important;
-        color: #FFFFFF !important;
-        width: 28px !important; /* Más grande para el dedo */
-        height: 28px !important;
+        fill: #FFFFFF !important; color: #FFFFFF !important;
+        width: 28px !important; height: 28px !important;
     }
-    [data-testid="collapsedControl"]:active {
-        transform: scale(0.9); /* Efecto de presionar */
-    }
-
-    /* Botón para cerrar (dentro de la barra lateral) */
     [data-testid="stSidebarHeader"] button {
-        background-color: #EEEEEE !important;
-        border: 1px solid #D3D3D3 !important;
-        border-radius: 50px !important;
-        padding: 5px !important;
+        background-color: #EEEEEE !important; border: 1px solid #D3D3D3 !important; border-radius: 50px !important;
     }
-    [data-testid="stSidebarHeader"] button svg {
-        fill: #1A1A1A !important;
-        width: 24px !important;
-        height: 24px !important;
-    }
+    [data-testid="stSidebarHeader"] button svg { fill: #1A1A1A !important; }
 
-    /* 3. BARRA LATERAL (SIDEBAR) */
+    /* 4. BARRA LATERAL Y MENÚS DESPLEGABLES (Selectboxes) */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
+    div[data-baseweb="select"] > div {
+        background-color: #FFFFFF !important; color: #1A1A1A !important; border: 1px solid #FF6600 !important;
+    }
+    div[role="listbox"] ul { background-color: #FFFFFF !important; }
+    div[role="option"] { color: #1A1A1A !important; background-color: #FFFFFF !important; }
+    input[type="text"] { color: #1A1A1A !important; background-color: #FFFFFF !important; }
 
-    /* 4. PESTAÑAS (TABS) */
-    button[data-baseweb="tab"] p {
-        color: #1A1A1A !important;
-        font-weight: bold !important;
-        font-size: 1.1rem !important; /* Más grande para móviles */
-    }
-    button[data-baseweb="tab"][aria-selected="true"] p {
-        color: #FF6600 !important;
-    }
+    /* 5. PESTAÑAS (TABS) */
+    button[data-baseweb="tab"] p { color: #1A1A1A !important; font-weight: bold !important; font-size: 1.1rem !important; }
+    button[data-baseweb="tab"][aria-selected="true"] p { color: #FF6600 !important; }
 
-    /* 5. ARREGLO PARA ALERTAS (st.warning / st.info) */
-    div[data-testid="stAlert"] {
-        background-color: #FFFFFF !important;
-        border: 2px solid #FF6600 !important;
-        border-radius: 10px !important;
-    }
-    div[data-testid="stAlert"] * {
-        color: #1A1A1A !important;
-        fill: #FF6600 !important;
-    }
+    /* 6. ALERTAS Y EXPANDERS */
+    div[data-testid="stAlert"] { background-color: #FFFFFF !important; border: 2px solid #FF6600 !important; border-radius: 10px !important; }
+    div[data-testid="stAlert"] * { color: #1A1A1A !important; fill: #FF6600 !important; }
+    [data-testid="stExpander"] { background-color: #FFFFFF !important; border: 1px solid #D3D3D3 !important; border-radius: 8px !important; }
+    [data-testid="stExpander"] summary, [data-testid="stExpander"] summary p { background-color: #FFFFFF !important; color: #1A1A1A !important; font-weight: bold !important; }
 
-    /* 6. ARREGLO PARA EXPANDERS (Detalles Técnicos) */
-    [data-testid="stExpander"] {
-        background-color: #FFFFFF !important;
-        border: 1px solid #D3D3D3 !important;
-        border-radius: 8px !important;
-    }
-    [data-testid="stExpander"] summary {
-        background-color: #FFFFFF !important;
-        color: #1A1A1A !important;
-    }
-    [data-testid="stExpander"] summary p {
-        color: #1A1A1A !important;
-        font-weight: bold !important;
-    }
-    [data-testid="stExpander"] [data-testid="stMarkdownContainer"] * {
-        color: #1A1A1A !important;
-    }
-
-    /* 7. TARJETAS DE CURSOS */
+    /* 7. TARJETAS DE CURSOS Y NRCs */
     .course-card {
-        border: 2px solid #FF6600;
-        border-radius: 12px;
-        padding: 20px;
-        background-color: #FFFFFF;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        border: 2px solid #FF6600; border-radius: 12px; padding: 20px; background-color: #FFFFFF; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
     .course-card h3 { color: #FF6600 !important; margin-top: 0; }
     .course-card p, .course-card b, .course-card strong { color: #1A1A1A !important; }
 
-    /* Recordatorio visual */
-    .reminder-box {
-        background-color: #FFF3CD;
-        border-left: 5px solid #FF6600;
-        border-radius: 6px;
-        padding: 10px 14px;
-        margin-top: 10px;
-        color: #1A1A1A !important;
-        font-size: 0.92em;
-    }
-
-    /* 8. ETIQUETAS NRC Y BOTONES */
-    .nrc-tag {
-        background-color: #FF6600;
-        color: #FFFFFF;
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-weight: bold;
-        display: inline-block;
-    }
-    /* Estilo para el NRC seleccionado */
-    .nrc-tag-selected {
-        background-color: #2ecc71 !important;
-        color: #FFFFFF !important;
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-weight: bold;
-        display: inline-block;
-        border: 2px solid #27ae60;
-    }
-    .legend-box {
-        background-color: #F1F3F5;
-        padding: 10px 14px;
-        border-radius: 6px;
-        font-size: 0.85em;
-        color: #1A1A1A;
-        border-left: 4px solid #FF6600;
-        margin-top: 6px;
-    }
-    div.stButton > button {
-        background-color: #FFFFFF !important;
-        color: #1A1A1A !important;
-        border: 2px solid #D3D3D3 !important;
-        border-radius: 8px !important;
-        width: 100% !important;
-        font-weight: bold !important;
-        padding: 12px !important; /* Más padding para el dedo en móvil */
-    }
+    .reminder-box { background-color: #FFF3CD; border-left: 5px solid #FF6600; border-radius: 6px; padding: 10px 14px; margin-top: 10px; color: #1A1A1A !important; font-size: 0.92em; }
+    .nrc-tag { background-color: #FF6600; color: #FFFFFF; padding: 6px 12px; border-radius: 6px; font-weight: bold; display: inline-block; }
+    .nrc-tag-selected { background-color: #2ecc71 !important; color: #FFFFFF !important; padding: 6px 12px; border-radius: 6px; font-weight: bold; display: inline-block; border: 2px solid #27ae60; }
+    .legend-box { background-color: #F1F3F5; padding: 10px 14px; border-radius: 6px; font-size: 0.85em; color: #1A1A1A; border-left: 4px solid #FF6600; margin-top: 6px; }
+    
+    div.stButton > button { background-color: #FFFFFF !important; color: #1A1A1A !important; border: 2px solid #D3D3D3 !important; border-radius: 8px !important; width: 100% !important; font-weight: bold !important; padding: 12px !important; }
     </style>
     """, unsafe_allow_html=True)
 
 
 def es_valor_valido(valor):
-    """Devuelve True si el valor tiene contenido real (no es NaN, vacío ni 'No asignado')."""
     if pd.isna(valor):
         return False
     return str(valor).strip() not in ("", "No asignado", "nan")
@@ -186,7 +113,6 @@ def cargar_datos():
 
 try:
     df = cargar_datos()
-    # Título adaptado a móviles (HTML simple)
     st.markdown("<h2 style='color: #FF6600 !important; text-align: center;'>🏛️ Centro de Lenguas UAX<br><small>Oferta 202660</small></h2>", unsafe_allow_html=True)
 
     t1, t2 = st.tabs(["🏠 Inicio", "🔍 Buscador"])
@@ -215,7 +141,7 @@ try:
             st.markdown(f"""
             <div style="background-color: #FFF5EE; padding: 25px; border-radius: 12px; border: 1px dashed #FF6600; margin-top: 15px;">
                 <h4 style="color: #FF6600 !important; margin-top:0;">🆘 Soporte Técnico</h4>
-                <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank'>
+                <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank' style='text-decoration:none;'>
                     <button style='width:100%; padding:14px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; font-size: 1.05em;'>
                         📝 Abrir Formulario
                     </button>
@@ -227,7 +153,7 @@ try:
         if 'rk' not in st.session_state:
             st.session_state.rk = 0
         
-        st.sidebar.markdown("<h3 style='color: #1A1A1A;'>Filtros de Búsqueda</h3>", unsafe_allow_html=True)
+        st.sidebar.markdown("<h3 style='color: #1A1A1A !important;'>Filtros de Búsqueda</h3>", unsafe_allow_html=True)
 
         nrc_input = st.sidebar.text_input("🔍 Buscar por NRC directo", key=f"nrc_{st.session_state.rk}")
         st.sidebar.divider()
