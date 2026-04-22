@@ -4,22 +4,16 @@ import pandas as pd
 # 1. Configuración Institucional
 st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
 
-# --- BLOQUEO NUCLEAR DE TEMA (FONDO BLANCO / TEXTO NEGRO) ---
 st.markdown("""
     <style>
-    /* 1. Fondo Global y Texto Base */
     html, body, [data-testid="stAppViewContainer"], .main, [data-testid="stHeader"] {
         background-color: #FFFFFF !important;
         color: #1A1A1A !important;
     }
-
-    /* 2. BARRA LATERAL (SIDEBAR) */
     [data-testid="stSidebar"], [data-testid="stSidebar"] * {
         background-color: #F8F9FA !important;
         color: #1A1A1A !important;
     }
-
-    /* 3. PESTAÑAS (TABS) */
     button[data-baseweb="tab"] p {
         color: #1A1A1A !important;
         font-weight: bold !important;
@@ -27,8 +21,6 @@ st.markdown("""
     button[data-baseweb="tab"][aria-selected="true"] p {
         color: #FF6600 !important;
     }
-
-    /* 4. ARREGLO PARA ALERTAS (st.warning / st.info) */
     div[data-testid="stAlert"] {
         background-color: #FFFFFF !important;
         border: 2px solid #FF6600 !important;
@@ -38,8 +30,6 @@ st.markdown("""
         color: #1A1A1A !important;
         fill: #FF6600 !important;
     }
-
-    /* 5. ARREGLO PARA EXPANDERS (Detalles Técnicos) */
     [data-testid="stExpander"] {
         background-color: #FFFFFF !important;
         border: 1px solid #D3D3D3 !important;
@@ -56,8 +46,6 @@ st.markdown("""
     [data-testid="stExpander"] [data-testid="stMarkdownContainer"] * {
         color: #1A1A1A !important;
     }
-
-    /* 6. TARJETAS DE CURSOS */
     .course-card {
         border: 2px solid #FF6600;
         border-radius: 12px;
@@ -68,8 +56,15 @@ st.markdown("""
     }
     .course-card h3 { color: #FF6600 !important; margin-top: 0; }
     .course-card p, .course-card b, .course-card strong { color: #1A1A1A !important; }
-
-    /* 7. ETIQUETAS NRC Y BOTONES */
+    .reminder-box {
+        background-color: #FFF3CD;
+        border-left: 5px solid #FF6600;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin-top: 10px;
+        color: #1A1A1A !important;
+        font-size: 0.92em;
+    }
     .nrc-tag {
         background-color: #FF6600;
         color: #FFFFFF;
@@ -77,6 +72,15 @@ st.markdown("""
         border-radius: 6px;
         font-weight: bold;
         display: inline-block;
+    }
+    .legend-box {
+        background-color: #F1F3F5;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-size: 0.85em;
+        color: #1A1A1A;
+        border-left: 4px solid #FF6600;
+        margin-top: 6px;
     }
     div.stButton > button {
         background-color: #FFFFFF !important;
@@ -87,24 +91,51 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+
+def es_valor_valido(valor):
+    """Devuelve True si el valor tiene contenido real (no es NaN, vacío ni 'No asignado')."""
+    if pd.isna(valor):
+        return False
+    return str(valor).strip() not in ("", "No asignado", "nan")
+
+
 @st.cache_data(ttl=60)
 def cargar_datos():
     archivo = "202660_UAX_OfertaLenguas.xlsx"
     df = pd.read_excel(archivo, dtype=str)
     df.columns = [str(c).strip() for c in df.columns]
-    
-    # Columnas a limpiar
-    cols = ['Docente', 'NombreMateria', 'MetodoInstruccion', 'Fechas', 'Weekdays', 'Status', 'Notas', 'Recordatorio', 'ClaveBanner']
-    
-    for c in cols:
+
+    # Asegurarse de que la columna Recordatorio existe (puede no existir en futuros periodos)
+    if 'Recordatorio' not in df.columns:
+        df['Recordatorio'] = ""
+
+    # Normalizar columnas de texto: NaN → cadena vacía
+    cols_texto = ['Docente', 'NombreMateria', 'MetodoInstruccion', 'Fechas',
+                  'Weekdays', 'Status', 'Notas', 'Recordatorio', 'ClaveBanner', 'ListaCruzada']
+    for c in cols_texto:
         if c in df.columns:
-            # AJUSTE SOLICITADO: Si es Notas, el valor por defecto es vacío ("")
-            # Para el resto, se mantiene "No asignado" para evitar confusiones administrativas
-            val_default = "" if c == 'Notas' else "No asignado"
-            df[c] = df[c].fillna(val_default)
-            
+            df[c] = df[c].fillna("").str.strip()
+
     df['Hora_Ref'] = df['HoraInicio'].str.strip()
     return df
+
+
+def traducir_dias(weekdays_str):
+    """Convierte la cadena de números de días al nombre completo en español."""
+    mapa = {
+        '1': 'Lunes',
+        '2': 'Martes',
+        '3': 'Miércoles',
+        '4': 'Jueves',
+        '5': 'Viernes',
+        '6': 'Sábado',
+        '7': 'Domingo'
+    }
+    if not weekdays_str or weekdays_str.strip() == "":
+        return "No especificado"
+    dias = [mapa.get(d.strip(), d.strip()) for d in weekdays_str if d.strip().isdigit()]
+    return " | ".join(dias) if dias else weekdays_str
+
 
 try:
     df = cargar_datos()
@@ -117,7 +148,7 @@ try:
         c1.metric("Idiomas", df['Lengua'].nunique())
         c2.metric("Total Grupos", df['NRC'].count())
         c3.metric("Modalidades", df['MetodoInstruccion'].nunique())
-        
+
         st.divider()
         cola, colb = st.columns([2, 1])
         with cola:
@@ -132,7 +163,7 @@ try:
             <div style="background-color: #FFF5EE; padding: 25px; border-radius: 12px; border: 1px dashed #FF6600;">
                 <h4 style="color: #FF6600 !important; margin-top:0;">🆘 Soporte</h4>
                 <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank'>
-                    <button style='width:100%; padding:12px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; width:100%;'>
+                    <button style='width:100%; padding:12px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;'>
                         Abrir Formulario
                     </button>
                 </a>
@@ -140,22 +171,20 @@ try:
             """, unsafe_allow_html=True)
 
     with t2:
-        if 'rk' not in st.session_state: st.session_state.rk = 0
+        if 'rk' not in st.session_state:
+            st.session_state.rk = 0
         st.sidebar.header("Búsqueda")
-        
-        # BUSCADOR POR NRC
+
         nrc_input = st.sidebar.text_input("🔍 Buscar por NRC", key=f"nrc_{st.session_state.rk}")
-        
         st.sidebar.divider()
-        
+
         df_res = df.copy()
         show_results = False
 
         if nrc_input:
-            df_res = df_res[df_res['NRC'].str.contains(nrc_input, na=False)]
+            df_res = df_res[df_res['NRC'].str.contains(nrc_input.strip(), na=False)]
             show_results = True
         else:
-            # FILTROS EN CASCADA COMPLETOS
             idi = st.sidebar.selectbox("1. Idioma", [""] + sorted(df['Lengua'].unique().tolist()), key=f"i{st.session_state.rk}")
             if idi:
                 df_res = df_res[df_res['Lengua'] == idi]
@@ -177,37 +206,67 @@ try:
             if df_res.empty:
                 st.warning("No se encontraron resultados para los criterios seleccionados.")
             else:
-                df_res['Key'] = df_res['ListaCruzada'].fillna(df_res['NRC'])
+                # FIX: GroupKey usa ListaCruzada sólo cuando tiene valor real
+                df_res['Key'] = df_res.apply(
+                    lambda r: r['ListaCruzada'] if es_valor_valido(r['ListaCruzada']) else r['NRC'],
+                    axis=1
+                )
+
                 for _, fila in df_res.drop_duplicates(subset=['Key']).iterrows():
-                    
-                    if fila['Recordatorio'] != "No asignado":
-                        st.warning(f"🔔 **Recordatorio:** {fila['Recordatorio']}")
+
+                    # FIX: Obtener NRCs vinculados con lógica robusta
+                    if es_valor_valido(fila['ListaCruzada']):
+                        lc = df[df['ListaCruzada'] == fila['ListaCruzada']]
+                    else:
+                        lc = df[df['NRC'] == fila['NRC']]
+
+                    # Construir contenido HTML de la tarjeta
+                    recordatorio_html = ""
+                    if es_valor_valido(fila['Recordatorio']):
+                        recordatorio_html = f"""
+                        <div class="reminder-box">
+                            🔔 <strong>Recordatorio:</strong> {fila['Recordatorio']}
+                        </div>"""
 
                     st.markdown(f"""
                     <div class="course-card">
                         <h3>{fila['NombreMateria']}</h3>
-                        <p><b>Docente:</b> {fila['Docente']}<br>
-                        <b>Horario:</b> {fila['HoraInicio']} - {fila['HoraFin']}</p>
+                        <p>
+                            <b>Docente:</b> {fila['Docente']}<br>
+                            <b>Horario:</b> {fila['HoraInicio']} – {fila['HoraFin']}
+                        </p>
+                        {recordatorio_html}
                     </div>
                     """, unsafe_allow_html=True)
-                    
-                    lc = df[df['ListaCruzada'] == fila['ListaCruzada']] if pd.notna(fila['ListaCruzada']) and fila['ListaCruzada'] != "No asignado" else df[df['NRC'] == fila['NRC']]
-                    cols = st.columns(min(len(lc), 4))
+
+                    # NRC tags
+                    cols_nrc = st.columns(min(len(lc), 4))
                     for i, (_, n) in enumerate(lc.iterrows()):
-                        with cols[i % 4]:
+                        with cols_nrc[i % 4]:
                             st.markdown(f"<div class='nrc-tag'>NRC {n['NRC']}</div>", unsafe_allow_html=True)
                             st.markdown(f"<span style='color:#FF6600; font-weight:800;'>{n['ClaveBanner']}</span>", unsafe_allow_html=True)
 
+                    # Detalles técnicos
                     with st.expander("🔍 Detalles Técnicos"):
                         c_a, c_b = st.columns(2)
                         with c_a:
                             st.write(f"**Créditos académicos:** {fila['CreditosAcademicos']}")
                             st.write(f"**Periodo:** {fila['Fechas']}")
+                            st.write(f"**Estatus:** {fila['Status']}")
                         with c_b:
-                            st.write(f"**Días:** {fila['Weekdays']}")
-                            st.markdown("<div style='background-color:#F1F3F5; padding:10px; border-radius:5px; font-size:0.8em; color:#1A1A1A;'>1:Lu | 2:Ma | 3:Mi | 4:Ju | 5:Vi | 6:Sa | 7:Do</div>", unsafe_allow_html=True)
-                            # Aquí se mostrará "Notas: " si está vacío
-                            st.info(f"**Notas:** {fila['Notas']}")
+                            dias_traducidos = traducir_dias(fila['Weekdays'])
+                            st.write(f"**Días de clase:** {dias_traducidos}")
+                            st.markdown("""
+                            <div class='legend-box'>
+                                <strong>Clave de días:</strong><br>
+                                1 = Lunes &nbsp;|&nbsp; 2 = Martes &nbsp;|&nbsp; 3 = Miércoles &nbsp;|&nbsp; 4 = Jueves<br>
+                                5 = Viernes &nbsp;|&nbsp; 6 = Sábado &nbsp;|&nbsp; 7 = Domingo
+                            </div>
+                            """, unsafe_allow_html=True)
+
+                        # FIX: Notas sólo se muestra si tiene contenido real
+                        if es_valor_valido(fila['Notas']):
+                            st.info(f"📌 **Notas:** {fila['Notas']}")
 
         st.sidebar.divider()
         if st.sidebar.button("🔄 Reiniciar"):
