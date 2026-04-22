@@ -198,7 +198,8 @@ try:
                         with c_b:
                             st.write(f"**Días:** {fila['Weekdays']}")
                             st.markdown("<div style='background-color:#F1F3F5; padding:10px; border-radius:5px; font-size:0.8em; color:#1A1A1A;'>1:Lu | 2:Ma | 3:Mi | 4:Ju | 5:Vi | 6:Sa | 7:Do</div>", unsafe_allow_html=True)
-                        st.info(f"**Notas:** {fila['Notas']}")
+                            # Aquí se mostrará "Notas: " si está vacío
+                            st.info(f"**Notas:** {fila['Notas']}")
 
         st.sidebar.divider()
         if st.sidebar.button("🔄 Reiniciar"):
