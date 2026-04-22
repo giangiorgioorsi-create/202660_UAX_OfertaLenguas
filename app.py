@@ -225,23 +225,25 @@ try:
                         </div>
                         """, unsafe_allow_html=True)
 
-                    # NRC tags (solo el NRC, sin Clave Banner)
-                    cols_nrc = st.columns(min(len(lc), 4))
-                    for i, (_, n) in enumerate(lc.iterrows()):
-                        with cols_nrc[i % 4]:
-                            st.markdown(f"<div class='nrc-tag'>NRC {n['NRC']}</div>", unsafe_allow_html=True)
-
-                    # Detalles técnicos
+                    # Detalles técnicos (NRC y Clave Banner van dentro)
                     with st.expander("🔍 Detalles Técnicos"):
                         c_a, c_b = st.columns(2)
                         with c_a:
                             st.write(f"**Créditos académicos:** {fila['CreditosAcademicos']}")
                             st.write(f"**Periodo:** {fila['Fechas']}")
                             st.write(f"**Estatus:** {fila['Status']}")
-                            # Clave Banner de cada NRC vinculado
-                            st.markdown("**Clave(s) Banner:**")
+                            st.divider()
+                            # NRC + Clave Banner en la misma línea
+                            st.markdown("**NRC(s) para inscripción:**")
                             for _, n in lc.iterrows():
-                                st.markdown(f"<span style='color:#FF6600; font-weight:800;'>{n['ClaveBanner']}</span>", unsafe_allow_html=True)
+                                st.markdown(
+                                    f"<div style='display:flex; align-items:center; gap:10px; margin-bottom:6px;'>"
+                                    f"<div class='nrc-tag'>NRC {n['NRC']}</div>"
+                                    f"<span style='color:#555; font-size:0.9em;'>Clave Banner: "
+                                    f"<strong style='color:#FF6600;'>{n['ClaveBanner']}</strong></span>"
+                                    f"</div>",
+                                    unsafe_allow_html=True
+                                )
                         with c_b:
                             dias_raw = fila['Weekdays'] if fila['Weekdays'] else "No especificado"
                             st.markdown(f"**Días de sesión:** <span style='color:#2ecc71; font-weight:600;'>{dias_raw}</span>", unsafe_allow_html=True)
