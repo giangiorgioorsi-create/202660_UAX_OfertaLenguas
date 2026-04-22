@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # 1. Configuración Institucional
-st.set_page_config(page_title="Portal de Oferta Académica 2026-60", layout="wide")
+st.set_page_config(page_title="Página con la oferta académica de Lenguas 2026-60", layout="wide")
 
 # --- BLOQUEO DE TEMA (FONDO BLANCO / TEXTO OSCURO) ---
 st.markdown("""
@@ -65,10 +65,10 @@ try:
     tab_inicio, tab_buscar = st.tabs(["🏠 Inicio y Guía", "🔍 Buscador de Cursos"])
 
     with tab_inicio:
-        st.subheader("Bienvenido al Portal de Consulta")
+        st.subheader("Bienvenid@ al portal de consulta")
         c1, c2, c3 = st.columns(3)
-        c1.metric("Idiomas Ofertados", df['Lengua'].nunique())
-        c2.metric("Total de Grupos", df['NRC'].count())
+        c1.metric("Idiomas ofertados", df['Lengua'].nunique())
+        c2.metric("Total de grupos", df['NRC'].count())
         c3.metric("Modalidades", df['MetodoInstruccion'].nunique())
 
         st.divider()
@@ -77,12 +77,12 @@ try:
 
         with col_info:
             st.markdown("""
-            ### 📝 Guía Rápida de Inscripción
-            1. **Encuentra tu curso:** Ve a la pestaña 'Buscador de Cursos'.
-            2. **Filtra con cuidado:** Selecciona idioma, materia y horario.
-            3. **Verifica el NRC:** Toma nota del número de 5 dígitos (NRC) y la Clave Banner.
-            4. **Listas Cruzadas:** Si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
-            5. **Planifica e Inscribe en Banner:** Realiza el proceso en el SIU.
+            ### 📝 Guía Rápida de planificación/inscripción
+            1. **Encuentra tu curso:** ve a la pestaña 'Buscador de Cursos'.
+            2. **Filtra con cuidado:** selecciona idioma, materia y horario.
+            3. **Verifica el NRC:** toma nota del número de 5 dígitos (NRC) y la Clave Banner.
+            4. **Listas Cruzadas:** si tu curso tiene varios NRC, elige el que corresponde a tu plan de estudios.
+            5. **Planifica e inscribe en Banner:** realiza el proceso en el SIU.
             """)
             
             with st.expander("✨ Un mensaje para tu camino"):
@@ -98,11 +98,11 @@ try:
                 <p>Si tienes problemas con un NRC, dudas de niveles o requieres atención personalizada:</p>
                 <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=l2uNDV3gDEa2tRm30CD0ep7ari_US8VMvJq8b3TFkrRUNlRKSEpGRENUVUk2MFJWTFJaOEU4QzEyOS4u' target='_blank' style='text-decoration:none;'>
                     <button style='width:100%; padding:12px; background-color:#FF6600; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;'>
-                        📝 Formulario de Atención
+                        📝 Formulario de atención
                     </button>
                 </a>
                 <br><br>
-                <p style='font-size:0.8em; text-align:center;'>Horario de atención de la Coordinación:<br>Lunes a Viernes 08:30 - 19:00 hrs</p>
+                <p style='font-size:0.8em; text-align:center;'>Horario de atención de la Coordinación:<br>Lunes a Viernes 08:30 - 14:30 y 16:30 - 19:00 hrs</p>
             </div>
             """, unsafe_allow_html=True)
 
