@@ -193,7 +193,7 @@ try:
                     with st.expander("🔍 Detalles Técnicos"):
                         c_a, c_b = st.columns(2)
                         with c_a:
-                            st.write(f"**Créditos:** {fila['CreditosAcademicos']}")
+                            st.write(f"**Créditos académicos:** {fila['CreditosAcademicos']}")
                             st.write(f"**Periodo:** {fila['Fechas']}")
                         with c_b:
                             st.write(f"**Días:** {fila['Weekdays']}")
