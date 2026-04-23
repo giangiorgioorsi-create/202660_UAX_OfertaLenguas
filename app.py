@@ -177,22 +177,28 @@ try:
             df_res = df_res[df_res['NRC'].str.contains(nrc_input.strip(), na=False)]
             show_results = True
         else:
+            # --- MODIFIED CODE: Incremental Filtering Logic ---
             idi = st.sidebar.selectbox("1. Idioma", [""] + sorted(df['Lengua'].unique().tolist()), key=f"i{st.session_state.rk}")
             if idi:
                 df_res = df_res[df_res['Lengua'] == idi]
+                show_results = True # Show results as soon as language is selected
+                
                 mat = st.sidebar.selectbox("2. Asignatura", [""] + sorted(df_res['NombreMateria'].unique().tolist()), key=f"m{st.session_state.rk}")
                 if mat:
                     df_res = df_res[df_res['NombreMateria'] == mat]
+                    
                     met = st.sidebar.selectbox("3. Modalidad", [""] + sorted(df_res['MetodoInstruccion'].unique().tolist()), key=f"e{st.session_state.rk}")
                     if met:
                         df_res = df_res[df_res['MetodoInstruccion'] == met]
+                        
                         fec = st.sidebar.selectbox("4. Periodo", [""] + sorted(df_res['Fechas'].unique().tolist()), key=f"f{st.session_state.rk}")
                         if fec:
                             df_res = df_res[df_res['Fechas'] == fec]
+                            
                             hor = st.sidebar.selectbox("5. Horario", [""] + sorted(df_res['Hora_Ref'].unique().tolist()), key=f"h{st.session_state.rk}")
                             if hor:
                                 df_res = df_res[df_res['Hora_Ref'] == hor]
-                                show_results = True
+            # --- END OF CHANGES ---
 
         if show_results:
             if df_res.empty:
