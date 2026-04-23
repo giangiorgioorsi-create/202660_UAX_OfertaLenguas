@@ -167,4 +167,118 @@ try:
             st.session_state.rk = 0
         st.sidebar.header("Búsqueda")
 
-        nrc_input =
+        # --- NEW/MODIFIED CODE: Fixed Syntax ---
+        nrc_input = st.sidebar.text_input("🔍 Buscar por NRC", key=f"nrc_{st.session_state.rk}")
+        # --- END OF CHANGES ---
+        st.sidebar.divider()
+
+        df_res = df.copy()
+        show_results = False
+
+        if nrc_input:
+            df_res = df_res[df_res['NRC'].str.contains(nrc_input.strip(), na=False)]
+            show_results = True
+        else:
+            idi = st.sidebar.selectbox("1. Idioma", [""] + sorted(df['Lengua'].unique().tolist()), key=f"i{st.session_state.rk}")
+            if idi:
+                df_res = df_res[df_res['Lengua'] == idi]
+                show_results = True
+                
+                mat = st.sidebar.selectbox("2. Asignatura", [""] + sorted(df_res['NombreMateria'].unique().tolist()), key=f"m{st.session_state.rk}")
+                if mat:
+                    df_res = df_res[df_res['NombreMateria'] == mat]
+                
+                met = st.sidebar.selectbox("3. Modalidad", [""] + sorted(df_res['MetodoInstruccion'].unique().tolist()), key=f"e{st.session_state.rk}")
+                if met:
+                    df_res = df_res[df_res['MetodoInstruccion'] == met]
+                
+                fec = st.sidebar.selectbox("4. Periodo", [""] + sorted(df_res['Fechas'].unique().tolist()), key=f"f{st.session_state.rk}")
+                if fec:
+                    df_res = df_res[df_res['Fechas'] == fec]
+                
+                hor = st.sidebar.selectbox("5. Horario", [""] + sorted(df_res['Hora_Ref'].unique().tolist()), key=f"h{st.session_state.rk}")
+                if hor:
+                    df_res = df_res[df_res['Hora_Ref'] == hor]
+
+        if show_results:
+            if df_res.empty:
+                st.warning("No se encontraron resultados para los criterios seleccionados.")
+            else:
+                nrcs_seleccionados = set(df_res['NRC'].unique())
+
+                df_res['Key'] = df_res.apply(
+                    lambda r: r['ListaCruzada'] if es_valor_valido(r['ListaCruzada']) else r['NRC'],
+                    axis=1
+                )
+
+                for _, fila in df_res.drop_duplicates(subset=['Key']).iterrows():
+
+                    if es_valor_valido(fila['ListaCruzada']):
+                        lc = df[df['ListaCruzada'] == fila['ListaCruzada']]
+                    else:
+                        lc = df[df['NRC'] == fila['NRC']]
+
+                    st.markdown(f"""
+                    <div class="course-card">
+                        <h3>{fila['NombreMateria']}</h3>
+                        <p>
+                            <b>Docente:</b> {fila['Docente']}<br>
+                            <b>Horario:</b> {fila['HoraInicio']} – {fila['HoraFin']}
+                        </p>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+                    if es_valor_valido(fila['Recordatorio']):
+                        st.markdown(f"""
+                        <div class="reminder-box">
+                            🔔 <strong>Recordatorio:</strong> {fila['Recordatorio']}
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                    with st.expander("🔍 Detalles Técnicos"):
+                        c_a, c_b = st.columns(2)
+                        with c_a:
+                            # Safely get credits column
+                            creditos = fila.get('CréditosAcadémicos', fila.get('CreditosAcademicos', 'N/A'))
+                            st.write(f"**Créditos académicos:** {creditos}")
+                            st.write(f"**Periodo:** {fila['Fechas']}")
+                            st.write(f"**Estatus:** {fila['Status']}")
+                            st.divider()
+                            st.markdown("**NRC(s) para inscripción:**")
+                            
+                            for _, n in lc.iterrows():
+                                es_el_buscado = n['NRC'] in nrcs_seleccionados
+                                tag_class = "nrc-tag-selected" if es_el_buscado else "nrc-tag"
+                                label_seleccion = " <span style='color:#27ae60; font-weight:bold; font-size:0.85em;'>← Tu selección</span>" if es_el_buscado else ""
+                                
+                                st.markdown(f"""
+                                    <div style='display:flex; align-items:center; gap:10px; margin-bottom:10px;'>
+                                        <div class='{tag_class}'>NRC {n['NRC']}</div>
+                                        <div style='display:flex; flex-direction:column;'>
+                                            <span style='color:#555; font-size:0.9em;'>Clave Banner: <strong style='color:#FF6600;'>{n['ClaveBanner']}</strong>{label_seleccion}</span>
+                                            <span style='color:#888; font-size:0.75em; font-style:italic;'>{n['NombreMateria']}</span>
+                                        </div>
+                                    </div>
+                                """, unsafe_allow_html=True)
+
+                        with c_b:
+                            dias_raw = fila['Weekdays'] if fila['Weekdays'] else "No especificado"
+                            st.markdown(f"**Días de sesión:** <span style='color:#2ecc71; font-weight:600;'>{dias_raw}</span>", unsafe_allow_html=True)
+                            st.markdown("""
+                            <div class='legend-box'>
+                                <strong>Guía de nomenclatura de días:</strong><br>
+                                1: Lunes | 2: Martes | 3: Miércoles | 4: Jueves<br>
+                                5: Viernes | 6: Sábado | 7: Domingo
+                            </div>
+                            """, unsafe_allow_html=True)
+
+                        if es_valor_valido(fila['Notas']):
+                            st.info(f"📌 **Notas:** {fila['Notas']}")
+
+        st.sidebar.divider()
+        if st.sidebar.button("🔄 Reiniciar"):
+            st.session_state.rk += 1
+            st.rerun()
+
+except Exception as e:
+    st.error(f"Error: {e}")
