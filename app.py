@@ -177,27 +177,27 @@ try:
             df_res = df_res[df_res['NRC'].str.contains(nrc_input.strip(), na=False)]
             show_results = True
         else:
-            # --- MODIFIED CODE: Incremental Filtering Logic ---
+            # --- NEW/MODIFIED CODE: Incremental Non-Nested Filters ---
             idi = st.sidebar.selectbox("1. Idioma", [""] + sorted(df['Lengua'].unique().tolist()), key=f"i{st.session_state.rk}")
             if idi:
                 df_res = df_res[df_res['Lengua'] == idi]
-                show_results = True # Show results as soon as language is selected
+                show_results = True
                 
                 mat = st.sidebar.selectbox("2. Asignatura", [""] + sorted(df_res['NombreMateria'].unique().tolist()), key=f"m{st.session_state.rk}")
                 if mat:
                     df_res = df_res[df_res['NombreMateria'] == mat]
-                    
-                    met = st.sidebar.selectbox("3. Modalidad", [""] + sorted(df_res['MetodoInstruccion'].unique().tolist()), key=f"e{st.session_state.rk}")
-                    if met:
-                        df_res = df_res[df_res['MetodoInstruccion'] == met]
-                        
-                        fec = st.sidebar.selectbox("4. Periodo", [""] + sorted(df_res['Fechas'].unique().tolist()), key=f"f{st.session_state.rk}")
-                        if fec:
-                            df_res = df_res[df_res['Fechas'] == fec]
-                            
-                            hor = st.sidebar.selectbox("5. Horario", [""] + sorted(df_res['Hora_Ref'].unique().tolist()), key=f"h{st.session_state.rk}")
-                            if hor:
-                                df_res = df_res[df_res['Hora_Ref'] == hor]
+                
+                met = st.sidebar.selectbox("3. Modalidad", [""] + sorted(df_res['MetodoInstruccion'].unique().tolist()), key=f"e{st.session_state.rk}")
+                if met:
+                    df_res = df_res[df_res['MetodoInstruccion'] == met]
+                
+                fec = st.sidebar.selectbox("4. Periodo", [""] + sorted(df_res['Fechas'].unique().tolist()), key=f"f{st.session_state.rk}")
+                if fec:
+                    df_res = df_res[df_res['Fechas'] == fec]
+                
+                hor = st.sidebar.selectbox("5. Horario", [""] + sorted(df_res['Hora_Ref'].unique().tolist()), key=f"h{st.session_state.rk}")
+                if hor:
+                    df_res = df_res[df_res['Hora_Ref'] == hor]
             # --- END OF CHANGES ---
 
         if show_results:
@@ -254,32 +254,4 @@ try:
                                 
                                 st.markdown(
                                     f"<div style='display:flex; align-items:center; gap:10px; margin-bottom:10px;'>"
-                                    f"<div class='{tag_class}'>NRC {n['NRC']}</div>"
-                                    f"<div style='display:flex; flex-direction:column;'>"
-                                    f"<span style='color:#555; font-size:0.9em;'>Clave Banner: <strong style='color:#FF6600;'>{n['ClaveBanner']}</strong>{label_seleccion}</span>"
-                                    f"<span style='color:#888; font-size:0.75em; font-style:italic;'>{n['NombreMateria']}</span>"
-                                    f"</div>"
-                                    f"</div>",
-                                    unsafe_allow_html=True
-                                )
-                        with c_b:
-                            dias_raw = fila['Weekdays'] if fila['Weekdays'] else "No especificado"
-                            st.markdown(f"**Días de sesión:** <span style='color:#2ecc71; font-weight:600;'>{dias_raw}</span>", unsafe_allow_html=True)
-                            st.markdown("""
-                            <div class='legend-box'>
-                                <strong>Guía de nomenclatura de días:</strong><br>
-                                1: Lunes | 2: Martes | 3: Miércoles | 4: Jueves<br>
-                                5: Viernes | 6: Sábado | 7: Domingo
-                            </div>
-                            """, unsafe_allow_html=True)
-
-                        if es_valor_valido(fila['Notas']):
-                            st.info(f"📌 **Notas:** {fila['Notas']}")
-
-        st.sidebar.divider()
-        if st.sidebar.button("🔄 Reiniciar"):
-            st.session_state.rk += 1
-            st.rerun()
-
-except Exception as e:
-    st.error(f"Error: {e}")
+                                    f"<div class
