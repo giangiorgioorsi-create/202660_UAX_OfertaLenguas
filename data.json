@@ -1,751 +1,23 @@
 {
-  "generado": "2026-07-08T20:16:26.696994",
+  "generado": "2026-07-08T20:24:46.764077",
   "secciones": [
     {
       "key": "ingles",
       "label": "Inglés",
       "icono": "🇬🇧",
       "colorMode": "hora",
-      "mostrarMateria": false,
+      "mostrarMateria": true,
       "inicioClases": "11 de agosto",
       "finClases": "26 de noviembre",
       "niveles": [
         {
-          "nombre": "3 Intermediate A",
-          "cefr": "",
-          "filas": [
-            {
-              "nrc": "40563",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "SALDAÑA FELIX MIRIAM",
-              "horaInicio": "7:00 AM",
-              "horaFin": "8:27 AM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40565",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Ortiz Romero Jaime Rommel",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40567",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Leana Silva Lilian",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40569",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Rivera Rojas Abryl Ninel",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40571",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Alarcón González José Fernando",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40573",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40585",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Contreras González Guadalupe",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40587",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Almeida Sánchez Arturo Miguel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40589",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Rivas López Ricardo",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40591",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40593",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Alarcón González José Fernando",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40595",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Cházaro Vitela Caesar",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40611",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            }
-          ]
-        },
-        {
-          "nombre": "4 Intermediate B",
-          "cefr": "",
-          "filas": [
-            {
-              "nrc": "40564",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "SALDAÑA FELIX MIRIAM",
-              "horaInicio": "7:00 AM",
-              "horaFin": "8:27 AM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40566",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Ortiz Romero Jaime Rommel",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40568",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Leana Silva Lilian",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40570",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Rivera Rojas Abryl Ninel",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40572",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Alarcón González José Fernando",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40574",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40586",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Contreras González Guadalupe",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40588",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Almeida Sánchez Arturo Miguel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40590",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Rivas López Ricardo",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40592",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40594",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Alarcón González José Fernando",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40596",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Cházaro Vitela Caesar",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40612",
-              "claveBanner": "CLINRIN4",
-              "materia": "4 Intermediate B",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            }
-          ]
-        },
-        {
-          "nombre": "1 Pre Intermediate A",
-          "cefr": "",
-          "filas": [
-            {
-              "nrc": "40525",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Vela Osorio Fernando",
-              "horaInicio": "7:00 AM",
-              "horaFin": "8:27 AM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40527",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Contreras González Guadalupe",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40529",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Rivas López Ricardo",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40531",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Cházaro Vitela Caesar",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40539",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Ortiz Romero Jaime Rommel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40541",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Rivera Rojas Abryl Ninel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40543",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Ladrón de Guevara Coutiño Armando",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40551",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Lozada Vega Silvia Gabriela",
-              "horaInicio": "5:30 PM",
-              "horaFin": "6:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40555",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Ladrón de Guevara Coutiño Armando",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            }
-          ]
-        },
-        {
-          "nombre": "2 Pre Intermediate B",
-          "cefr": "",
-          "filas": [
-            {
-              "nrc": "40526",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Vela Osorio Fernando",
-              "horaInicio": "7:00 AM",
-              "horaFin": "8:27 AM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40528",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Contreras González Guadalupe",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40530",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Rivas López Ricardo",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40532",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Cházaro Vitela Caesar",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40540",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Ortiz Romero Jaime Rommel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40542",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Rivera Rojas Abryl Ninel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40544",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Ladrón de Guevara Coutiño Armando",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40552",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Lozada Vega Silvia Gabriela",
-              "horaInicio": "5:30 PM",
-              "horaFin": "6:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40556",
-              "claveBanner": "CLINRIN2",
-              "materia": "2 Pre Intermediate B",
-              "docente": "Ladrón de Guevara Coutiño Armando",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            }
-          ]
-        },
-        {
-          "nombre": "0A Propedéutico Elementary A",
-          "cefr": "",
+          "nombre": "Nivel 0A",
+          "cefr": "Pre-A1",
           "filas": [
             {
               "nrc": "40493",
               "claveBanner": "CLINRIN0A",
-              "materia": "0A Propedéutico Elementary A",
+              "materia": "Propedéutico Elementary A",
               "docente": "Viñas Viñas Ana María",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -761,7 +33,7 @@
             {
               "nrc": "40495",
               "claveBanner": "CLINRIN0A",
-              "materia": "0A Propedéutico Elementary A",
+              "materia": "Propedéutico Elementary B",
               "docente": "Hernández Espinosa Raquel Aurora",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -777,7 +49,7 @@
             {
               "nrc": "40501",
               "claveBanner": "CLINRIN0A",
-              "materia": "0A Propedéutico Elementary A",
+              "materia": "Propedéutico Elementary A",
               "docente": "Viñas Viñas Ana María",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -793,7 +65,7 @@
             {
               "nrc": "40503",
               "claveBanner": "CLINRIN0A",
-              "materia": "0A Propedéutico Elementary A",
+              "materia": "Propedéutico Elementary B",
               "docente": "Hernández Espinosa Raquel Aurora",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -809,7 +81,7 @@
             {
               "nrc": "40505",
               "claveBanner": "CLINRIN0A",
-              "materia": "0A Propedéutico Elementary A",
+              "materia": "Propedéutico Elementary A",
               "docente": "Leano Fernández Dafne Ivonne",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -825,7 +97,7 @@
             {
               "nrc": "40513",
               "claveBanner": "CLINRIN0A",
-              "materia": "0A Propedéutico Elementary A",
+              "materia": "Propedéutico Elementary B",
               "docente": "Leano Fernández Dafne Ivonne",
               "horaInicio": "5:30 PM",
               "horaFin": "6:57 PM",
@@ -841,7 +113,7 @@
             {
               "nrc": "40517",
               "claveBanner": "CLINRIN0A",
-              "materia": "0A Propedéutico Elementary A",
+              "materia": "Propedéutico Elementary A",
               "docente": "Ortíz Esteban Imelda",
               "horaInicio": "7:00 PM",
               "horaFin": "8:27 PM",
@@ -857,13 +129,13 @@
           ]
         },
         {
-          "nombre": "0B Propedéutico Elementary B",
-          "cefr": "",
+          "nombre": "Nivel 0B",
+          "cefr": "Pre-A1",
           "filas": [
             {
               "nrc": "40494",
               "claveBanner": "CLINRIN0B",
-              "materia": "0B Propedéutico Elementary B",
+              "materia": "Propedéutico Elementary A",
               "docente": "Viñas Viñas Ana María",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -879,7 +151,7 @@
             {
               "nrc": "40496",
               "claveBanner": "CLINRIN0B",
-              "materia": "0B Propedéutico Elementary B",
+              "materia": "Propedéutico Elementary B",
               "docente": "Hernández Espinosa Raquel Aurora",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -895,7 +167,7 @@
             {
               "nrc": "40502",
               "claveBanner": "CLINRIN0B",
-              "materia": "0B Propedéutico Elementary B",
+              "materia": "Propedéutico Elementary A",
               "docente": "Viñas Viñas Ana María",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -911,7 +183,7 @@
             {
               "nrc": "40504",
               "claveBanner": "CLINRIN0B",
-              "materia": "0B Propedéutico Elementary B",
+              "materia": "Propedéutico Elementary B",
               "docente": "Hernández Espinosa Raquel Aurora",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -927,7 +199,7 @@
             {
               "nrc": "40506",
               "claveBanner": "CLINRIN0B",
-              "materia": "0B Propedéutico Elementary B",
+              "materia": "Propedéutico Elementary A",
               "docente": "Leano Fernández Dafne Ivonne",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -943,7 +215,7 @@
             {
               "nrc": "40514",
               "claveBanner": "CLINRIN0B",
-              "materia": "0B Propedéutico Elementary B",
+              "materia": "Propedéutico Elementary B",
               "docente": "Leano Fernández Dafne Ivonne",
               "horaInicio": "5:30 PM",
               "horaFin": "6:57 PM",
@@ -959,7 +231,7 @@
             {
               "nrc": "40518",
               "claveBanner": "CLINRIN0B",
-              "materia": "0B Propedéutico Elementary B",
+              "materia": "Propedéutico Elementary B",
               "docente": "Ortíz Esteban Imelda",
               "horaInicio": "7:00 PM",
               "horaFin": "8:27 PM",
@@ -975,13 +247,741 @@
           ]
         },
         {
-          "nombre": "5 Upper Intermediate A",
-          "cefr": "",
+          "nombre": "Nivel 1",
+          "cefr": "A2",
+          "filas": [
+            {
+              "nrc": "40525",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Vela Osorio Fernando",
+              "horaInicio": "7:00 AM",
+              "horaFin": "8:27 AM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40527",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Contreras González Guadalupe",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40529",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Rivas López Ricardo",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40531",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Cházaro Vitela Caesar",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40539",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Ortiz Romero Jaime Rommel",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40541",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Rivera Rojas Abryl Ninel",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40543",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Ladrón de Guevara Coutiño Armando",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40551",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Lozada Vega Silvia Gabriela",
+              "horaInicio": "5:30 PM",
+              "horaFin": "6:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40555",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Ladrón de Guevara Coutiño Armando",
+              "horaInicio": "7:00 PM",
+              "horaFin": "8:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 2",
+          "cefr": "A2",
+          "filas": [
+            {
+              "nrc": "40526",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Vela Osorio Fernando",
+              "horaInicio": "7:00 AM",
+              "horaFin": "8:27 AM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40528",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Contreras González Guadalupe",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40530",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Rivas López Ricardo",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40532",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Cházaro Vitela Caesar",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40540",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Ortiz Romero Jaime Rommel",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40542",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Rivera Rojas Abryl Ninel",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40544",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Ladrón de Guevara Coutiño Armando",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40552",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Lozada Vega Silvia Gabriela",
+              "horaInicio": "5:30 PM",
+              "horaFin": "6:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40556",
+              "claveBanner": "CLINRIN2",
+              "materia": "Pre Intermediate B",
+              "docente": "Ladrón de Guevara Coutiño Armando",
+              "horaInicio": "7:00 PM",
+              "horaFin": "8:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 3",
+          "cefr": "B1",
+          "filas": [
+            {
+              "nrc": "40563",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "SALDAÑA FELIX MIRIAM",
+              "horaInicio": "7:00 AM",
+              "horaFin": "8:27 AM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40565",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Ortiz Romero Jaime Rommel",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40567",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Leana Silva Lilian",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40569",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Rivera Rojas Abryl Ninel",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40571",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Alarcón González José Fernando",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40573",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Loya Vite Adriana Guadalupe",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40585",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Contreras González Guadalupe",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40587",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Almeida Sánchez Arturo Miguel",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40589",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Rivas López Ricardo",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40591",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Loya Vite Adriana Guadalupe",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40593",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Alarcón González José Fernando",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40595",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Cházaro Vitela Caesar",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40611",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Loya Vite Adriana Guadalupe",
+              "horaInicio": "7:00 PM",
+              "horaFin": "8:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 4",
+          "cefr": "B1",
+          "filas": [
+            {
+              "nrc": "40564",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "SALDAÑA FELIX MIRIAM",
+              "horaInicio": "7:00 AM",
+              "horaFin": "8:27 AM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40566",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Ortiz Romero Jaime Rommel",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40568",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Leana Silva Lilian",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40570",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Rivera Rojas Abryl Ninel",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40572",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Alarcón González José Fernando",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40574",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Loya Vite Adriana Guadalupe",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40586",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Contreras González Guadalupe",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40588",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Almeida Sánchez Arturo Miguel",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40590",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Rivas López Ricardo",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40592",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Loya Vite Adriana Guadalupe",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40594",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Alarcón González José Fernando",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40596",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Cházaro Vitela Caesar",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40612",
+              "claveBanner": "CLINRIN4",
+              "materia": "Intermediate B",
+              "docente": "Loya Vite Adriana Guadalupe",
+              "horaInicio": "7:00 PM",
+              "horaFin": "8:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "28-SEP-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 5",
+          "cefr": "B2",
           "filas": [
             {
               "nrc": "40619",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Almeida Sánchez Arturo Miguel",
               "horaInicio": "7:00 AM",
               "horaFin": "8:27 AM",
@@ -997,7 +997,7 @@
             {
               "nrc": "40621",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Libreros Cortez Héctor",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1013,7 +1013,7 @@
             {
               "nrc": "40623",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Hernández Ortega Karina Iveth",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1029,7 +1029,7 @@
             {
               "nrc": "40625",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Huerta Rodríguez César Samir",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1045,7 +1045,7 @@
             {
               "nrc": "40627",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Bustamante Herrera Guillermo",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1061,7 +1061,7 @@
             {
               "nrc": "40629",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Levi Alexia",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1077,7 +1077,7 @@
             {
               "nrc": "40631",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Ortega Sánchez Pablo Camilo",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1093,7 +1093,7 @@
             {
               "nrc": "40641",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Libreros Cortez Héctor",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1109,7 +1109,7 @@
             {
               "nrc": "40643",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Hernández Ortega Karina Iveth",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1125,7 +1125,7 @@
             {
               "nrc": "40645",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Huerta Rodríguez César Samir",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1141,7 +1141,7 @@
             {
               "nrc": "40647",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Leana Silva Lilian",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1157,7 +1157,7 @@
             {
               "nrc": "40649",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Bustamante Herrera Guillermo",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1173,7 +1173,7 @@
             {
               "nrc": "40651",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Levi Alexia",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1189,7 +1189,7 @@
             {
               "nrc": "40653",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Ortega Sánchez Pablo Camilo",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1205,7 +1205,7 @@
             {
               "nrc": "40669",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Lozada Vega Silvia Gabriela",
               "horaInicio": "7:00 PM",
               "horaFin": "8:27 PM",
@@ -1221,7 +1221,7 @@
             {
               "nrc": "40673",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Bustamante Herrera Guillermo",
               "horaInicio": "7:00 PM",
               "horaFin": "8:27 PM",
@@ -1237,7 +1237,7 @@
             {
               "nrc": "40675",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Ortíz Esteban Imelda",
               "horaInicio": "8:30 PM",
               "horaFin": "9:57 PM",
@@ -1253,13 +1253,13 @@
           ]
         },
         {
-          "nombre": "6 Upper Intermediate B",
-          "cefr": "",
+          "nombre": "Nivel 6",
+          "cefr": "B2",
           "filas": [
             {
               "nrc": "40620",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Almeida Sánchez Arturo Miguel",
               "horaInicio": "7:00 AM",
               "horaFin": "8:27 AM",
@@ -1275,7 +1275,7 @@
             {
               "nrc": "40622",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Libreros Cortez Héctor",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1291,7 +1291,7 @@
             {
               "nrc": "40624",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Hernández Ortega Karina Iveth",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1307,7 +1307,7 @@
             {
               "nrc": "40626",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Huerta Rodríguez César Samir",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1323,7 +1323,7 @@
             {
               "nrc": "40628",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Bustamante Herrera Guillermo",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1339,7 +1339,7 @@
             {
               "nrc": "40630",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Levi Alexia",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1355,7 +1355,7 @@
             {
               "nrc": "40632",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Ortega Sánchez Pablo Camilo",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1371,7 +1371,7 @@
             {
               "nrc": "40642",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Libreros Cortez Héctor",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1387,7 +1387,7 @@
             {
               "nrc": "40644",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Hernández Ortega Karina Iveth",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1403,7 +1403,7 @@
             {
               "nrc": "40646",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Huerta Rodríguez César Samir",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1419,7 +1419,7 @@
             {
               "nrc": "40648",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Leana Silva Lilian",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1435,7 +1435,7 @@
             {
               "nrc": "40650",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Bustamante Herrera Guillermo",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1451,7 +1451,7 @@
             {
               "nrc": "40652",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Levi Alexia",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1467,7 +1467,7 @@
             {
               "nrc": "40654",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Ortega Sánchez Pablo Camilo",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1483,7 +1483,7 @@
             {
               "nrc": "40670",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Lozada Vega Silvia Gabriela",
               "horaInicio": "7:00 PM",
               "horaFin": "8:27 PM",
@@ -1499,7 +1499,7 @@
             {
               "nrc": "40674",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Bustamante Herrera Guillermo",
               "horaInicio": "7:00 PM",
               "horaFin": "8:27 PM",
@@ -1515,7 +1515,7 @@
             {
               "nrc": "40676",
               "claveBanner": "CLINRING",
-              "materia": "6 Upper Intermediate B",
+              "materia": "Upper Intermediate B",
               "docente": "Ortíz Esteban Imelda",
               "horaInicio": "8:30 PM",
               "horaFin": "9:57 PM",
@@ -1538,78 +1538,18 @@
       "label": "Inglés sabatino",
       "icono": "🇬🇧",
       "colorMode": "none",
-      "mostrarMateria": false,
+      "mostrarMateria": true,
       "inicioClases": "11 de agosto",
       "finClases": "26 de noviembre",
       "niveles": [
         {
-          "nombre": "3 Intermediate A",
-          "cefr": "",
-          "filas": [
-            {
-              "nrc": "40683",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Vela Osorio Fernando",
-              "horaInicio": "9:00 AM",
-              "horaFin": "2:19 PM",
-              "dias": "6",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            },
-            {
-              "nrc": "40684",
-              "claveBanner": "CLINRIN3",
-              "materia": "3 Intermediate A",
-              "docente": "Huerta Rodríguez César Samir",
-              "horaInicio": "9:00 AM",
-              "horaFin": "2:19 PM",
-              "dias": "6",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            }
-          ]
-        },
-        {
-          "nombre": "1 Pre Intermediate A",
-          "cefr": "",
-          "filas": [
-            {
-              "nrc": "40681",
-              "claveBanner": "CLINRIN1",
-              "materia": "1 Pre Intermediate A",
-              "docente": "Contreras González Guadalupe",
-              "horaInicio": "9:00 AM",
-              "horaFin": "2:19 PM",
-              "dias": "6",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false
-            }
-          ]
-        },
-        {
-          "nombre": "0A Propedéutico Elementary A",
-          "cefr": "",
+          "nombre": "Nivel 0A",
+          "cefr": "Pre-A1",
           "filas": [
             {
               "nrc": "40679",
               "claveBanner": "CLINRIN0A",
-              "materia": "0A Propedéutico Elementary A",
+              "materia": "Propedéutico Elementary A",
               "docente": "Ortíz Esteban Imelda",
               "horaInicio": "9:00 AM",
               "horaFin": "2:19 PM",
@@ -1625,13 +1565,73 @@
           ]
         },
         {
-          "nombre": "5 Upper Intermediate A",
-          "cefr": "",
+          "nombre": "Nivel 1",
+          "cefr": "A2",
+          "filas": [
+            {
+              "nrc": "40681",
+              "claveBanner": "CLINRIN1",
+              "materia": "Pre Intermediate A",
+              "docente": "Contreras González Guadalupe",
+              "horaInicio": "9:00 AM",
+              "horaFin": "2:19 PM",
+              "dias": "6",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 3",
+          "cefr": "B1",
+          "filas": [
+            {
+              "nrc": "40683",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Vela Osorio Fernando",
+              "horaInicio": "9:00 AM",
+              "horaFin": "2:19 PM",
+              "dias": "6",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40684",
+              "claveBanner": "CLINRIN3",
+              "materia": "Intermediate A",
+              "docente": "Huerta Rodríguez César Samir",
+              "horaInicio": "9:00 AM",
+              "horaFin": "2:19 PM",
+              "dias": "6",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 5",
+          "cefr": "B2",
           "filas": [
             {
               "nrc": "40685",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Leana Silva Lilian",
               "horaInicio": "9:00 AM",
               "horaFin": "2:19 PM",
@@ -1647,7 +1647,7 @@
             {
               "nrc": "40686",
               "claveBanner": "CLINRIN5",
-              "materia": "5 Upper Intermediate A",
+              "materia": "Upper Intermediate A",
               "docente": "Hernández Ortega Karina Iveth",
               "horaInicio": "9:00 AM",
               "horaFin": "2:19 PM",
@@ -1675,157 +1675,13 @@
       "finClases": "26 de noviembre",
       "niveles": [
         {
-          "nombre": "",
+          "nombre": "Preparación B2 First",
           "cefr": "",
           "filas": [
             {
-              "nrc": "40687",
-              "claveBanner": "EIDI0317",
-              "materia": "C1 English academic purposes",
-              "docente": "Gidi Marti Daniel Jacobo",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "6",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
-            {
-              "nrc": "40689",
-              "claveBanner": "EIDI0317",
-              "materia": "C1 English academic purposes",
-              "docente": "Pickup Christian Watson",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "6",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
-            {
-              "nrc": "40693",
-              "claveBanner": "TCUG0432",
-              "materia": "B2 English Grammar",
-              "docente": "Pickup Christian Watson",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "2,4",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "3",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40691.",
-              "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
-            {
-              "nrc": "40694",
-              "claveBanner": "TIDI0302",
-              "materia": "B2 English Grammar",
-              "docente": "Pickup Christian Watson",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "2,4",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "3",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40692.",
-              "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
-            {
-              "nrc": "40696",
-              "claveBanner": "TCUG0432",
-              "materia": "B2 English Grammar",
-              "docente": "García Pérez Alfredo",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "2,4",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "3",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40695.",
-              "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
-            {
-              "nrc": "40698",
-              "claveBanner": "TIDI0302",
-              "materia": "B2 English Grammar",
-              "docente": "García Pérez Alfredo",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "2,4",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "3",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40697.",
-              "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
-            {
-              "nrc": "40688",
-              "claveBanner": "IDI4432",
-              "materia": "C1 Expresió oral escrit ingl acad",
-              "docente": "Gidi Marti Daniel Jacobo",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "6",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
-            {
-              "nrc": "40690",
-              "claveBanner": "IDI4432",
-              "materia": "C1 Expresió oral escrit ingl acad",
-              "docente": "Pickup Christian Watson",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-NOV-2026",
-              "creditos": "6",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
-            {
               "nrc": "40691",
               "claveBanner": "TCUG0430",
-              "materia": "B2 Taller First Certificate",
+              "materia": "Taller First Certificate",
               "docente": "Pickup Christian Watson",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1838,12 +1694,12 @@
               "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40693.",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020"
             },
             {
               "nrc": "40692",
               "claveBanner": "TIDI0303",
-              "materia": "B2 Taller First Certificate",
+              "materia": "Taller First Certificate",
               "docente": "Pickup Christian Watson",
               "horaInicio": "1:00 PM",
               "horaFin": "2:27 PM",
@@ -1855,13 +1711,49 @@
               "notas": "",
               "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40694.",
               "esNuevo": false,
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
+            },
+            {
+              "nrc": "40693",
+              "claveBanner": "TCUG0432",
+              "materia": "English Grammar",
+              "docente": "Pickup Christian Watson",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "2,4",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "3",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40691.",
+              "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020"
+            },
+            {
+              "nrc": "40694",
+              "claveBanner": "TIDI0302",
+              "materia": "English Grammar",
+              "docente": "Pickup Christian Watson",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "2,4",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "3",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40692.",
+              "esNuevo": false,
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40695",
               "claveBanner": "TCUG0430",
-              "materia": "B2 Taller First Certificate",
+              "materia": "Taller First Certificate",
               "docente": "García Pérez Alfredo",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1874,12 +1766,30 @@
               "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40696.",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020"
+            },
+            {
+              "nrc": "40696",
+              "claveBanner": "TCUG0432",
+              "materia": "English Grammar",
+              "docente": "García Pérez Alfredo",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "2,4",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "3",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40695.",
+              "esNuevo": false,
+              "plan": "2020",
+              "planTexto": "Plan 2020"
             },
             {
               "nrc": "40697",
               "claveBanner": "TIDI0303",
-              "materia": "B2 Taller First Certificate",
+              "materia": "Taller First Certificate",
               "docente": "García Pérez Alfredo",
               "horaInicio": "2:30 PM",
               "horaFin": "3:57 PM",
@@ -1891,13 +1801,31 @@
               "notas": "",
               "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40698.",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
+            },
+            {
+              "nrc": "40698",
+              "claveBanner": "TIDI0302",
+              "materia": "English Grammar",
+              "docente": "García Pérez Alfredo",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "2,4",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "3",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40697.",
+              "esNuevo": false,
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40699",
               "claveBanner": "TCUG0430",
-              "materia": "B2 Taller First Certificate",
+              "materia": "Taller First Certificate",
               "docente": "Loya Vite Adriana Guadalupe",
               "horaInicio": "9:00 AM",
               "horaFin": "2:19 PM",
@@ -1910,12 +1838,12 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020"
             },
             {
               "nrc": "40700",
               "claveBanner": "TIDI0303",
-              "materia": "B2 Taller First Certificate",
+              "materia": "Taller First Certificate",
               "docente": "Loya Vite Adriana Guadalupe",
               "horaInicio": "9:00 AM",
               "horaFin": "2:21 PM",
@@ -1927,8 +1855,86 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
+            }
+          ]
+        },
+        {
+          "nombre": "Preparación C1 Advanced",
+          "cefr": "",
+          "filas": [
+            {
+              "nrc": "40687",
+              "claveBanner": "EIDI0317",
+              "materia": "English academic purposes",
+              "docente": "Gidi Marti Daniel Jacobo",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "6",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false,
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
+            },
+            {
+              "nrc": "40688",
+              "claveBanner": "IDI4432",
+              "materia": "Expresió oral escrit ingl acad",
+              "docente": "Gidi Marti Daniel Jacobo",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "6",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020"
+            },
+            {
+              "nrc": "40689",
+              "claveBanner": "EIDI0317",
+              "materia": "English academic purposes",
+              "docente": "Pickup Christian Watson",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "6",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false,
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
+            },
+            {
+              "nrc": "40690",
+              "claveBanner": "IDI4432",
+              "materia": "Expresió oral escrit ingl acad",
+              "docente": "Pickup Christian Watson",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-NOV-2026",
+              "creditos": "6",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false,
+              "plan": "2020",
+              "planTexto": "Plan 2020"
             }
           ]
         }
@@ -1958,7 +1964,7 @@
       "finClases": "26 de noviembre",
       "niveles": [
         {
-          "nombre": "Nivel",
+          "nombre": "Nivel 1",
           "cefr": "",
           "filas": [
             {
@@ -1976,8 +1982,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40702",
@@ -1995,7 +2001,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-01"
             },
             {
               "nrc": "40703",
@@ -2012,8 +2018,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
             },
             {
               "nrc": "40704",
@@ -2030,8 +2036,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40705",
@@ -2049,7 +2055,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-01"
             },
             {
               "nrc": "40706",
@@ -2066,9 +2072,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 2",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40707",
               "claveBanner": "EIDI0302",
@@ -2084,8 +2096,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40708",
@@ -2103,7 +2115,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-01"
             },
             {
               "nrc": "40709",
@@ -2120,8 +2132,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
             },
             {
               "nrc": "40710",
@@ -2138,8 +2150,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40711",
@@ -2157,7 +2169,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-01"
             },
             {
               "nrc": "40712",
@@ -2174,9 +2186,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 3",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40713",
               "claveBanner": "EIDI0303",
@@ -2192,8 +2210,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40714",
@@ -2211,7 +2229,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-01"
             },
             {
               "nrc": "40715",
@@ -2228,9 +2246,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 4",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40716",
               "claveBanner": "EIDI0304",
@@ -2246,8 +2270,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40717",
@@ -2265,7 +2289,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-01"
             },
             {
               "nrc": "40718",
@@ -2282,9 +2306,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 5",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40719",
               "claveBanner": "IDI3406",
@@ -2301,7 +2331,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-01"
             },
             {
               "nrc": "40720",
@@ -2318,8 +2348,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
             }
           ]
         }
@@ -2355,7 +2385,7 @@
       "finClases": "26 de noviembre",
       "niveles": [
         {
-          "nombre": "Nivel",
+          "nombre": "Nivel 1",
           "cefr": "",
           "filas": [
             {
@@ -2373,8 +2403,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40725",
@@ -2392,7 +2422,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-04"
             },
             {
               "nrc": "40726",
@@ -2409,9 +2439,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 2",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40728",
               "claveBanner": "EIDI0325",
@@ -2427,8 +2463,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40729",
@@ -2446,7 +2482,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-04"
             },
             {
               "nrc": "40730",
@@ -2463,9 +2499,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 3",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40731",
               "claveBanner": "EIDI0326",
@@ -2481,8 +2523,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40732",
@@ -2500,7 +2542,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-04"
             },
             {
               "nrc": "40733",
@@ -2517,9 +2559,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 4",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40734",
               "claveBanner": "EIDI0327",
@@ -2535,8 +2583,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40735",
@@ -2554,7 +2602,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-04"
             },
             {
               "nrc": "40736",
@@ -2571,9 +2619,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 5",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40737",
               "claveBanner": "EIDI0313",
@@ -2589,8 +2643,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40738",
@@ -2608,7 +2662,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-04"
             },
             {
               "nrc": "40739",
@@ -2625,8 +2679,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
             }
           ]
         }
@@ -2662,7 +2716,7 @@
       "finClases": "26 de noviembre",
       "niveles": [
         {
-          "nombre": "Nivel",
+          "nombre": "Nivel 1",
           "cefr": "",
           "filas": [
             {
@@ -2680,8 +2734,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40741",
@@ -2699,7 +2753,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-05"
             },
             {
               "nrc": "40742",
@@ -2716,9 +2770,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 2",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40746",
               "claveBanner": "EIDI0329",
@@ -2734,8 +2794,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40747",
@@ -2753,7 +2813,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-05"
             },
             {
               "nrc": "40748",
@@ -2770,9 +2830,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 3",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40749",
               "claveBanner": "EIDI0330",
@@ -2788,8 +2854,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40750",
@@ -2807,7 +2873,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-05"
             },
             {
               "nrc": "40751",
@@ -2824,9 +2890,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 4",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40752",
               "claveBanner": "EIDI0331",
@@ -2842,8 +2914,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40753",
@@ -2861,7 +2933,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-05"
             },
             {
               "nrc": "40754",
@@ -2878,9 +2950,15 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
-            },
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
+            }
+          ]
+        },
+        {
+          "nombre": "Nivel 5",
+          "cefr": "",
+          "filas": [
             {
               "nrc": "40755",
               "claveBanner": "EIDI0315",
@@ -2896,8 +2974,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "2016",
+              "planTexto": "Plan 2016-2019"
             },
             {
               "nrc": "40756",
@@ -2915,7 +2993,7 @@
               "recordatorio": "",
               "esNuevo": false,
               "plan": "2020",
-              "planTexto": ""
+              "planTexto": "Plan 2020 - Clave minor ML-05"
             },
             {
               "nrc": "40757",
@@ -2932,8 +3010,8 @@
               "notas": "",
               "recordatorio": "",
               "esNuevo": false,
-              "plan": "2020",
-              "planTexto": ""
+              "plan": "0creditos",
+              "planTexto": "Requisito tercera lengua"
             }
           ]
         }
