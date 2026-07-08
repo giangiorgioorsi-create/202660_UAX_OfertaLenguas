@@ -23,188 +23,96 @@
   --font-display: 'Fraunces', serif;
   --font-body: 'IBM Plex Sans', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
+
+  --t-0700:#F2B134; --t-0700-tx:#5B3F00;
+  --t-1300:#3FA9F5; --t-1300-tx:#0A3A5C;
+  --t-1430:#A4D65E; --t-1430-tx:#345412;
+  --t-1730:#F5A623; --t-1730-tx:#5C3A00;
+  --t-1900:#F0609E; --t-1900-tx:#5C0F32;
+  --t-2030:#3A3A3A; --t-2030-tx:#FFFFFF;
+  --t-otro:#EEECE4; --t-otro-tx:#57544C;
+
+  --p-blue:#2255A4; --p-blue-tx:#FFFFFF;
+  --p-red:#D9483D; --p-red-tx:#FFFFFF;
+  --p-none:#FFFFFF; --p-none-tx:#1C1B1A;
 }
 *{box-sizing:border-box;}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--font-body);
-  line-height:1.5;
-}
-.topbar{
-  position:sticky; top:0; z-index:10;
-  background:var(--bg);
-  border-bottom:1px solid var(--stone-line);
-  padding:14px 20px;
-}
-.topbar-inner{
-  max-width:900px; margin:0 auto;
-  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-}
-.brand{
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:20px;
-  color:var(--orange-deep);
-  flex:1 1 auto;
-  min-width:200px;
-}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.5;}
+.topbar{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--stone-line);padding:14px 20px;}
+.topbar-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.brand{font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--orange-deep);flex:1 1 auto;min-width:200px;}
 .brand span{color:var(--ink);}
-.search-box{
-  position:relative;
-  flex:0 1 260px;
-}
-.search-box input{
-  width:100%;
-  padding:9px 12px 9px 34px;
-  border:1px solid var(--stone-line);
-  border-radius:8px;
-  font-family:var(--font-mono);
-  font-size:13px;
-  background:var(--card);
-  color:var(--ink);
-}
-.search-box input:focus{outline:2px solid var(--orange); outline-offset:1px;}
-.search-box::before{
-  content:"⌕";
-  position:absolute; left:11px; top:50%; transform:translateY(-50%);
-  color:var(--ink-soft); font-size:15px;
-}
-.nav-pills{
-  max-width:900px; margin:0 auto;
-  display:flex; gap:8px; overflow-x:auto;
-  padding:12px 20px 0;
-  scrollbar-width:none;
-}
+.search-box{position:relative;flex:0 1 260px;}
+.search-box input{width:100%;padding:9px 12px 9px 34px;border:1px solid var(--stone-line);border-radius:8px;font-family:var(--font-mono);font-size:13px;background:var(--card);color:var(--ink);}
+.search-box input:focus{outline:2px solid var(--orange);outline-offset:1px;}
+.search-box::before{content:"⌕";position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--ink-soft);font-size:15px;}
+.nav-pills{max-width:1000px;margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:12px 20px 0;scrollbar-width:none;}
 .nav-pills::-webkit-scrollbar{display:none;}
-.pill{
-  flex:0 0 auto;
-  font-family:var(--font-body);
-  font-size:13px;
-  font-weight:500;
-  padding:7px 14px;
-  border-radius:999px;
-  border:1px solid var(--stone-line);
-  background:var(--card);
-  color:var(--ink-soft);
-  text-decoration:none;
-  white-space:nowrap;
-}
-.pill:hover{border-color:var(--orange); color:var(--orange-deep);}
-
-main{max-width:900px; margin:0 auto; padding:24px 20px 60px;}
-
-.empty-msg{
-  text-align:center; color:var(--ink-soft); padding:40px 0; font-size:14px;
-}
+.pill{flex:0 0 auto;font-family:var(--font-body);font-size:13px;font-weight:500;padding:7px 14px;border-radius:999px;border:1px solid var(--stone-line);background:var(--card);color:var(--ink-soft);text-decoration:none;white-space:nowrap;}
+.pill:hover{border-color:var(--orange);color:var(--orange-deep);}
+main{max-width:1000px;margin:0 auto;padding:20px 20px 60px;}
+.empty-msg{text-align:center;color:var(--ink-soft);padding:40px 0;font-size:14px;}
 
 section.lang-section{margin-bottom:20px;}
-.section-header{
-  display:flex; align-items:center; gap:10px;
-  cursor:pointer;
-  padding:14px 16px;
-  background:var(--card);
-  border:1px solid var(--stone-line);
-  border-radius:12px;
-  user-select:none;
-}
-.section-header h2{
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:19px;
-  margin:0;
-  flex:1;
-  color:var(--ink);
-}
-.chevron{
-  font-size:14px; color:var(--ink-soft);
-  transition:transform 0.15s ease;
-}
+.section-header{display:flex;align-items:center;gap:10px;cursor:pointer;padding:14px 16px;background:var(--card);border:1px solid var(--stone-line);border-radius:12px;user-select:none;}
+.section-header .flag{font-size:22px;}
+.section-header .titles{flex:1;}
+.section-header h2{font-family:var(--font-display);font-weight:600;font-size:19px;margin:0;color:var(--ink);}
+.section-header .fechas{font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
+.chevron{font-size:14px;color:var(--ink-soft);transition:transform 0.15s ease;}
 .section-header[aria-expanded="true"] .chevron{transform:rotate(90deg);}
-.badge-count{
-  font-family:var(--font-mono);
-  font-size:12px;
-  color:var(--ink-soft);
-  background:var(--stone);
-  padding:2px 8px;
-  border-radius:999px;
-}
-
-.section-body{display:none; padding:14px 4px 4px;}
+.badge-count{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);background:var(--stone);padding:2px 8px;border-radius:999px;}
+.section-body{display:none;padding:14px 4px 4px;}
 .section-body.open{display:block;}
 
-.cefr-ladder{
-  display:flex; align-items:center; gap:6px;
-  margin:4px 8px 18px;
-  font-family:var(--font-mono); font-size:11px; color:var(--ink-soft);
-}
-.cefr-ladder .dot{
-  width:8px; height:8px; border-radius:50%;
-  background:var(--stone-line);
-}
-.cefr-ladder .dot.active{background:var(--orange);}
-.cefr-ladder .line{flex:1; height:1px; background:var(--stone-line);}
+.legend-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 8px 16px;font-family:var(--font-mono);font-size:11.5px;}
+.legend-row .sw{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:6px;font-weight:500;}
 
-.level-block{margin-bottom:6px;}
-.level-header{
-  display:flex; align-items:center; gap:8px;
-  padding:10px 12px;
-  cursor:pointer;
-  border-radius:8px;
-}
+.plan-legend{margin:14px 8px 18px;display:flex;flex-direction:column;gap:0;border:1px solid var(--stone-line);border-radius:8px;overflow:hidden;}
+.plan-legend-row{display:flex;font-size:12.5px;}
+.plan-legend-row .titulo{flex:0 0 110px;padding:8px 10px;font-weight:600;font-family:var(--font-body);}
+.plan-legend-row .texto{flex:1;padding:8px 10px;background:var(--card);color:var(--ink-soft);}
+
+.cefr-ladder{display:flex;align-items:center;gap:6px;margin:4px 8px 18px;font-family:var(--font-mono);font-size:11px;color:var(--ink-soft);}
+.cefr-ladder .dot2{width:8px;height:8px;border-radius:50%;background:var(--stone-line);}
+.cefr-ladder .dot2.active{background:var(--orange);}
+.cefr-ladder .line{flex:1;height:1px;background:var(--stone-line);}
+
+.level-block{margin-bottom:14px;}
+.level-header{display:flex;align-items:center;gap:8px;padding:10px 12px;cursor:pointer;border-radius:8px;}
 .level-header:hover{background:var(--orange-tint);}
-.level-header h3{
-  font-size:15px; font-weight:600; margin:0; flex:1;
-}
-.cefr-tag{
-  font-family:var(--font-mono); font-size:11px;
-  color:var(--orange-deep); background:var(--orange-tint);
-  padding:2px 7px; border-radius:6px;
-}
-.level-courses{display:none; padding-left:12px;}
+.level-header h3{font-size:15px;font-weight:600;margin:0;flex:1;}
+.cefr-tag{font-family:var(--font-mono);font-size:11px;color:var(--orange-deep);background:var(--orange-tint);padding:2px 7px;border-radius:6px;}
+.level-courses{display:none;padding-left:2px;}
 .level-courses.open{display:block;}
 
-.course-row{
-  background:var(--card);
-  border:1px solid var(--stone-line);
-  border-radius:10px;
-  padding:12px 14px;
-  margin:8px 0;
-}
-.course-top{
-  display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
-}
-.course-main p{margin:0 0 2px; font-size:14px;}
-.course-main .materia{font-weight:600;}
-.course-main .meta{color:var(--ink-soft); font-size:13px;}
-.new-badge{
-  font-family:var(--font-body); font-size:11px; font-weight:600;
-  color:var(--green); background:var(--green-tint);
-  padding:3px 8px; border-radius:999px;
-  white-space:nowrap;
-}
-.reminder-line{
-  margin-top:8px; padding:8px 10px;
-  background:var(--orange-tint); border-left:3px solid var(--orange);
-  border-radius:0 6px 6px 0;
-  font-size:13px;
-}
-.codes{
-  margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;
-  font-family:var(--font-mono); font-size:12px; color:var(--ink-soft);
-}
-.codes .code-pair{
-  background:var(--stone); padding:3px 8px; border-radius:6px;
-}
-.notas-line{
-  margin-top:6px; font-size:12.5px; color:var(--ink-soft);
-}
+table.oferta{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--stone-line);}
+table.oferta th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink-soft);padding:9px 10px;background:var(--stone);font-weight:600;}
+table.oferta td{padding:9px 10px;border-top:1px solid var(--stone-line);vertical-align:top;}
+td.crn{font-family:var(--font-mono);font-weight:500;white-space:nowrap;}
+td.hora{white-space:nowrap;}
+.hora-pill{display:inline-block;padding:3px 9px;border-radius:6px;font-family:var(--font-mono);font-size:12.5px;font-weight:500;}
+.new-badge{font-family:var(--font-body);font-size:10.5px;font-weight:600;color:var(--green);background:var(--green-tint);padding:2px 7px;border-radius:999px;margin-left:6px;white-space:nowrap;}
+.reminder-row td{background:var(--orange-tint) !important;border-top:none;padding:6px 10px 10px;font-size:12.5px;}
+.materia-cell{font-weight:500;}
+tr.plan-row td{border-top:1px solid var(--stone-line);}
+.modalidad-virtual{font-weight:600;}
 
-@media (max-width:600px){
+@media (max-width:640px){
   .brand{font-size:17px;}
-  main{padding:18px 12px 50px;}
+  main{padding:16px 10px 50px;}
   .section-header h2{font-size:17px;}
+  table.oferta{font-size:12.5px;}
+  table.oferta th, table.oferta td{padding:7px 6px;}
+  table.oferta thead{display:none;}
+  table.oferta tr{display:flex;flex-wrap:wrap;gap:2px 10px;padding:8px 6px;border-top:1px solid var(--stone-line);}
+  table.oferta td{border-top:none;padding:2px 0;}
+  td.crn::before{content:"CRN ";color:var(--ink-soft);}
+  td.docente::before{content:"Docente: ";color:var(--ink-soft);}
+  td.modalidad::before{content:"Modalidad: ";color:var(--ink-soft);}
+  .reminder-row{display:block;}
+  .plan-legend-row{flex-direction:column;}
+  .plan-legend-row .titulo{flex:none;}
 }
 </style>
 </head>
@@ -227,42 +135,101 @@ section.lang-section{margin-bottom:20px;}
 <script>
 const DIA_NOMBRE = {"1":"Lun","2":"Mar","3":"Mié","4":"Jue","5":"Vie","6":"Sáb","7":"Dom"};
 
+const FRANJAS = [
+  {min: 7*60,     label:"07:00", cls:"0700"},
+  {min: 13*60,    label:"13:00", cls:"1300"},
+  {min: 14*60+30, label:"14:30", cls:"1430"},
+  {min: 17*60+30, label:"17:30", cls:"1730"},
+  {min: 19*60,    label:"19:00", cls:"1900"},
+  {min: 20*60+30, label:"20:30", cls:"2030"}
+];
+
+function parseHoraMin(str){
+  if(!str) return null;
+  const s = str.trim().toUpperCase();
+  let m = s.match(/^(\d{1,2}):(\d{2})$/);
+  if(m) return parseInt(m[1])*60 + parseInt(m[2]);
+  m = s.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/);
+  if(m){ let h = parseInt(m[1]) % 12; if(m[3]==="PM") h += 12; return h*60 + parseInt(m[2]); }
+  return null;
+}
+function franjaDe(horaInicio){
+  const min = parseHoraMin(horaInicio);
+  if(min === null) return {cls:"otro", label: horaInicio || "—"};
+  let mejor = FRANJAS[0], dist = Math.abs(min - FRANJAS[0].min);
+  for(const f of FRANJAS){ const d = Math.abs(min - f.min); if(d < dist){ dist = d; mejor = f; } }
+  return dist <= 10 ? {cls:mejor.cls, label:mejor.label} : {cls:"otro", label: horaInicio};
+}
 function diasLegibles(diasStr){
-  if(!diasStr) return "No especificado";
-  return diasStr.split(",").map(d => DIA_NOMBRE[d.trim()] || d.trim()).join(" · ");
+  if(!diasStr) return "—";
+  return diasStr.split(",").map(d => DIA_NOMBRE[d.trim()] || d.trim()).join("·");
 }
 
-function renderCurso(curso){
-  const codigos = curso.nrcs.map((nrc,i) =>
-    `<span class="code-pair">NRC ${nrc} · ${curso.clavesBanner[i] || ""}</span>`
-  ).join("");
-  const badge = curso.esNuevo ? `<span class="new-badge">Nuevo</span>` : "";
-  const recordatorio = curso.recordatorio
-    ? `<div class="reminder-line">🔔 <strong>Recordatorio:</strong> ${curso.recordatorio}</div>` : "";
-  const notas = curso.notas
-    ? `<div class="notas-line">📌 Notas: ${curso.notas}</div>` : "";
+function renderFila(f, colorMode, mostrarMateria){
+  const badge = f.esNuevo ? `<span class="new-badge">Nuevo</span>` : "";
+  const materiaCol = mostrarMateria ? `<td class="materia-cell">${f.materia}</td>` : "";
+  let horaCelda;
+  if(colorMode === "hora"){
+    const franja = franjaDe(f.horaInicio);
+    horaCelda = `<span class="hora-pill" style="background:var(--t-${franja.cls});color:var(--t-${franja.cls}-tx);">${franja.label}</span>`;
+  } else {
+    horaCelda = f.horaInicio;
+  }
+  let planBg = "", planTx = "";
+  if(colorMode === "plan" && f.plan){
+    if(f.plan === "2016"){ planBg = "var(--p-blue)"; planTx = "var(--p-blue-tx)"; }
+    else if(f.plan === "0creditos"){ planBg = "var(--p-red)"; planTx = "var(--p-red-tx)"; }
+    else { planBg = "var(--p-none)"; planTx = "var(--p-none-tx)"; }
+  }
+  const rowStyle = planBg ? ` style="background:${planBg};color:${planTx};"` : "";
+  const modClass = f.modalidad && f.modalidad.toLowerCase().includes("virtual") ? "modalidad-virtual" : "";
+
+  let fila = `
+    <tr data-nrc="${f.nrc}" class="plan-row"${rowStyle}>
+      ${materiaCol}
+      <td class="crn">${f.nrc}${badge}</td>
+      <td class="docente">${f.docente}</td>
+      <td class="hora">${horaCelda}</td>
+      <td class="modalidad ${modClass}">${f.modalidad}</td>
+    </tr>`;
+  if(f.recordatorio){
+    fila += `<tr class="reminder-row"><td colspan="5">🔔 <strong>Recordatorio:</strong> ${f.recordatorio}</td></tr>`;
+  }
+  return fila;
+}
+
+function tablaHtml(filas, colorMode, mostrarMateria){
+  const encabezadoMateria = mostrarMateria ? "<th>Materia</th>" : "";
   return `
-    <div class="course-row" data-nrcs="${curso.nrcs.join(' ')}">
-      <div class="course-top">
-        <div class="course-main">
-          <p class="materia">${curso.materia}</p>
-          <p class="meta">${curso.docente} · ${curso.horario} · ${diasLegibles(curso.dias)}</p>
-          <p class="meta">${curso.modalidad} · ${curso.periodo}</p>
-        </div>
-        ${badge}
-      </div>
-      ${recordatorio}
-      <div class="codes">${codigos}</div>
-      ${notas}
-    </div>`;
+    <table class="oferta">
+      <thead><tr>${encabezadoMateria}<th>CRN</th><th>Docente</th><th>Inicio</th><th>Modalidad</th></tr></thead>
+      <tbody>${filas.map(f => renderFila(f, colorMode, mostrarMateria)).join("")}</tbody>
+    </table>`;
+}
+
+function horaLegendHtml(){
+  return `<div class="legend-row">${FRANJAS.map(f => `<span class="sw" style="background:var(--t-${f.cls});color:var(--t-${f.cls}-tx);">${f.label}</span>`).join("")}</div>`;
+}
+
+function planLegendHtml(leyenda){
+  if(!leyenda) return "";
+  const filas = leyenda.map(p => {
+    const bg = p.color === "blue" ? "var(--p-blue)" : p.color === "red" ? "var(--p-red)" : "var(--p-none)";
+    const tx = p.color === "blue" ? "var(--p-blue-tx)" : p.color === "red" ? "var(--p-red-tx)" : "var(--p-none-tx)";
+    return `<div class="plan-legend-row"><div class="titulo" style="background:${bg};color:${tx};">${p.titulo}</div><div class="texto">${p.texto}</div></div>`;
+  }).join("");
+  return `<div class="plan-legend">${filas}</div>`;
 }
 
 function renderSeccion(sec){
   let cuerpo = "";
+
+  if(sec.colorMode === "hora") cuerpo += horaLegendHtml();
+
   if(sec.tipo === "niveles"){
     const activos = sec.niveles.map(n => n.cefr).filter(Boolean);
     cuerpo += `<div class="cefr-ladder">A1<div class="line"></div>${
-      ["A1","A2","B1","B1+","B2","C1"].map(l=>`<div class="dot ${activos.includes(l)?'active':''}"></div>`).join('<div class="line"></div>')
+      ["A1","A2","B1","B1+","B2","C1"].map(l=>`<div class="dot2 ${activos.includes(l)?'active':''}"></div>`).join('<div class="line"></div>')
     }C1</div>`;
     sec.niveles.forEach((niv, idx) => {
       cuerpo += `
@@ -271,27 +238,47 @@ function renderSeccion(sec){
             <span class="chevron">▸</span>
             <h3>${niv.nombre}</h3>
             ${niv.cefr ? `<span class="cefr-tag">${niv.cefr}</span>` : ""}
-            <span class="badge-count">${niv.cursos.length} grupo${niv.cursos.length!==1?'s':''}</span>
+            <span class="badge-count">${niv.filas.length} grupo${niv.filas.length!==1?'s':''}</span>
           </div>
           <div class="level-courses" id="level-${sec.key}-${idx}">
-            ${niv.cursos.map(renderCurso).join("")}
+            ${tablaHtml(niv.filas, sec.colorMode, false)}
           </div>
         </div>`;
     });
+  } else if(sec.tipo === "niveles-plan"){
+    sec.niveles.forEach((niv, idx) => {
+      cuerpo += `
+        <div class="level-block">
+          <div class="level-header" onclick="toggleLevel('${sec.key}-${idx}')">
+            <span class="chevron">▸</span>
+            <h3>${niv.nombre}</h3>
+            <span class="badge-count">${niv.filas.length} CRN</span>
+          </div>
+          <div class="level-courses" id="level-${sec.key}-${idx}">
+            ${tablaHtml(niv.filas, sec.colorMode, true)}
+          </div>
+        </div>`;
+    });
+    cuerpo += planLegendHtml(sec.leyendaPlan);
   } else {
-    cuerpo = sec.cursos.map(renderCurso).join("");
+    cuerpo += tablaHtml(sec.filas, sec.colorMode, sec.colorMode === "plan");
+    if(sec.colorMode === "plan") cuerpo += planLegendHtml(sec.leyendaPlan);
   }
 
-  const totalCursos = sec.tipo === "niveles"
-    ? sec.niveles.reduce((a,n)=>a+n.cursos.length,0)
-    : sec.cursos.length;
+  const total = (sec.tipo === "niveles" || sec.tipo === "niveles-plan")
+    ? sec.niveles.reduce((a,n)=>a+n.filas.length,0)
+    : sec.filas.length;
 
   return `
     <section class="lang-section" id="sec-${sec.key}">
       <div class="section-header" aria-expanded="false" onclick="toggleSection('${sec.key}')">
+        <span class="flag">${sec.icono || ""}</span>
+        <div class="titles">
+          <h2>${sec.label}</h2>
+          <div class="fechas">Inicio: ${sec.inicioClases} · Fin: ${sec.finClases}</div>
+        </div>
+        <span class="badge-count">${total} grupo${total!==1?'s':''}</span>
         <span class="chevron">▸</span>
-        <h2>${sec.label}</h2>
-        <span class="badge-count">${totalCursos} grupo${totalCursos!==1?'s':''}</span>
       </div>
       <div class="section-body" id="body-${sec.key}">${cuerpo}</div>
     </section>`;
@@ -303,20 +290,14 @@ function toggleSection(key){
   const isOpen = body.classList.toggle("open");
   header.setAttribute("aria-expanded", isOpen);
 }
-
-function toggleLevel(id){
-  document.getElementById(`level-${id}`).classList.toggle("open");
-}
-
-let DATA = null;
+function toggleLevel(id){ document.getElementById(`level-${id}`).classList.toggle("open"); }
 
 fetch("data.json")
   .then(r => r.json())
   .then(data => {
-    DATA = data;
     const main = document.getElementById("main");
     const nav = document.getElementById("navPills");
-    nav.innerHTML = data.secciones.map(s => `<a class="pill" href="#sec-${s.key}">${s.label}</a>`).join("");
+    nav.innerHTML = data.secciones.map(s => `<a class="pill" href="#sec-${s.key}">${s.icono||""} ${s.label}</a>`).join("");
     main.innerHTML = data.secciones.map(renderSeccion).join("");
   })
   .catch(() => {
@@ -326,9 +307,8 @@ fetch("data.json")
 
 document.getElementById("buscarNrc").addEventListener("input", (e) => {
   const q = e.target.value.trim();
-  document.querySelectorAll(".course-row").forEach(row => {
-    const nrcs = row.dataset.nrcs.split(" ");
-    const match = q === "" || nrcs.some(n => n.includes(q));
+  document.querySelectorAll("table.oferta tbody tr[data-nrc]").forEach(row => {
+    const match = q === "" || row.dataset.nrc.includes(q);
     row.style.display = match ? "" : "none";
   });
   if(q !== ""){

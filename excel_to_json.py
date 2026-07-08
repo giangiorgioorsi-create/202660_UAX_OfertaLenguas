@@ -1,12 +1,12 @@
 """
 Convierte el Excel de oferta de lenguas (formato Banner) a data.json
-para la página estática del Centro de Lenguas.
+para la pagina estatica del Centro de Lenguas.
 
 Uso:
     python excel_to_json.py archivo.xlsx
 
 Genera:
-    data.json         -> datos para la página (se sobreescribe cada vez)
+    data.json          -> datos para la pagina (se sobreescribe cada vez)
     new_tracker.json   -> historial de "primera vez visto" por NRC (persiste)
 """
 
@@ -27,14 +27,42 @@ CEFR_POR_NIVEL = {
     "Upper Intermediate A": "B1+",
 }
 
+# Edita aqui las fechas de inicio/fin de clases de cada periodo
+INICIO_CLASES = "11 de agosto"
+FIN_CLASES = "26 de noviembre"
+
 SECCIONES = [
-    {"key": "ingles", "label": "Inglés", "lengua": "Inglés requisito LV", "tipo": "niveles"},
-    {"key": "ingles-sabatino", "label": "Inglés sabatino", "lengua": "Inglés requisito SAB", "tipo": "plano"},
-    {"key": "certificaciones", "label": "Inglés certificaciones B2 First y CAE", "lengua": "Inglés certificación", "tipo": "plano"},
-    {"key": "aleman", "label": "Alemán", "lengua": "Alemán", "tipo": "plano"},
-    {"key": "chino", "label": "Chino", "lengua": "Chino", "tipo": "plano"},
-    {"key": "frances", "label": "Francés", "lengua": "Francés", "tipo": "plano"},
-    {"key": "italiano", "label": "Italiano", "lengua": "Italiano", "tipo": "plano"},
+    {"key": "ingles", "label": "Inglés", "lengua": "Inglés requisito LV",
+     "tipo": "niveles", "colorMode": "hora", "icono": "🇬🇧"},
+    {"key": "ingles-sabatino", "label": "Inglés sabatino", "lengua": "Inglés requisito SAB",
+     "tipo": "plano", "colorMode": "none", "icono": "🇬🇧"},
+    {"key": "certificaciones", "label": "Inglés certificaciones B2 First y CAE", "lengua": "Inglés certificación",
+     "tipo": "plano", "colorMode": "plan", "icono": "🇬🇧",
+     "planColores": {"2020": "blue", "2016": "red"}},
+    {"key": "aleman", "label": "Alemán", "lengua": "Alemán",
+     "tipo": "niveles-plan", "colorMode": "plan", "icono": "🇩🇪",
+     "planColores": {"2016": "blue", "2020": "none", "0creditos": "red"}},
+    {"key": "chino", "label": "Chino", "lengua": "Chino",
+     "tipo": "plano", "colorMode": "none", "icono": "🇨🇳"},
+    {"key": "frances", "label": "Francés", "lengua": "Francés",
+     "tipo": "niveles-plan", "colorMode": "plan", "icono": "🇫🇷",
+     "planColores": {"2016": "blue", "2020": "none", "0creditos": "red"}},
+    {"key": "italiano", "label": "Italiano", "lengua": "Italiano",
+     "tipo": "niveles-plan", "colorMode": "plan", "icono": "🇮🇹",
+     "planColores": {"2016": "blue", "2020": "none", "0creditos": "red"}},
+]
+
+PLAN_LEYENDAS_3 = [
+    {"clave": "2016", "titulo": "Plan 2016", "color": "blue",
+     "texto": "Para alumnos de plan 2016. 6 créditos. Sí aplica beca."},
+    {"clave": "2020", "titulo": "Plan 2020", "color": "none",
+     "texto": "Para alumnos de plan 2020. 6 créditos. Sí aplica beca. También aplica para quienes cursan el minor en esta lengua."},
+    {"clave": "0creditos", "titulo": "0 créditos", "color": "red",
+     "texto": "Para alumnos que cursan una tercera lengua como requisito de titulación (RELI-TINT), o que desean que la calificación no afecte su promedio. Tiene un costo de 6 créditos y no aplica beca."},
+]
+PLAN_LEYENDA_CERT = [
+    {"clave": "2020", "titulo": "Plan 2020", "color": "blue", "texto": "Para alumnos de plan 2020."},
+    {"clave": "2016", "titulo": "Plan 2016", "color": "red", "texto": "Para alumnos de plan 2016."},
 ]
 
 
@@ -42,6 +70,17 @@ def es_valor_valido(valor):
     if pd.isna(valor):
         return False
     return str(valor).strip() not in ("", "No asignado", "nan")
+
+
+def normalizar_plan(valor):
+    v = str(valor).strip().lower()
+    if "2016" in v:
+        return "2016"
+    if "2020" in v:
+        return "2020"
+    if "0" in v or "tercera" in v or "credit" in v:
+        return "0creditos"
+    return "2020"
 
 
 def cargar_tracker(ruta="new_tracker.json"):
@@ -57,13 +96,14 @@ def guardar_tracker(tracker, ruta="new_tracker.json"):
         json.dump(tracker, f, ensure_ascii=False, indent=2)
 
 
-def construir_curso(fila, grupo, es_nuevo):
-    return {
-        "nrcs": [n["NRC"] for _, n in grupo.iterrows()],
-        "clavesBanner": [n["ClaveBanner"] for _, n in grupo.iterrows()],
+def construir_fila(fila, es_nuevo, con_plan=False):
+    base = {
+        "nrc": fila["NRC"],
+        "claveBanner": fila["ClaveBanner"],
         "materia": fila["NombreMateria"],
         "docente": fila["Docente"],
-        "horario": f"{fila['HoraInicio']} - {fila['HoraFin']}",
+        "horaInicio": fila["HoraInicio"],
+        "horaFin": fila["HoraFin"],
         "dias": fila["Weekdays"],
         "periodo": fila["Fechas"],
         "creditos": fila.get("CreditosAcademicos", ""),
@@ -73,6 +113,16 @@ def construir_curso(fila, grupo, es_nuevo):
         "recordatorio": fila.get("Recordatorio", ""),
         "esNuevo": es_nuevo,
     }
+    if con_plan:
+        base["plan"] = normalizar_plan(fila.get("Plan", "2020"))
+    return base
+
+
+def etiqueta_de_nivel(df_grupo, indice):
+    for _, f in df_grupo.iterrows():
+        if "nivel" in str(f["NombreMateria"]).lower():
+            return f["NombreMateria"]
+    return f"Nivel {indice}"
 
 
 def main():
@@ -86,9 +136,11 @@ def main():
 
     if "Recordatorio" not in df.columns:
         df["Recordatorio"] = ""
+    if "Plan" not in df.columns:
+        df["Plan"] = ""
 
     cols_texto = ["Docente", "NombreMateria", "MetodoInstruccion", "Fechas", "Weekdays",
-                  "Status", "Notas", "Recordatorio", "ClaveBanner", "ListaCruzada", "Lengua", "NRC"]
+                  "Status", "Notas", "Recordatorio", "ClaveBanner", "ListaCruzada", "Lengua", "NRC", "Plan"]
     for c in cols_texto:
         if c in df.columns:
             df[c] = df[c].fillna("").str.strip()
@@ -119,28 +171,41 @@ def main():
         if df_sec.empty:
             continue
 
+        sec_out = {
+            "key": sec["key"], "label": sec["label"], "tipo": sec["tipo"],
+            "colorMode": sec["colorMode"], "icono": sec.get("icono", ""),
+            "inicioClases": INICIO_CLASES, "finClases": FIN_CLASES,
+        }
+
         if sec["tipo"] == "niveles":
             niveles = []
             nombres_presentes = [n for n in NIVELES_INGLES_ORDEN if n in df_sec["NombreMateria"].unique()]
             otros = [n for n in df_sec["NombreMateria"].unique() if n not in NIVELES_INGLES_ORDEN]
             for nombre in nombres_presentes + otros:
                 df_niv = df_sec[df_sec["NombreMateria"] == nombre]
-                cursos = []
-                for _, fila in df_niv.drop_duplicates(subset=["Key"]).iterrows():
-                    grupo = df[df["ListaCruzada"] == fila["ListaCruzada"]] if es_valor_valido(fila["ListaCruzada"]) else df[df["NRC"] == fila["NRC"]]
-                    es_nuevo = any(nrc_es_nuevo(n) for n in grupo["NRC"])
-                    cursos.append(construir_curso(fila, grupo, es_nuevo))
-                niveles.append({"nombre": nombre, "cefr": CEFR_POR_NIVEL.get(nombre, ""), "cursos": cursos})
-            salida["secciones"].append({"key": sec["key"], "label": sec["label"], "tipo": "niveles", "niveles": niveles})
+                filas = [construir_fila(f, nrc_es_nuevo(f["NRC"])) for _, f in df_niv.iterrows()]
+                niveles.append({"nombre": nombre, "cefr": CEFR_POR_NIVEL.get(nombre, ""), "filas": filas})
+            sec_out["niveles"] = niveles
+
+        elif sec["tipo"] == "niveles-plan":
+            niveles = []
+            grupos = [g for g in df_sec["Key"].unique()]
+            for idx, key in enumerate(grupos, start=1):
+                df_grupo = df_sec[df_sec["Key"] == key]
+                nombre_nivel = etiqueta_de_nivel(df_grupo, idx)
+                filas = [construir_fila(f, nrc_es_nuevo(f["NRC"]), con_plan=True) for _, f in df_grupo.iterrows()]
+                niveles.append({"nombre": nombre_nivel, "filas": filas})
+            sec_out["niveles"] = niveles
+            sec_out["leyendaPlan"] = PLAN_LEYENDAS_3
+
         else:
-            cursos = []
-            for nombre in sorted(df_sec["NombreMateria"].unique()):
-                df_mat = df_sec[df_sec["NombreMateria"] == nombre]
-                for _, fila in df_mat.drop_duplicates(subset=["Key"]).iterrows():
-                    grupo = df[df["ListaCruzada"] == fila["ListaCruzada"]] if es_valor_valido(fila["ListaCruzada"]) else df[df["NRC"] == fila["NRC"]]
-                    es_nuevo = any(nrc_es_nuevo(n) for n in grupo["NRC"])
-                    cursos.append(construir_curso(fila, grupo, es_nuevo))
-            salida["secciones"].append({"key": sec["key"], "label": sec["label"], "tipo": "plano", "cursos": cursos})
+            con_plan = sec["colorMode"] == "plan"
+            filas = [construir_fila(f, nrc_es_nuevo(f["NRC"]), con_plan=con_plan) for _, f in df_sec.iterrows()]
+            sec_out["filas"] = filas
+            if con_plan:
+                sec_out["leyendaPlan"] = PLAN_LEYENDA_CERT
+
+        salida["secciones"].append(sec_out)
 
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(salida, f, ensure_ascii=False, indent=2)
