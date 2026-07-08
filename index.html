@@ -9,20 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FBFAF7;
-  --card:#FFFFFF;
-  --ink:#1C1B1A;
-  --ink-soft:#57544C;
-  --stone:#E5E1D6;
-  --stone-line:#D8D3C4;
-  --orange:#FF6600;
-  --orange-deep:#B84A00;
-  --orange-tint:#FFF1E4;
-  --green:#1F7A4D;
-  --green-tint:#E7F5EC;
-  --font-display: 'Fraunces', serif;
-  --font-body: 'IBM Plex Sans', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --bg:#FBFAF7; --card:#FFFFFF; --ink:#1C1B1A; --ink-soft:#57544C;
+  --stone:#E5E1D6; --stone-line:#D8D3C4;
+  --orange:#FF6600; --orange-deep:#B84A00; --orange-tint:#FFF1E4;
+  --green:#1F7A4D; --green-tint:#E7F5EC;
+  --font-display:'Fraunces',serif; --font-body:'IBM Plex Sans',sans-serif; --font-mono:'IBM Plex Mono',monospace;
 
   --t-0700:#F2B134; --t-0700-tx:#5B3F00;
   --t-1300:#3FA9F5; --t-1300-tx:#0A3A5C;
@@ -59,18 +50,18 @@ section.lang-section{margin-bottom:20px;}
 .section-header .titles{flex:1;}
 .section-header h2{font-family:var(--font-display);font-weight:600;font-size:19px;margin:0;color:var(--ink);}
 .section-header .fechas{font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
-.chevron{font-size:14px;color:var(--ink-soft);transition:transform 0.15s ease;}
+.chevron{font-size:14px;color:var(--ink-soft);transition:transform 0.15s ease;flex-shrink:0;}
 .section-header[aria-expanded="true"] .chevron{transform:rotate(90deg);}
-.badge-count{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);background:var(--stone);padding:2px 8px;border-radius:999px;}
+.badge-count{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);background:var(--stone);padding:2px 8px;border-radius:999px;white-space:nowrap;}
 .section-body{display:none;padding:14px 4px 4px;}
 .section-body.open{display:block;}
 
 .legend-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 8px 16px;font-family:var(--font-mono);font-size:11.5px;}
 .legend-row .sw{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:6px;font-weight:500;}
 
-.plan-legend{margin:14px 8px 18px;display:flex;flex-direction:column;gap:0;border:1px solid var(--stone-line);border-radius:8px;overflow:hidden;}
+.plan-legend{margin:14px 8px 4px;display:flex;flex-direction:column;border:1px solid var(--stone-line);border-radius:8px;overflow:hidden;}
 .plan-legend-row{display:flex;font-size:12.5px;}
-.plan-legend-row .titulo{flex:0 0 110px;padding:8px 10px;font-weight:600;font-family:var(--font-body);}
+.plan-legend-row .titulo{flex:0 0 130px;padding:8px 10px;font-weight:600;}
 .plan-legend-row .texto{flex:1;padding:8px 10px;background:var(--card);color:var(--ink-soft);}
 
 .cefr-ladder{display:flex;align-items:center;gap:6px;margin:4px 8px 18px;font-family:var(--font-mono);font-size:11px;color:var(--ink-soft);}
@@ -90,12 +81,11 @@ table.oferta{width:100%;border-collapse:collapse;font-size:13.5px;background:var
 table.oferta th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink-soft);padding:9px 10px;background:var(--stone);font-weight:600;}
 table.oferta td{padding:9px 10px;border-top:1px solid var(--stone-line);vertical-align:top;}
 td.crn{font-family:var(--font-mono);font-weight:500;white-space:nowrap;}
-td.hora{white-space:nowrap;}
+.plan-subtexto{font-size:11px;color:var(--ink-soft);margin-top:2px;}
 .hora-pill{display:inline-block;padding:3px 9px;border-radius:6px;font-family:var(--font-mono);font-size:12.5px;font-weight:500;}
 .new-badge{font-family:var(--font-body);font-size:10.5px;font-weight:600;color:var(--green);background:var(--green-tint);padding:2px 7px;border-radius:999px;margin-left:6px;white-space:nowrap;}
 .reminder-row td{background:var(--orange-tint) !important;border-top:none;padding:6px 10px 10px;font-size:12.5px;}
 .materia-cell{font-weight:500;}
-tr.plan-row td{border-top:1px solid var(--stone-line);}
 .modalidad-virtual{font-weight:600;}
 
 @media (max-width:640px){
@@ -134,7 +124,6 @@ tr.plan-row td{border-top:1px solid var(--stone-line);}
 
 <script>
 const DIA_NOMBRE = {"1":"Lun","2":"Mar","3":"Mié","4":"Jue","5":"Vie","6":"Sáb","7":"Dom"};
-
 const FRANJAS = [
   {min: 7*60,     label:"07:00", cls:"0700"},
   {min: 13*60,    label:"13:00", cls:"1300"},
@@ -160,34 +149,36 @@ function franjaDe(horaInicio){
   for(const f of FRANJAS){ const d = Math.abs(min - f.min); if(d < dist){ dist = d; mejor = f; } }
   return dist <= 10 ? {cls:mejor.cls, label:mejor.label} : {cls:"otro", label: horaInicio};
 }
-function diasLegibles(diasStr){
-  if(!diasStr) return "—";
-  return diasStr.split(",").map(d => DIA_NOMBRE[d.trim()] || d.trim()).join("·");
+
+function planColores(plan){
+  if(plan === "2016") return ["var(--p-blue)","var(--p-blue-tx)"];
+  if(plan === "0creditos") return ["var(--p-red)","var(--p-red-tx)"];
+  return ["var(--p-none)","var(--p-none-tx)"];
 }
 
 function renderFila(f, colorMode, mostrarMateria){
   const badge = f.esNuevo ? `<span class="new-badge">Nuevo</span>` : "";
   const materiaCol = mostrarMateria ? `<td class="materia-cell">${f.materia}</td>` : "";
-  let horaCelda;
+
+  let horaCelda, rowStyle = "";
   if(colorMode === "hora"){
     const franja = franjaDe(f.horaInicio);
     horaCelda = `<span class="hora-pill" style="background:var(--t-${franja.cls});color:var(--t-${franja.cls}-tx);">${franja.label}</span>`;
   } else {
     horaCelda = f.horaInicio;
+    if(colorMode === "plan" && f.plan){
+      const [bg, tx] = planColores(f.plan);
+      rowStyle = ` style="background:${bg};color:${tx};"`;
+    }
   }
-  let planBg = "", planTx = "";
-  if(colorMode === "plan" && f.plan){
-    if(f.plan === "2016"){ planBg = "var(--p-blue)"; planTx = "var(--p-blue-tx)"; }
-    else if(f.plan === "0creditos"){ planBg = "var(--p-red)"; planTx = "var(--p-red-tx)"; }
-    else { planBg = "var(--p-none)"; planTx = "var(--p-none-tx)"; }
-  }
-  const rowStyle = planBg ? ` style="background:${planBg};color:${planTx};"` : "";
-  const modClass = f.modalidad && f.modalidad.toLowerCase().includes("virtual") ? "modalidad-virtual" : "";
+
+  const subtextoPlan = (colorMode === "plan" && f.planTexto) ? `<div class="plan-subtexto">${f.planTexto}</div>` : "";
+  const modClass = f.modalidad === "Virtual" ? "modalidad-virtual" : "";
 
   let fila = `
-    <tr data-nrc="${f.nrc}" class="plan-row"${rowStyle}>
+    <tr data-nrc="${f.nrc}"${rowStyle}>
       ${materiaCol}
-      <td class="crn">${f.nrc}${badge}</td>
+      <td class="crn">${f.nrc}${badge}${subtextoPlan}</td>
       <td class="docente">${f.docente}</td>
       <td class="hora">${horaCelda}</td>
       <td class="modalidad ${modClass}">${f.modalidad}</td>
@@ -199,75 +190,51 @@ function renderFila(f, colorMode, mostrarMateria){
 }
 
 function tablaHtml(filas, colorMode, mostrarMateria){
-  const encabezadoMateria = mostrarMateria ? "<th>Materia</th>" : "";
-  return `
-    <table class="oferta">
-      <thead><tr>${encabezadoMateria}<th>CRN</th><th>Docente</th><th>Inicio</th><th>Modalidad</th></tr></thead>
-      <tbody>${filas.map(f => renderFila(f, colorMode, mostrarMateria)).join("")}</tbody>
-    </table>`;
+  const th = mostrarMateria ? "<th>Materia</th>" : "";
+  return `<table class="oferta"><thead><tr>${th}<th>CRN</th><th>Docente</th><th>Inicio</th><th>Modalidad</th></tr></thead>
+    <tbody>${filas.map(f => renderFila(f, colorMode, mostrarMateria)).join("")}</tbody></table>`;
 }
 
 function horaLegendHtml(){
   return `<div class="legend-row">${FRANJAS.map(f => `<span class="sw" style="background:var(--t-${f.cls});color:var(--t-${f.cls}-tx);">${f.label}</span>`).join("")}</div>`;
 }
-
 function planLegendHtml(leyenda){
   if(!leyenda) return "";
-  const filas = leyenda.map(p => {
-    const bg = p.color === "blue" ? "var(--p-blue)" : p.color === "red" ? "var(--p-red)" : "var(--p-none)";
-    const tx = p.color === "blue" ? "var(--p-blue-tx)" : p.color === "red" ? "var(--p-red-tx)" : "var(--p-none-tx)";
+  return `<div class="plan-legend">${leyenda.map(p => {
+    const [bg, tx] = planColores(p.clave);
     return `<div class="plan-legend-row"><div class="titulo" style="background:${bg};color:${tx};">${p.titulo}</div><div class="texto">${p.texto}</div></div>`;
-  }).join("");
-  return `<div class="plan-legend">${filas}</div>`;
+  }).join("")}</div>`;
 }
 
 function renderSeccion(sec){
   let cuerpo = "";
-
   if(sec.colorMode === "hora") cuerpo += horaLegendHtml();
 
-  if(sec.tipo === "niveles"){
+  if(sec.colorMode === "hora"){
     const activos = sec.niveles.map(n => n.cefr).filter(Boolean);
-    cuerpo += `<div class="cefr-ladder">A1<div class="line"></div>${
-      ["A1","A2","B1","B1+","B2","C1"].map(l=>`<div class="dot2 ${activos.includes(l)?'active':''}"></div>`).join('<div class="line"></div>')
-    }C1</div>`;
-    sec.niveles.forEach((niv, idx) => {
-      cuerpo += `
-        <div class="level-block">
-          <div class="level-header" onclick="toggleLevel('${sec.key}-${idx}')">
-            <span class="chevron">▸</span>
-            <h3>${niv.nombre}</h3>
-            ${niv.cefr ? `<span class="cefr-tag">${niv.cefr}</span>` : ""}
-            <span class="badge-count">${niv.filas.length} grupo${niv.filas.length!==1?'s':''}</span>
-          </div>
-          <div class="level-courses" id="level-${sec.key}-${idx}">
-            ${tablaHtml(niv.filas, sec.colorMode, false)}
-          </div>
-        </div>`;
-    });
-  } else if(sec.tipo === "niveles-plan"){
-    sec.niveles.forEach((niv, idx) => {
-      cuerpo += `
-        <div class="level-block">
-          <div class="level-header" onclick="toggleLevel('${sec.key}-${idx}')">
-            <span class="chevron">▸</span>
-            <h3>${niv.nombre}</h3>
-            <span class="badge-count">${niv.filas.length} CRN</span>
-          </div>
-          <div class="level-courses" id="level-${sec.key}-${idx}">
-            ${tablaHtml(niv.filas, sec.colorMode, true)}
-          </div>
-        </div>`;
-    });
-    cuerpo += planLegendHtml(sec.leyendaPlan);
-  } else {
-    cuerpo += tablaHtml(sec.filas, sec.colorMode, sec.colorMode === "plan");
-    if(sec.colorMode === "plan") cuerpo += planLegendHtml(sec.leyendaPlan);
+    cuerpo += `<div class="cefr-ladder">Pre-A1<div class="line"></div>${
+      ["Pre-A1","A2","B1","B2"].map(l=>`<div class="dot2 ${activos.includes(l)?'active':''}"></div>`).join('<div class="line"></div>')
+    }B2+</div>`;
   }
 
-  const total = (sec.tipo === "niveles" || sec.tipo === "niveles-plan")
-    ? sec.niveles.reduce((a,n)=>a+n.filas.length,0)
-    : sec.filas.length;
+  sec.niveles.forEach((niv, idx) => {
+    cuerpo += `
+      <div class="level-block">
+        <div class="level-header" onclick="toggleLevel('${sec.key}-${idx}')">
+          <span class="chevron">▸</span>
+          <h3>${niv.nombre}</h3>
+          ${niv.cefr ? `<span class="cefr-tag">${niv.cefr}</span>` : ""}
+          <span class="badge-count">${niv.filas.length} CRN</span>
+        </div>
+        <div class="level-courses" id="level-${sec.key}-${idx}">
+          ${tablaHtml(niv.filas, sec.colorMode, sec.mostrarMateria)}
+        </div>
+      </div>`;
+  });
+
+  if(sec.colorMode === "plan") cuerpo += planLegendHtml(sec.leyendaPlan);
+
+  const total = sec.niveles.reduce((a,n)=>a+n.filas.length,0);
 
   return `
     <section class="lang-section" id="sec-${sec.key}">
@@ -277,7 +244,7 @@ function renderSeccion(sec){
           <h2>${sec.label}</h2>
           <div class="fechas">Inicio: ${sec.inicioClases} · Fin: ${sec.finClases}</div>
         </div>
-        <span class="badge-count">${total} grupo${total!==1?'s':''}</span>
+        <span class="badge-count">${total} CRN</span>
         <span class="chevron">▸</span>
       </div>
       <div class="section-body" id="body-${sec.key}">${cuerpo}</div>
