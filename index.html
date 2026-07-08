@@ -86,6 +86,9 @@ td.crn{font-family:var(--font-mono);font-weight:500;white-space:nowrap;}
 .new-badge{font-family:var(--font-body);font-size:10.5px;font-weight:600;color:var(--green);background:var(--green-tint);padding:2px 7px;border-radius:999px;margin-left:6px;white-space:nowrap;}
 .reminder-row td{background:var(--orange-tint) !important;border-top:none;padding:6px 10px 10px;font-size:12.5px;}
 .materia-cell{font-weight:500;}
+.parte-tag{font-family:var(--font-mono);font-size:11.5px;padding:2px 8px;border-radius:6px;font-weight:500;}
+.parte-A{background:var(--orange-tint);color:var(--orange-deep);}
+.parte-B{background:var(--stone);color:var(--ink-soft);}
 .modalidad-virtual{font-weight:600;}
 
 @media (max-width:640px){
@@ -156,9 +159,10 @@ function planColores(plan){
   return ["var(--p-none)","var(--p-none-tx)"];
 }
 
-function renderFila(f, colorMode, mostrarMateria){
+function renderFila(f, colorMode, mostrarMateria, mostrarParte){
   const badge = f.esNuevo ? `<span class="new-badge">Nuevo</span>` : "";
   const materiaCol = mostrarMateria ? `<td class="materia-cell">${f.materia}</td>` : "";
+  const parteCol = mostrarParte ? `<td><span class="parte-tag parte-${f.parte}">Parte ${f.parte}</span></td>` : "";
 
   let horaCelda, rowStyle = "";
   if(colorMode === "hora"){
@@ -178,21 +182,23 @@ function renderFila(f, colorMode, mostrarMateria){
   let fila = `
     <tr data-nrc="${f.nrc}"${rowStyle}>
       ${materiaCol}
+      ${parteCol}
       <td class="crn">${f.nrc}${badge}${subtextoPlan}</td>
       <td class="docente">${f.docente}</td>
       <td class="hora">${horaCelda}</td>
       <td class="modalidad ${modClass}">${f.modalidad}</td>
     </tr>`;
   if(f.recordatorio){
-    fila += `<tr class="reminder-row"><td colspan="5">🔔 <strong>Recordatorio:</strong> ${f.recordatorio}</td></tr>`;
+    fila += `<tr class="reminder-row"><td colspan="6">🔔 <strong>Recordatorio:</strong> ${f.recordatorio}</td></tr>`;
   }
   return fila;
 }
 
-function tablaHtml(filas, colorMode, mostrarMateria){
-  const th = mostrarMateria ? "<th>Materia</th>" : "";
-  return `<table class="oferta"><thead><tr>${th}<th>CRN</th><th>Docente</th><th>Inicio</th><th>Modalidad</th></tr></thead>
-    <tbody>${filas.map(f => renderFila(f, colorMode, mostrarMateria)).join("")}</tbody></table>`;
+function tablaHtml(filas, colorMode, mostrarMateria, mostrarParte){
+  const thMateria = mostrarMateria ? "<th>Materia</th>" : "";
+  const thParte = mostrarParte ? "<th>Periodo</th>" : "";
+  return `<table class="oferta"><thead><tr>${thMateria}${thParte}<th>CRN</th><th>Docente</th><th>Inicio</th><th>Modalidad</th></tr></thead>
+    <tbody>${filas.map(f => renderFila(f, colorMode, mostrarMateria, mostrarParte)).join("")}</tbody></table>`;
 }
 
 function horaLegendHtml(){
@@ -227,7 +233,7 @@ function renderSeccion(sec){
           <span class="badge-count">${niv.filas.length} CRN</span>
         </div>
         <div class="level-courses" id="level-${sec.key}-${idx}">
-          ${tablaHtml(niv.filas, sec.colorMode, sec.mostrarMateria)}
+          ${tablaHtml(niv.filas, sec.colorMode, sec.mostrarMateria, sec.key === "ingles")}
         </div>
       </div>`;
   });

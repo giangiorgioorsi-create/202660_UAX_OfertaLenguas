@@ -23,17 +23,22 @@ DIAS_DE_VIGENCIA_NUEVO = 7
 INICIO_CLASES = "11 de agosto"
 FIN_CLASES = "26 de noviembre"
 
-ORDEN_NIVELES_INGLES = ["0A", "0B", "1", "2", "3", "4", "5", "6"]
-CEFR_POR_NIVEL_INGLES = {
-    "0A": "Pre-A1", "0B": "Pre-A1",
-    "1": "A2", "2": "A2",
-    "3": "B1", "4": "B1",
-    "5": "B2", "6": "B2",
+GRUPO_NIVEL_INGLES = {
+    "0A": "Propedéutico Elementary", "0B": "Propedéutico Elementary",
+    "1": "Pre Intermediate", "2": "Pre Intermediate",
+    "3": "Intermediate", "4": "Intermediate",
+    "5": "Upper Intermediate", "6": "Upper Intermediate",
 }
-ETIQUETA_NIVEL_INGLES = {
-    "0A": "Nivel 0A", "0B": "Nivel 0B",
-    "1": "Nivel 1", "2": "Nivel 2", "3": "Nivel 3",
-    "4": "Nivel 4", "5": "Nivel 5", "6": "Nivel 6",
+PARTE_POR_NIVEL = {
+    "0A": "A", "1": "A", "3": "A", "5": "A",
+    "0B": "B", "2": "B", "4": "B", "6": "B",
+}
+ORDEN_GRUPOS_INGLES = ["Propedéutico Elementary", "Pre Intermediate", "Intermediate", "Upper Intermediate"]
+CEFR_POR_GRUPO_INGLES = {
+    "Propedéutico Elementary": "Pre-A1",
+    "Pre Intermediate": "A2",
+    "Intermediate": "B1",
+    "Upper Intermediate": "B2",
 }
 ORDEN_NIVELES_CERT = ["Preparación B2 First", "Preparación C1 Advanced"]
 
@@ -78,7 +83,7 @@ def orden_numero_nivel(nombre):
     return int(m.group(1)) if m else 999
 
 
-def construir_fila(fila, es_nuevo, con_plan=False):
+def construir_fila(fila, es_nuevo, con_plan=False, con_parte=False):
     base = {
         "nrc": fila["NRC"],
         "claveBanner": fila["ClaveBanner"],
@@ -99,21 +104,42 @@ def construir_fila(fila, es_nuevo, con_plan=False):
         plan_original = fila.get("Plan", "")
         base["plan"] = normalizar_plan(plan_original)
         base["planTexto"] = plan_original
+    if con_parte:
+        base["parte"] = PARTE_POR_NIVEL.get(fila.get("NivelEtiqueta", ""), "")
     return base
 
 
-def agrupar_por_nivel(df_sec, columna_grupo, orden_explicito=None, con_plan=False, nrc_es_nuevo=None):
+def agrupar_ingles(df_sec, nrc_es_nuevo):
+    df_sec = df_sec.copy()
+    df_sec["_grupo"] = df_sec["NivelEtiqueta"].map(GRUPO_NIVEL_INGLES).fillna(df_sec["NombreMateria"])
     niveles = []
-    valores = df_sec[columna_grupo].unique().tolist()
-    if orden_explicito:
-        ordenados = [v for v in orden_explicito if v in valores] + [v for v in valores if v not in orden_explicito]
-    else:
-        ordenados = sorted(valores, key=orden_numero_nivel)
+    grupos_presentes = [g for g in ORDEN_GRUPOS_INGLES if g in df_sec["_grupo"].unique()]
+    otros = [g for g in df_sec["_grupo"].unique() if g not in ORDEN_GRUPOS_INGLES]
+    for grupo in grupos_presentes + otros:
+        df_niv = df_sec[df_sec["_grupo"] == grupo].sort_values(by=["Docente", "HoraInicio", "NivelEtiqueta"])
+        filas = [construir_fila(f, nrc_es_nuevo(f["NRC"]), con_parte=True) for _, f in df_niv.iterrows()]
+        niveles.append({"nombre": grupo, "cefr": CEFR_POR_GRUPO_INGLES.get(grupo, ""), "filas": filas})
+    return niveles
+
+
+def agrupar_certificaciones(df_sec, orden_explicito, nrc_es_nuevo):
+    niveles = []
+    valores = df_sec["NivelEtiqueta"].unique().tolist()
+    ordenados = [v for v in orden_explicito if v in valores] + [v for v in valores if v not in orden_explicito]
     for valor in ordenados:
-        df_niv = df_sec[df_sec[columna_grupo] == valor]
-        filas = [construir_fila(f, nrc_es_nuevo(f["NRC"]), con_plan=con_plan) for _, f in df_niv.iterrows()]
-        nombre_mostrado = ETIQUETA_NIVEL_INGLES.get(valor, valor)
-        niveles.append({"nombre": nombre_mostrado, "cefr": CEFR_POR_NIVEL_INGLES.get(valor, ""), "filas": filas})
+        df_niv = df_sec[df_sec["NivelEtiqueta"] == valor]
+        filas = [construir_fila(f, nrc_es_nuevo(f["NRC"]), con_plan=True) for _, f in df_niv.iterrows()]
+        niveles.append({"nombre": valor, "cefr": "", "filas": filas})
+    return niveles
+
+
+def agrupar_sabatino(df_sec, nrc_es_nuevo):
+    niveles = []
+    orden = [n for n in df_sec["NombreMateria"].unique()]
+    for nombre in orden:
+        df_niv = df_sec[df_sec["NombreMateria"] == nombre]
+        filas = [construir_fila(f, nrc_es_nuevo(f["NRC"])) for _, f in df_niv.iterrows()]
+        niveles.append({"nombre": nombre, "cefr": "", "filas": filas})
     return niveles
 
 
@@ -204,18 +230,18 @@ def main():
     df_ing_sabado = df_ing[df_ing["Weekdays"] == "6"]
 
     agregar_seccion(
-        "ingles", "Inglés", "🇬🇧", "hora", True,
-        agrupar_por_nivel(df_ing_semana, "NivelEtiqueta", ORDEN_NIVELES_INGLES, con_plan=False, nrc_es_nuevo=nrc_es_nuevo)
+        "ingles", "Inglés", "🇬🇧", "hora", False,
+        agrupar_ingles(df_ing_semana, nrc_es_nuevo)
     )
     agregar_seccion(
-        "ingles-sabatino", "Inglés sabatino", "🇬🇧", "none", True,
-        agrupar_por_nivel(df_ing_sabado, "NivelEtiqueta", ORDEN_NIVELES_INGLES, con_plan=False, nrc_es_nuevo=nrc_es_nuevo)
+        "ingles-sabatino", "Inglés sabatino", "🇬🇧", "none", False,
+        agrupar_sabatino(df_ing_sabado, nrc_es_nuevo)
     )
 
     df_cert = df[df["Lengua"] == "Inglés certificación"]
     agregar_seccion(
         "certificaciones", "Inglés certificaciones B2 First y CAE", "🇬🇧", "plan", True,
-        agrupar_por_nivel(df_cert, "NivelEtiqueta", ORDEN_NIVELES_CERT, con_plan=True, nrc_es_nuevo=nrc_es_nuevo),
+        agrupar_certificaciones(df_cert, ORDEN_NIVELES_CERT, nrc_es_nuevo),
         leyendaPlan=LEYENDA_PLAN_CERT
     )
 
