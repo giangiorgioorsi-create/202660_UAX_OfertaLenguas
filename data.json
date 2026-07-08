@@ -1,0 +1,1436 @@
+{
+  "generado": "2026-07-08T17:58:36.546547",
+  "secciones": [
+    {
+      "key": "certificaciones",
+      "label": "Inglés certificaciones B2 First y CAE",
+      "tipo": "plano",
+      "cursos": [
+        {
+          "nrcs": [
+            "40693"
+          ],
+          "clavesBanner": [
+            "TCUG0432"
+          ],
+          "materia": "B2 English Grammar",
+          "docente": "Pickup Christian Watson",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "2,4",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2020",
+          "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40691.",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40694"
+          ],
+          "clavesBanner": [
+            "TIDI0302"
+          ],
+          "materia": "B2 English Grammar",
+          "docente": "Pickup Christian Watson",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "2,4",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40692.",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40696"
+          ],
+          "clavesBanner": [
+            "TCUG0432"
+          ],
+          "materia": "B2 English Grammar",
+          "docente": "García Pérez Alfredo",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "2,4",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2020",
+          "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40695.",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40698"
+          ],
+          "clavesBanner": [
+            "TIDI0302"
+          ],
+          "materia": "B2 English Grammar",
+          "docente": "García Pérez Alfredo",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "2,4",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40697.",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40691"
+          ],
+          "clavesBanner": [
+            "TCUG0430"
+          ],
+          "materia": "B2 Taller First Certificate",
+          "docente": "Pickup Christian Watson",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,3,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2020",
+          "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40693.",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40692"
+          ],
+          "clavesBanner": [
+            "TIDI0303"
+          ],
+          "materia": "B2 Taller First Certificate",
+          "docente": "Pickup Christian Watson",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,3,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40694.",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40695"
+          ],
+          "clavesBanner": [
+            "TCUG0430"
+          ],
+          "materia": "B2 Taller First Certificate",
+          "docente": "García Pérez Alfredo",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,3,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2020",
+          "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40696.",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40697"
+          ],
+          "clavesBanner": [
+            "TIDI0303"
+          ],
+          "materia": "B2 Taller First Certificate",
+          "docente": "García Pérez Alfredo",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,3,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "este curso debe inscribirse obligatoriamente junto con el NRC 40698.",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40699",
+            "40700"
+          ],
+          "clavesBanner": [
+            "TCUG0430",
+            "TIDI0303"
+          ],
+          "materia": "B2 Taller First Certificate",
+          "docente": "Loya Vite Adriana Guadalupe",
+          "horario": "9:00 AM - 2:19 PM",
+          "dias": "6",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "3",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Plan 2020",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40687",
+            "40688"
+          ],
+          "clavesBanner": [
+            "EIDI0317",
+            "IDI4432"
+          ],
+          "materia": "C1 English academic purposes",
+          "docente": "Gidi Marti Daniel Jacobo",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40689",
+            "40690"
+          ],
+          "clavesBanner": [
+            "EIDI0317",
+            "IDI4432"
+          ],
+          "materia": "C1 English academic purposes",
+          "docente": "Pickup Christian Watson",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40687",
+            "40688"
+          ],
+          "clavesBanner": [
+            "EIDI0317",
+            "IDI4432"
+          ],
+          "materia": "C1 Expresió oral escrit ingl acad",
+          "docente": "Gidi Marti Daniel Jacobo",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2020",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40689",
+            "40690"
+          ],
+          "clavesBanner": [
+            "EIDI0317",
+            "IDI4432"
+          ],
+          "materia": "C1 Expresió oral escrit ingl acad",
+          "docente": "Pickup Christian Watson",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2020",
+          "recordatorio": "",
+          "esNuevo": true
+        }
+      ]
+    },
+    {
+      "key": "aleman",
+      "label": "Alemán",
+      "tipo": "plano",
+      "cursos": [
+        {
+          "nrcs": [
+            "40701",
+            "40702",
+            "40703"
+          ],
+          "clavesBanner": [
+            "EIDI0301",
+            "IDI1407",
+            "CLALALE1"
+          ],
+          "materia": "1er. Nivel Alemán",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40704",
+            "40705",
+            "40706"
+          ],
+          "clavesBanner": [
+            "EIDI0301",
+            "IDI1407",
+            "CLALALE1"
+          ],
+          "materia": "1er. Nivel Alemán",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40707",
+            "40708",
+            "40709"
+          ],
+          "clavesBanner": [
+            "EIDI0302",
+            "IDI1408",
+            "CLALALE2"
+          ],
+          "materia": "2° Nivel Alemán",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40710",
+            "40711",
+            "40712"
+          ],
+          "clavesBanner": [
+            "EIDI0302",
+            "IDI1408",
+            "CLALALE2"
+          ],
+          "materia": "2° Nivel Alemán",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40713",
+            "40714",
+            "40715"
+          ],
+          "clavesBanner": [
+            "EIDI0303",
+            "IDI2405",
+            "CLALALE3"
+          ],
+          "materia": "3er. Nivel Alemán",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40716",
+            "40717",
+            "40718"
+          ],
+          "clavesBanner": [
+            "EIDI0304",
+            "IDI2406",
+            "CLALALE4"
+          ],
+          "materia": "4° Nivel Alemán",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40719",
+            "40720"
+          ],
+          "clavesBanner": [
+            "IDI3406",
+            "CLALALE5"
+          ],
+          "materia": "5° nivel de alemán",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40701",
+            "40702",
+            "40703"
+          ],
+          "clavesBanner": [
+            "EIDI0301",
+            "IDI1407",
+            "CLALALE1"
+          ],
+          "materia": "Alemán electivo I",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40704",
+            "40705",
+            "40706"
+          ],
+          "clavesBanner": [
+            "EIDI0301",
+            "IDI1407",
+            "CLALALE1"
+          ],
+          "materia": "Alemán electivo I",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40707",
+            "40708",
+            "40709"
+          ],
+          "clavesBanner": [
+            "EIDI0302",
+            "IDI1408",
+            "CLALALE2"
+          ],
+          "materia": "Alemán electivo II",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40710",
+            "40711",
+            "40712"
+          ],
+          "clavesBanner": [
+            "EIDI0302",
+            "IDI1408",
+            "CLALALE2"
+          ],
+          "materia": "Alemán electivo II",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40713",
+            "40714",
+            "40715"
+          ],
+          "clavesBanner": [
+            "EIDI0303",
+            "IDI2405",
+            "CLALALE3"
+          ],
+          "materia": "Alemán electivo III",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40716",
+            "40717",
+            "40718"
+          ],
+          "clavesBanner": [
+            "EIDI0304",
+            "IDI2406",
+            "CLALALE4"
+          ],
+          "materia": "Alemán electivo IV",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40701",
+            "40702",
+            "40703"
+          ],
+          "clavesBanner": [
+            "EIDI0301",
+            "IDI1407",
+            "CLALALE1"
+          ],
+          "materia": "Lengua alemana A",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-01",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40704",
+            "40705",
+            "40706"
+          ],
+          "clavesBanner": [
+            "EIDI0301",
+            "IDI1407",
+            "CLALALE1"
+          ],
+          "materia": "Lengua alemana A",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-01",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40707",
+            "40708",
+            "40709"
+          ],
+          "clavesBanner": [
+            "EIDI0302",
+            "IDI1408",
+            "CLALALE2"
+          ],
+          "materia": "Lengua alemana B",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-01",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40710",
+            "40711",
+            "40712"
+          ],
+          "clavesBanner": [
+            "EIDI0302",
+            "IDI1408",
+            "CLALALE2"
+          ],
+          "materia": "Lengua alemana B",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-01",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40713",
+            "40714",
+            "40715"
+          ],
+          "clavesBanner": [
+            "EIDI0303",
+            "IDI2405",
+            "CLALALE3"
+          ],
+          "materia": "Lengua alemana C",
+          "docente": "Boedeker Sandra Maria",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-01",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40716",
+            "40717",
+            "40718"
+          ],
+          "clavesBanner": [
+            "EIDI0304",
+            "IDI2406",
+            "CLALALE4"
+          ],
+          "materia": "Lengua alemana D",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-01",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40719",
+            "40720"
+          ],
+          "clavesBanner": [
+            "IDI3406",
+            "CLALALE5"
+          ],
+          "materia": "Lengua alemana E",
+          "docente": "Egry Rasetti Stephanie",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula virtual",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-01",
+          "recordatorio": "",
+          "esNuevo": true
+        }
+      ]
+    },
+    {
+      "key": "frances",
+      "label": "Francés",
+      "tipo": "plano",
+      "cursos": [
+        {
+          "nrcs": [
+            "40724",
+            "40725",
+            "40726"
+          ],
+          "clavesBanner": [
+            "EIDI0324",
+            "IDI1413",
+            "CLFRFRA1"
+          ],
+          "materia": "1er. Nivel Francés",
+          "docente": "Cortes Martínez Misael",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40728",
+            "40729",
+            "40730"
+          ],
+          "clavesBanner": [
+            "EIDI0325",
+            "IDI1414",
+            "CLFRFRA2"
+          ],
+          "materia": "2° Nivel Francés",
+          "docente": "Trejo y Cruz Diana",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40731",
+            "40732",
+            "40733"
+          ],
+          "clavesBanner": [
+            "EIDI0326",
+            "IDI2411",
+            "CLFRFRA3"
+          ],
+          "materia": "3er. Nivel Francés",
+          "docente": "Ladrón de Guevara Coutiño Armando",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40734",
+            "40735",
+            "40736"
+          ],
+          "clavesBanner": [
+            "EIDI0327",
+            "IDI2412",
+            "CLFRFRA4"
+          ],
+          "materia": "4° Nivel Francés",
+          "docente": "Cortes Martínez Misael",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40737",
+            "40738",
+            "40739"
+          ],
+          "clavesBanner": [
+            "EIDI0313",
+            "IDI3412",
+            "CLFRFRA5"
+          ],
+          "materia": "5° nivel de francés",
+          "docente": "Trejo y Cruz Diana",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40737",
+            "40738",
+            "40739"
+          ],
+          "clavesBanner": [
+            "EIDI0313",
+            "IDI3412",
+            "CLFRFRA5"
+          ],
+          "materia": "Conversación francés",
+          "docente": "Trejo y Cruz Diana",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40724",
+            "40725",
+            "40726"
+          ],
+          "clavesBanner": [
+            "EIDI0324",
+            "IDI1413",
+            "CLFRFRA1"
+          ],
+          "materia": "Francés I",
+          "docente": "Cortes Martínez Misael",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40728",
+            "40729",
+            "40730"
+          ],
+          "clavesBanner": [
+            "EIDI0325",
+            "IDI1414",
+            "CLFRFRA2"
+          ],
+          "materia": "Francés II",
+          "docente": "Trejo y Cruz Diana",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40731",
+            "40732",
+            "40733"
+          ],
+          "clavesBanner": [
+            "EIDI0326",
+            "IDI2411",
+            "CLFRFRA3"
+          ],
+          "materia": "Francés III",
+          "docente": "Ladrón de Guevara Coutiño Armando",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40734",
+            "40735",
+            "40736"
+          ],
+          "clavesBanner": [
+            "EIDI0327",
+            "IDI2412",
+            "CLFRFRA4"
+          ],
+          "materia": "Francés IV",
+          "docente": "Cortes Martínez Misael",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40724",
+            "40725",
+            "40726"
+          ],
+          "clavesBanner": [
+            "EIDI0324",
+            "IDI1413",
+            "CLFRFRA1"
+          ],
+          "materia": "Lengua francesa A",
+          "docente": "Cortes Martínez Misael",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-04",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40728",
+            "40729",
+            "40730"
+          ],
+          "clavesBanner": [
+            "EIDI0325",
+            "IDI1414",
+            "CLFRFRA2"
+          ],
+          "materia": "Lengua francesa B",
+          "docente": "Trejo y Cruz Diana",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-04",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40731",
+            "40732",
+            "40733"
+          ],
+          "clavesBanner": [
+            "EIDI0326",
+            "IDI2411",
+            "CLFRFRA3"
+          ],
+          "materia": "Lengua francesa C",
+          "docente": "Ladrón de Guevara Coutiño Armando",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-04",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40734",
+            "40735",
+            "40736"
+          ],
+          "clavesBanner": [
+            "EIDI0327",
+            "IDI2412",
+            "CLFRFRA4"
+          ],
+          "materia": "Lengua francesa D",
+          "docente": "Cortes Martínez Misael",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-04",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40737",
+            "40738",
+            "40739"
+          ],
+          "clavesBanner": [
+            "EIDI0313",
+            "IDI3412",
+            "CLFRFRA5"
+          ],
+          "materia": "Lengua francesa E",
+          "docente": "Trejo y Cruz Diana",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-04",
+          "recordatorio": "",
+          "esNuevo": true
+        }
+      ]
+    },
+    {
+      "key": "italiano",
+      "label": "Italiano",
+      "tipo": "plano",
+      "cursos": [
+        {
+          "nrcs": [
+            "40740",
+            "40741",
+            "40742"
+          ],
+          "clavesBanner": [
+            "EIDI0328",
+            "IDI1415",
+            "CLITITA1"
+          ],
+          "materia": "1er. Nivel Italiano",
+          "docente": "Conchello Osorio Eliz Eugenia",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40746",
+            "40747",
+            "40748"
+          ],
+          "clavesBanner": [
+            "EIDI0329",
+            "IDI1416",
+            "CLITITA2"
+          ],
+          "materia": "2° Nivel Italiano",
+          "docente": "Conchello Osorio Eliz Eugenia",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40749",
+            "40750",
+            "40751"
+          ],
+          "clavesBanner": [
+            "EIDI0330",
+            "IDI2413",
+            "CLITITA3"
+          ],
+          "materia": "3er. Nivel Italiano",
+          "docente": "Bellani Luca",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40752",
+            "40753",
+            "40754"
+          ],
+          "clavesBanner": [
+            "EIDI0331",
+            "IDI2414",
+            "CLITITA4"
+          ],
+          "materia": "4° Nivel Italiano",
+          "docente": "Bellani Luca",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40755",
+            "40756",
+            "40757"
+          ],
+          "clavesBanner": [
+            "EIDI0315",
+            "IDI3414",
+            "CLITITA5"
+          ],
+          "materia": "5°nivel de italiano",
+          "docente": "Orsi Giangiorgio",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "0",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Requisito tercera lengua",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40755",
+            "40756",
+            "40757"
+          ],
+          "clavesBanner": [
+            "EIDI0315",
+            "IDI3414",
+            "CLITITA5"
+          ],
+          "materia": "Conversación italiano",
+          "docente": "Orsi Giangiorgio",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40740",
+            "40741",
+            "40742"
+          ],
+          "clavesBanner": [
+            "EIDI0328",
+            "IDI1415",
+            "CLITITA1"
+          ],
+          "materia": "Italiano A",
+          "docente": "Conchello Osorio Eliz Eugenia",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-05",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40746",
+            "40747",
+            "40748"
+          ],
+          "clavesBanner": [
+            "EIDI0329",
+            "IDI1416",
+            "CLITITA2"
+          ],
+          "materia": "Italiano B",
+          "docente": "Conchello Osorio Eliz Eugenia",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-05",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40749",
+            "40750",
+            "40751"
+          ],
+          "clavesBanner": [
+            "EIDI0330",
+            "IDI2413",
+            "CLITITA3"
+          ],
+          "materia": "Italiano C",
+          "docente": "Bellani Luca",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-05",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40752",
+            "40753",
+            "40754"
+          ],
+          "clavesBanner": [
+            "EIDI0331",
+            "IDI2414",
+            "CLITITA4"
+          ],
+          "materia": "Italiano D",
+          "docente": "Bellani Luca",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-05",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40755",
+            "40756",
+            "40757"
+          ],
+          "clavesBanner": [
+            "EIDI0315",
+            "IDI3414",
+            "CLITITA5"
+          ],
+          "materia": "Italiano E",
+          "docente": "Orsi Giangiorgio",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Clave minor ML-05",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40740",
+            "40741",
+            "40742"
+          ],
+          "clavesBanner": [
+            "EIDI0328",
+            "IDI1415",
+            "CLITITA1"
+          ],
+          "materia": "Italiano I",
+          "docente": "Conchello Osorio Eliz Eugenia",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40746",
+            "40747",
+            "40748"
+          ],
+          "clavesBanner": [
+            "EIDI0329",
+            "IDI1416",
+            "CLITITA2"
+          ],
+          "materia": "Italiano II",
+          "docente": "Conchello Osorio Eliz Eugenia",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40749",
+            "40750",
+            "40751"
+          ],
+          "clavesBanner": [
+            "EIDI0330",
+            "IDI2413",
+            "CLITITA3"
+          ],
+          "materia": "Italiano III",
+          "docente": "Bellani Luca",
+          "horario": "2:30 PM - 3:57 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        },
+        {
+          "nrcs": [
+            "40752",
+            "40753",
+            "40754"
+          ],
+          "clavesBanner": [
+            "EIDI0331",
+            "IDI2414",
+            "CLITITA4"
+          ],
+          "materia": "Italiano IV",
+          "docente": "Bellani Luca",
+          "horario": "1:00 PM - 2:27 PM",
+          "dias": "1,2,3,4,5",
+          "periodo": "10-AGO-2026 25-NOV-2026",
+          "creditos": "6",
+          "modalidad": "Presencial en aula",
+          "estatus": "Activo",
+          "notas": "Plan 2016-2019",
+          "recordatorio": "",
+          "esNuevo": true
+        }
+      ]
+    }
+  ]
+}
