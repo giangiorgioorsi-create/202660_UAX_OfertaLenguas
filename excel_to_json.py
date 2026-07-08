@@ -23,22 +23,13 @@ DIAS_DE_VIGENCIA_NUEVO = 7
 INICIO_CLASES = "11 de agosto"
 FIN_CLASES = "26 de noviembre"
 
-GRUPO_NIVEL_INGLES = {
-    "0A": "Propedéutico Elementary", "0B": "Propedéutico Elementary",
-    "1": "Pre Intermediate", "2": "Pre Intermediate",
-    "3": "Intermediate", "4": "Intermediate",
-    "5": "Upper Intermediate", "6": "Upper Intermediate",
-}
-PARTE_POR_NIVEL = {
-    "0A": "A", "1": "A", "3": "A", "5": "A",
-    "0B": "B", "2": "B", "4": "B", "6": "B",
-}
-ORDEN_GRUPOS_INGLES = ["Propedéutico Elementary", "Pre Intermediate", "Intermediate", "Upper Intermediate"]
-CEFR_POR_GRUPO_INGLES = {
-    "Propedéutico Elementary": "Pre-A1",
-    "Pre Intermediate": "A2",
-    "Intermediate": "B1",
-    "Upper Intermediate": "B2",
+ORDEN_NIVELES_INGLES = [
+    "Propedéutico Elementary A", "Propedéutico Elementary B",
+    "Pre Intermediate A", "Intermediate A", "Upper Intermediate A",
+]
+CEFR_POR_NIVEL_INGLES = {
+    "Propedéutico Elementary A": "Pre-A1", "Propedéutico Elementary B": "Pre-A1",
+    "Pre Intermediate A": "A2", "Intermediate A": "B1", "Upper Intermediate A": "B2",
 }
 ORDEN_NIVELES_CERT = ["Preparación B2 First", "Preparación C1 Advanced"]
 
@@ -83,7 +74,17 @@ def orden_numero_nivel(nombre):
     return int(m.group(1)) if m else 999
 
 
-def construir_fila(fila, es_nuevo, con_plan=False, con_parte=False):
+def filtrar_agosto(df):
+    """Conserva solo las filas cuyo periodo (Fechas) inicia en agosto."""
+    def inicia_en_agosto(fechas_str):
+        m = re.match(r"^\s*\d{1,2}-([A-Za-zÁÉÍÓÚáéíóú]{3})", str(fechas_str))
+        if not m:
+            return True
+        return m.group(1).strip().upper() == "AGO"
+    return df[df["Fechas"].apply(inicia_en_agosto)]
+
+
+def construir_fila(fila, es_nuevo, con_plan=False):
     base = {
         "nrc": fila["NRC"],
         "claveBanner": fila["ClaveBanner"],
@@ -104,21 +105,17 @@ def construir_fila(fila, es_nuevo, con_plan=False, con_parte=False):
         plan_original = fila.get("Plan", "")
         base["plan"] = normalizar_plan(plan_original)
         base["planTexto"] = plan_original
-    if con_parte:
-        base["parte"] = PARTE_POR_NIVEL.get(fila.get("NivelEtiqueta", ""), "")
     return base
 
 
 def agrupar_ingles(df_sec, nrc_es_nuevo):
-    df_sec = df_sec.copy()
-    df_sec["_grupo"] = df_sec["NivelEtiqueta"].map(GRUPO_NIVEL_INGLES).fillna(df_sec["NombreMateria"])
     niveles = []
-    grupos_presentes = [g for g in ORDEN_GRUPOS_INGLES if g in df_sec["_grupo"].unique()]
-    otros = [g for g in df_sec["_grupo"].unique() if g not in ORDEN_GRUPOS_INGLES]
-    for grupo in grupos_presentes + otros:
-        df_niv = df_sec[df_sec["_grupo"] == grupo].sort_values(by=["Docente", "HoraInicio", "NivelEtiqueta"])
-        filas = [construir_fila(f, nrc_es_nuevo(f["NRC"]), con_parte=True) for _, f in df_niv.iterrows()]
-        niveles.append({"nombre": grupo, "cefr": CEFR_POR_GRUPO_INGLES.get(grupo, ""), "filas": filas})
+    valores = df_sec["NombreMateria"].unique().tolist()
+    ordenados = [v for v in ORDEN_NIVELES_INGLES if v in valores] + [v for v in valores if v not in ORDEN_NIVELES_INGLES]
+    for nombre in ordenados:
+        df_niv = df_sec[df_sec["NombreMateria"] == nombre].sort_values(by=["Docente", "HoraInicio"])
+        filas = [construir_fila(f, nrc_es_nuevo(f["NRC"])) for _, f in df_niv.iterrows()]
+        niveles.append({"nombre": nombre, "cefr": CEFR_POR_NIVEL_INGLES.get(nombre, ""), "filas": filas})
     return niveles
 
 
@@ -195,6 +192,8 @@ def main():
         lambda r: r["ListaCruzada"] if es_valor_valido(r["ListaCruzada"]) else r["NRC"],
         axis=1
     )
+
+    df = filtrar_agosto(df)
 
     hoy = datetime.now().date()
     try:

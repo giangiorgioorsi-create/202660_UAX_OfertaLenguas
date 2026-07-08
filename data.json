@@ -1,5 +1,5 @@
 {
-  "generado": "2026-07-08T20:40:34.621949",
+  "generado": "2026-07-08T21:08:16.999149",
   "secciones": [
     {
       "key": "ingles",
@@ -11,7 +11,77 @@
       "finClases": "26 de noviembre",
       "niveles": [
         {
-          "nombre": "Propedéutico Elementary",
+          "nombre": "Propedéutico Elementary A",
+          "cefr": "Pre-A1",
+          "filas": [
+            {
+              "nrc": "40505",
+              "claveBanner": "CLINRIN0A",
+              "materia": "Propedéutico Elementary A",
+              "docente": "Leano Fernández Dafne Ivonne",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40517",
+              "claveBanner": "CLINRIN0A",
+              "materia": "Propedéutico Elementary A",
+              "docente": "Ortíz Esteban Imelda",
+              "horaInicio": "7:00 PM",
+              "horaFin": "8:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Virtual",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40493",
+              "claveBanner": "CLINRIN0A",
+              "materia": "Propedéutico Elementary A",
+              "docente": "Viñas Viñas Ana María",
+              "horaInicio": "1:00 PM",
+              "horaFin": "2:27 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            },
+            {
+              "nrc": "40501",
+              "claveBanner": "CLINRIN0A",
+              "materia": "Propedéutico Elementary A",
+              "docente": "Viñas Viñas Ana María",
+              "horaInicio": "2:30 PM",
+              "horaFin": "3:57 PM",
+              "dias": "1,2,3,4,5",
+              "periodo": "10-AGO-2026 25-SEP-2026",
+              "creditos": "0",
+              "modalidad": "Presencial",
+              "estatus": "Activo",
+              "notas": "",
+              "recordatorio": "",
+              "esNuevo": false
+            }
+          ]
+        },
+        {
+          "nombre": "Propedéutico Elementary B",
           "cefr": "Pre-A1",
           "filas": [
             {
@@ -28,25 +98,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40496",
-              "claveBanner": "CLINRIN0B",
-              "materia": "Propedéutico Elementary B",
-              "docente": "Hernández Espinosa Raquel Aurora",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40503",
@@ -62,59 +114,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40504",
-              "claveBanner": "CLINRIN0B",
-              "materia": "Propedéutico Elementary B",
-              "docente": "Hernández Espinosa Raquel Aurora",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
-            },
-            {
-              "nrc": "40505",
-              "claveBanner": "CLINRIN0A",
-              "materia": "Propedéutico Elementary A",
-              "docente": "Leano Fernández Dafne Ivonne",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40506",
-              "claveBanner": "CLINRIN0B",
-              "materia": "Propedéutico Elementary A",
-              "docente": "Leano Fernández Dafne Ivonne",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40513",
@@ -130,132 +130,12 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40514",
-              "claveBanner": "CLINRIN0B",
-              "materia": "Propedéutico Elementary B",
-              "docente": "Leano Fernández Dafne Ivonne",
-              "horaInicio": "5:30 PM",
-              "horaFin": "6:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
-            },
-            {
-              "nrc": "40517",
-              "claveBanner": "CLINRIN0A",
-              "materia": "Propedéutico Elementary A",
-              "docente": "Ortíz Esteban Imelda",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40518",
-              "claveBanner": "CLINRIN0B",
-              "materia": "Propedéutico Elementary B",
-              "docente": "Ortíz Esteban Imelda",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
-            },
-            {
-              "nrc": "40493",
-              "claveBanner": "CLINRIN0A",
-              "materia": "Propedéutico Elementary A",
-              "docente": "Viñas Viñas Ana María",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40494",
-              "claveBanner": "CLINRIN0B",
-              "materia": "Propedéutico Elementary A",
-              "docente": "Viñas Viñas Ana María",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
-            },
-            {
-              "nrc": "40501",
-              "claveBanner": "CLINRIN0A",
-              "materia": "Propedéutico Elementary A",
-              "docente": "Viñas Viñas Ana María",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "10-AGO-2026 25-SEP-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40502",
-              "claveBanner": "CLINRIN0B",
-              "materia": "Propedéutico Elementary A",
-              "docente": "Viñas Viñas Ana María",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             }
           ]
         },
         {
-          "nombre": "Pre Intermediate",
+          "nombre": "Pre Intermediate A",
           "cefr": "A2",
           "filas": [
             {
@@ -272,25 +152,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40532",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Cházaro Vitela Caesar",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40527",
@@ -306,25 +168,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40528",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Contreras González Guadalupe",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40543",
@@ -340,25 +184,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40544",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Ladrón de Guevara Coutiño Armando",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40555",
@@ -374,25 +200,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40556",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Ladrón de Guevara Coutiño Armando",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40551",
@@ -408,25 +216,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40552",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Lozada Vega Silvia Gabriela",
-              "horaInicio": "5:30 PM",
-              "horaFin": "6:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40539",
@@ -442,25 +232,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40540",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Ortiz Romero Jaime Rommel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40529",
@@ -476,25 +248,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40530",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Rivas López Ricardo",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40541",
@@ -510,25 +264,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40542",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Rivera Rojas Abryl Ninel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40525",
@@ -544,30 +280,12 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40526",
-              "claveBanner": "CLINRIN2",
-              "materia": "Pre Intermediate B",
-              "docente": "Vela Osorio Fernando",
-              "horaInicio": "7:00 AM",
-              "horaFin": "8:27 AM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             }
           ]
         },
         {
-          "nombre": "Intermediate",
+          "nombre": "Intermediate A",
           "cefr": "B1",
           "filas": [
             {
@@ -584,25 +302,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40572",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Alarcón González José Fernando",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40593",
@@ -618,25 +318,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40594",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Alarcón González José Fernando",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40587",
@@ -652,25 +334,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40588",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Almeida Sánchez Arturo Miguel",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40595",
@@ -686,25 +350,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40596",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Cházaro Vitela Caesar",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40585",
@@ -720,25 +366,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40586",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Contreras González Guadalupe",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40567",
@@ -754,25 +382,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40568",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Leana Silva Lilian",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40573",
@@ -788,25 +398,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40574",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40591",
@@ -822,25 +414,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40592",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40611",
@@ -856,25 +430,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40612",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Loya Vite Adriana Guadalupe",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40565",
@@ -890,25 +446,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40566",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Ortiz Romero Jaime Rommel",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40589",
@@ -924,25 +462,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40590",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Rivas López Ricardo",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40569",
@@ -958,25 +478,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40570",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "Rivera Rojas Abryl Ninel",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40563",
@@ -992,30 +494,12 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40564",
-              "claveBanner": "CLINRIN4",
-              "materia": "Intermediate B",
-              "docente": "SALDAÑA FELIX MIRIAM",
-              "horaInicio": "7:00 AM",
-              "horaFin": "8:27 AM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             }
           ]
         },
         {
-          "nombre": "Upper Intermediate",
+          "nombre": "Upper Intermediate A",
           "cefr": "B2",
           "filas": [
             {
@@ -1032,25 +516,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40620",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Almeida Sánchez Arturo Miguel",
-              "horaInicio": "7:00 AM",
-              "horaFin": "8:27 AM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40627",
@@ -1066,25 +532,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40628",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Bustamante Herrera Guillermo",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40649",
@@ -1100,25 +548,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40650",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Bustamante Herrera Guillermo",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40673",
@@ -1134,25 +564,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40674",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Bustamante Herrera Guillermo",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40623",
@@ -1168,25 +580,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40624",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Hernández Ortega Karina Iveth",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40643",
@@ -1202,25 +596,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40644",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Hernández Ortega Karina Iveth",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40625",
@@ -1236,25 +612,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40626",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Huerta Rodríguez César Samir",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40645",
@@ -1270,25 +628,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40646",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Huerta Rodríguez César Samir",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40647",
@@ -1304,25 +644,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40648",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Leana Silva Lilian",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40629",
@@ -1338,25 +660,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40630",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Levi Alexia",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40651",
@@ -1372,25 +676,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40652",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Levi Alexia",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40621",
@@ -1406,25 +692,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40622",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Libreros Cortez Héctor",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40641",
@@ -1440,25 +708,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40642",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Libreros Cortez Héctor",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40669",
@@ -1474,25 +724,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40670",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Lozada Vega Silvia Gabriela",
-              "horaInicio": "7:00 PM",
-              "horaFin": "8:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40631",
@@ -1508,25 +740,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40632",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Ortega Sánchez Pablo Camilo",
-              "horaInicio": "1:00 PM",
-              "horaFin": "2:27 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40653",
@@ -1542,25 +756,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40654",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Ortega Sánchez Pablo Camilo",
-              "horaInicio": "2:30 PM",
-              "horaFin": "3:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Presencial",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             },
             {
               "nrc": "40675",
@@ -1576,25 +772,7 @@
               "estatus": "Activo",
               "notas": "",
               "recordatorio": "",
-              "esNuevo": false,
-              "parte": "A"
-            },
-            {
-              "nrc": "40676",
-              "claveBanner": "CLINRING",
-              "materia": "Upper Intermediate B",
-              "docente": "Ortíz Esteban Imelda",
-              "horaInicio": "8:30 PM",
-              "horaFin": "9:57 PM",
-              "dias": "1,2,3,4,5",
-              "periodo": "28-SEP-2026 25-NOV-2026",
-              "creditos": "0",
-              "modalidad": "Virtual",
-              "estatus": "Activo",
-              "notas": "",
-              "recordatorio": "",
-              "esNuevo": false,
-              "parte": "B"
+              "esNuevo": false
             }
           ]
         }
