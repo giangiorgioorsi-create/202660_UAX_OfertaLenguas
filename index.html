@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de Lenguas UAX — Oferta Académica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBFAF7;
+  --card:#FFFFFF;
+  --ink:#1C1B1A;
+  --ink-soft:#57544C;
+  --stone:#E5E1D6;
+  --stone-line:#D8D3C4;
+  --orange:#FF6600;
+  --orange-deep:#B84A00;
+  --orange-tint:#FFF1E4;
+  --green:#1F7A4D;
+  --green-tint:#E7F5EC;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.5;
+}
+.topbar{
+  position:sticky; top:0; z-index:10;
+  background:var(--bg);
+  border-bottom:1px solid var(--stone-line);
+  padding:14px 20px;
+}
+.topbar-inner{
+  max-width:900px; margin:0 auto;
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+}
+.brand{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:20px;
+  color:var(--orange-deep);
+  flex:1 1 auto;
+  min-width:200px;
+}
+.brand span{color:var(--ink);}
+.search-box{
+  position:relative;
+  flex:0 1 260px;
+}
+.search-box input{
+  width:100%;
+  padding:9px 12px 9px 34px;
+  border:1px solid var(--stone-line);
+  border-radius:8px;
+  font-family:var(--font-mono);
+  font-size:13px;
+  background:var(--card);
+  color:var(--ink);
+}
+.search-box input:focus{outline:2px solid var(--orange); outline-offset:1px;}
+.search-box::before{
+  content:"⌕";
+  position:absolute; left:11px; top:50%; transform:translateY(-50%);
+  color:var(--ink-soft); font-size:15px;
+}
+.nav-pills{
+  max-width:900px; margin:0 auto;
+  display:flex; gap:8px; overflow-x:auto;
+  padding:12px 20px 0;
+  scrollbar-width:none;
+}
+.nav-pills::-webkit-scrollbar{display:none;}
+.pill{
+  flex:0 0 auto;
+  font-family:var(--font-body);
+  font-size:13px;
+  font-weight:500;
+  padding:7px 14px;
+  border-radius:999px;
+  border:1px solid var(--stone-line);
+  background:var(--card);
+  color:var(--ink-soft);
+  text-decoration:none;
+  white-space:nowrap;
+}
+.pill:hover{border-color:var(--orange); color:var(--orange-deep);}
+
+main{max-width:900px; margin:0 auto; padding:24px 20px 60px;}
+
+.empty-msg{
+  text-align:center; color:var(--ink-soft); padding:40px 0; font-size:14px;
+}
+
+section.lang-section{margin-bottom:20px;}
+.section-header{
+  display:flex; align-items:center; gap:10px;
+  cursor:pointer;
+  padding:14px 16px;
+  background:var(--card);
+  border:1px solid var(--stone-line);
+  border-radius:12px;
+  user-select:none;
+}
+.section-header h2{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:19px;
+  margin:0;
+  flex:1;
+  color:var(--ink);
+}
+.chevron{
+  font-size:14px; color:var(--ink-soft);
+  transition:transform 0.15s ease;
+}
+.section-header[aria-expanded="true"] .chevron{transform:rotate(90deg);}
+.badge-count{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--ink-soft);
+  background:var(--stone);
+  padding:2px 8px;
+  border-radius:999px;
+}
+
+.section-body{display:none; padding:14px 4px 4px;}
+.section-body.open{display:block;}
+
+.cefr-ladder{
+  display:flex; align-items:center; gap:6px;
+  margin:4px 8px 18px;
+  font-family:var(--font-mono); font-size:11px; color:var(--ink-soft);
+}
+.cefr-ladder .dot{
+  width:8px; height:8px; border-radius:50%;
+  background:var(--stone-line);
+}
+.cefr-ladder .dot.active{background:var(--orange);}
+.cefr-ladder .line{flex:1; height:1px; background:var(--stone-line);}
+
+.level-block{margin-bottom:6px;}
+.level-header{
+  display:flex; align-items:center; gap:8px;
+  padding:10px 12px;
+  cursor:pointer;
+  border-radius:8px;
+}
+.level-header:hover{background:var(--orange-tint);}
+.level-header h3{
+  font-size:15px; font-weight:600; margin:0; flex:1;
+}
+.cefr-tag{
+  font-family:var(--font-mono); font-size:11px;
+  color:var(--orange-deep); background:var(--orange-tint);
+  padding:2px 7px; border-radius:6px;
+}
+.level-courses{display:none; padding-left:12px;}
+.level-courses.open{display:block;}
+
+.course-row{
+  background:var(--card);
+  border:1px solid var(--stone-line);
+  border-radius:10px;
+  padding:12px 14px;
+  margin:8px 0;
+}
+.course-top{
+  display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+}
+.course-main p{margin:0 0 2px; font-size:14px;}
+.course-main .materia{font-weight:600;}
+.course-main .meta{color:var(--ink-soft); font-size:13px;}
+.new-badge{
+  font-family:var(--font-body); font-size:11px; font-weight:600;
+  color:var(--green); background:var(--green-tint);
+  padding:3px 8px; border-radius:999px;
+  white-space:nowrap;
+}
+.reminder-line{
+  margin-top:8px; padding:8px 10px;
+  background:var(--orange-tint); border-left:3px solid var(--orange);
+  border-radius:0 6px 6px 0;
+  font-size:13px;
+}
+.codes{
+  margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;
+  font-family:var(--font-mono); font-size:12px; color:var(--ink-soft);
+}
+.codes .code-pair{
+  background:var(--stone); padding:3px 8px; border-radius:6px;
+}
+.notas-line{
+  margin-top:6px; font-size:12.5px; color:var(--ink-soft);
+}
+
+@media (max-width:600px){
+  .brand{font-size:17px;}
+  main{padding:18px 12px 50px;}
+  .section-header h2{font-size:17px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">🏛️ Centro de <span>Lenguas UAX</span></div>
+    <div class="search-box">
+      <input id="buscarNrc" type="text" placeholder="Buscar por NRC" inputmode="numeric">
+    </div>
+  </div>
+  <nav class="nav-pills" id="navPills"></nav>
+</div>
+
+<main id="main">
+  <div class="empty-msg">Cargando oferta académica…</div>
+</main>
+
+<script>
+const DIA_NOMBRE = {"1":"Lun","2":"Mar","3":"Mié","4":"Jue","5":"Vie","6":"Sáb","7":"Dom"};
+
+function diasLegibles(diasStr){
+  if(!diasStr) return "No especificado";
+  return diasStr.split(",").map(d => DIA_NOMBRE[d.trim()] || d.trim()).join(" · ");
+}
+
+function renderCurso(curso){
+  const codigos = curso.nrcs.map((nrc,i) =>
+    `<span class="code-pair">NRC ${nrc} · ${curso.clavesBanner[i] || ""}</span>`
+  ).join("");
+  const badge = curso.esNuevo ? `<span class="new-badge">Nuevo</span>` : "";
+  const recordatorio = curso.recordatorio
+    ? `<div class="reminder-line">🔔 <strong>Recordatorio:</strong> ${curso.recordatorio}</div>` : "";
+  const notas = curso.notas
+    ? `<div class="notas-line">📌 Notas: ${curso.notas}</div>` : "";
+  return `
+    <div class="course-row" data-nrcs="${curso.nrcs.join(' ')}">
+      <div class="course-top">
+        <div class="course-main">
+          <p class="materia">${curso.materia}</p>
+          <p class="meta">${curso.docente} · ${curso.horario} · ${diasLegibles(curso.dias)}</p>
+          <p class="meta">${curso.modalidad} · ${curso.periodo}</p>
+        </div>
+        ${badge}
+      </div>
+      ${recordatorio}
+      <div class="codes">${codigos}</div>
+      ${notas}
+    </div>`;
+}
+
+function renderSeccion(sec){
+  let cuerpo = "";
+  if(sec.tipo === "niveles"){
+    const activos = sec.niveles.map(n => n.cefr).filter(Boolean);
+    cuerpo += `<div class="cefr-ladder">A1<div class="line"></div>${
+      ["A1","A2","B1","B1+","B2","C1"].map(l=>`<div class="dot ${activos.includes(l)?'active':''}"></div>`).join('<div class="line"></div>')
+    }C1</div>`;
+    sec.niveles.forEach((niv, idx) => {
+      cuerpo += `
+        <div class="level-block">
+          <div class="level-header" onclick="toggleLevel('${sec.key}-${idx}')">
+            <span class="chevron">▸</span>
+            <h3>${niv.nombre}</h3>
+            ${niv.cefr ? `<span class="cefr-tag">${niv.cefr}</span>` : ""}
+            <span class="badge-count">${niv.cursos.length} grupo${niv.cursos.length!==1?'s':''}</span>
+          </div>
+          <div class="level-courses" id="level-${sec.key}-${idx}">
+            ${niv.cursos.map(renderCurso).join("")}
+          </div>
+        </div>`;
+    });
+  } else {
+    cuerpo = sec.cursos.map(renderCurso).join("");
+  }
+
+  const totalCursos = sec.tipo === "niveles"
+    ? sec.niveles.reduce((a,n)=>a+n.cursos.length,0)
+    : sec.cursos.length;
+
+  return `
+    <section class="lang-section" id="sec-${sec.key}">
+      <div class="section-header" aria-expanded="false" onclick="toggleSection('${sec.key}')">
+        <span class="chevron">▸</span>
+        <h2>${sec.label}</h2>
+        <span class="badge-count">${totalCursos} grupo${totalCursos!==1?'s':''}</span>
+      </div>
+      <div class="section-body" id="body-${sec.key}">${cuerpo}</div>
+    </section>`;
+}
+
+function toggleSection(key){
+  const body = document.getElementById(`body-${key}`);
+  const header = document.querySelector(`#sec-${key} .section-header`);
+  const isOpen = body.classList.toggle("open");
+  header.setAttribute("aria-expanded", isOpen);
+}
+
+function toggleLevel(id){
+  document.getElementById(`level-${id}`).classList.toggle("open");
+}
+
+let DATA = null;
+
+fetch("data.json")
+  .then(r => r.json())
+  .then(data => {
+    DATA = data;
+    const main = document.getElementById("main");
+    const nav = document.getElementById("navPills");
+    nav.innerHTML = data.secciones.map(s => `<a class="pill" href="#sec-${s.key}">${s.label}</a>`).join("");
+    main.innerHTML = data.secciones.map(renderSeccion).join("");
+  })
+  .catch(() => {
+    document.getElementById("main").innerHTML =
+      `<div class="empty-msg">No se pudo cargar la oferta académica. Verifica que data.json esté publicado junto a esta página.</div>`;
+  });
+
+document.getElementById("buscarNrc").addEventListener("input", (e) => {
+  const q = e.target.value.trim();
+  document.querySelectorAll(".course-row").forEach(row => {
+    const nrcs = row.dataset.nrcs.split(" ");
+    const match = q === "" || nrcs.some(n => n.includes(q));
+    row.style.display = match ? "" : "none";
+  });
+  if(q !== ""){
+    document.querySelectorAll(".section-body").forEach(b => b.classList.add("open"));
+    document.querySelectorAll(".level-courses").forEach(b => b.classList.add("open"));
+    document.querySelectorAll(".section-header").forEach(h => h.setAttribute("aria-expanded","true"));
+  }
+});
+</script>
+</body>
+</html>
