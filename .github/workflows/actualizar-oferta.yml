@@ -1,1 +1,44 @@
+name: Actualizar oferta académica
 
+on:
+  push:
+    paths:
+      - "*.xlsx"
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install pandas openpyxl
+
+      - name: Detectar archivo Excel
+        id: buscar_excel
+        run: |
+          ARCHIVO=$(ls *.xlsx | head -n 1)
+          echo "archivo=$ARCHIVO" >> "$GITHUB_OUTPUT"
+
+      - name: Generar data.json
+        run: python excel_to_json.py "${{ steps.buscar_excel.outputs.archivo }}"
+
+      - name: Publicar cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json new_tracker.json
+          git diff --quiet --cached || git commit -m "Actualizar oferta académica (automático)"
+          git push
