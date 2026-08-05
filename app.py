@@ -1,28 +1,26 @@
 import streamlit as st
-import streamlit.components.v1 as components
 
 st.set_page_config(page_title="Nueva página disponible", page_icon="🌐", layout="centered")
 
 CANVA_URL = "https://canva.link/ip80odtkn9luggs"
 
-# Redirección automática (window.top escapa del iframe del componente)
-components.html(
-    f"""
-    <script>
-        window.top.location.href = "{CANVA_URL}";
-    </script>
-    """,
-    height=0,
-)
-
 st.markdown(
     f"""
     <style>
+        #MainMenu, footer, header {{visibility: hidden;}}
+        .block-container {{padding-top: 15vh;}}
         .redirect-card {{
             text-align: center;
-            padding-top: 15vh;
             font-family: Georgia, 'Times New Roman', serif;
             color: #eef1f6;
+        }}
+        .redirect-card .eyebrow {{
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            font-size: .75rem;
+            color: #c9a24b;
+            font-family: Helvetica, Arial, sans-serif;
+            margin-bottom: 14px;
         }}
         .redirect-card p {{
             font-family: Helvetica, Arial, sans-serif;
@@ -31,19 +29,21 @@ st.markdown(
         .redirect-card a {{
             display: inline-block;
             background: #c9a24b;
-            color: #0b2545;
+            color: #0b2545 !important;
             text-decoration: none;
             font-weight: 700;
             font-family: Helvetica, Arial, sans-serif;
-            padding: 14px 34px;
+            padding: 16px 40px;
             border-radius: 2px;
             margin-top: 12px;
+            font-size: 1.05rem;
         }}
     </style>
     <div class="redirect-card">
-        <h2>La información se mudó a nuestra nueva página</h2>
-        <p>Si no fuiste redirigido automáticamente, entra aquí:</p>
-        <a href="{CANVA_URL}" target="_top">Ir a la nueva página</a>
+        <div class="eyebrow">Esta página se actualizó</div>
+        <h1>La información se mudó a nuestra nueva página</h1>
+        <p>Entra desde aquí para ver la oferta de lenguas:</p>
+        <a href="{CANVA_URL}">Ir a la nueva página</a>
     </div>
     """,
     unsafe_allow_html=True,
