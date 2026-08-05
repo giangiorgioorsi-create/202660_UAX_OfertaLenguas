@@ -12,19 +12,22 @@ st.markdown(
         .redirect-card {{
             text-align: center;
             font-family: Georgia, 'Times New Roman', serif;
-            color: #eef1f6;
         }}
         .redirect-card .eyebrow {{
             letter-spacing: .18em;
             text-transform: uppercase;
             font-size: .75rem;
-            color: #c9a24b;
+            color: #a9832f;
             font-family: Helvetica, Arial, sans-serif;
             margin-bottom: 14px;
         }}
+        .redirect-card h1 {{
+            color: #0b2545;
+            font-weight: 400;
+        }}
         .redirect-card p {{
             font-family: Helvetica, Arial, sans-serif;
-            color: #a9b6cc;
+            color: #4a5568;
         }}
         .redirect-card a {{
             display: inline-block;
